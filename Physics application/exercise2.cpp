@@ -23,13 +23,13 @@ void inputNumber(double& number)
 void distanceCalculator()
 {
     double t;
-    
+
     cout << "Enter the time interval (t):" << endl;
     inputNumber(t);
 
     cout << "Our formula is s = (g * t * t ) / 2" << endl;
     cout << "First we replace the values:" << endl;
-    cout << "s = "<< "(" << 10 << " * "  << t << " * " << t << ")" << " / 2" << endl;
+    cout << "s = " << "(" << 10 << " * " << t << " * " << t << ")" << " / 2" << endl;
     cout << "Then we calculate our eqalation:" << endl;
     cout << "s = " << (10 * t * t) / 2 << " m" << endl;
 }
@@ -77,6 +77,22 @@ void exerciseOne(bool& pointAdd)
     }
 }
 
+void exerciseTwo(bool& pointAdd)
+{
+    double answer;
+    cout << "Try to solve this problem!" << endl;
+    cout << "A stone that starts at rest is in free fall for 6 s. What is the stone’s velocity after these 6 seconds?" << endl;
+    cout << "s = ?m (example input: 122)" << endl;
+    cin >> answer;
+    if (answer == 60)
+    {
+        pointAdd = true;
+    }
+    else
+    {
+        pointAdd = false;
+    }
+}
 
 
 int main()
@@ -108,18 +124,39 @@ int main()
         exerciseOne(isCorrect);
         if (isCorrect == true)
         {
-            cout << "That's correct!";
+            cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
-            cout << "That's wrong!";
+            cout << "That's wrong! ";
         }
     }
 
-
-    
-
+    cout << "Would you like to do the next exercise? (y/n)" << endl;
+    cin >> sym;
+    while (sym != 'y' && sym != 'n')
+    {
+        cout << "Please enter a valid input!" << endl;
+        cin >> sym;
+    }
+    if (sym == 'n')
+    {
+    }
+    else if (sym == 'y')
+    {
+        exerciseChecker++;
+        exerciseTwo(isCorrect);
+        if (isCorrect == true)
+        {
+            cout << "That's correct! ";
+            correctExerciseCount++;
+        }
+        else if (isCorrect == false)
+        {
+            cout << "That's wrong! ";
+        }
+    }
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     cin >> sym;
@@ -135,6 +172,26 @@ int main()
         cin >> sym;
         velocityDistanceCalculator(sym);
     }
-    
-    cout << "You got " << correctExerciseCount << " out of 2 points!";
-}
+    else if (sym == 'p')
+    {
+        if (exerciseChecker < 2)
+        {
+            exerciseTwo(isCorrect);
+            if (isCorrect == true)
+            {
+                cout << "That's correct! ";
+                correctExerciseCount++;
+            }
+            else if (isCorrect == false)
+            {
+                cout << "That's wrong! ";
+            }
+        }
+        else
+        {
+            cout << "Ops! You've done 2 out of two exercises!" << endl;
+        }
+
+
+        cout << "You got " << correctExerciseCount << " out of 2 points!";
+    }
