@@ -89,6 +89,24 @@ void exerciseOne(bool& pointAdd)
     }
 }
 
+void exerciseTwo(bool& pointAdd)
+{
+    double answer;
+    cout << "Try to solve this problem!" << endl;
+    cout << "With an initial velocity of 36 km/h, a car accelerated at 8 m/s2 for 10 seconds. What is the position of the car at the end of the 10 seconds?" << endl;
+    cout << "hint: 36 km/h = 10 m/s" << endl;
+    cout << "s = ?m (example input: 122)" << endl;
+    cin >> answer;
+    if (answer == 500)
+    {
+        pointAdd = true;
+    }
+    else
+    {
+        pointAdd = false;
+    }
+}
+
 int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
@@ -98,6 +116,14 @@ int main()
     int correctExerciseCount = 0;
     bool isCorrect;
 
+    int exerciseChecker = 0;
+
+    while (sym != 'c' && sym != 'p')
+    {
+        cout << "Please enter a valid input!" << endl;
+        cin >> sym;
+
+    }
     if (sym == 'c')
     {
         cout << "Enter the unit we are searching (s/V)" << endl;
@@ -106,6 +132,7 @@ int main()
     }
     else if (sym == 'p')
     {
+        exerciseChecker++;
         exerciseOne(isCorrect);
         if (isCorrect == true)
         {
@@ -115,20 +142,44 @@ int main()
         else if (isCorrect == false)
         {
             cout << "That's wrong!";
-
         }
     }
-    cout << "Would you like to go to the next exercise? (y/n)";
+
+
+    cout << "Would you like to go to the next exercise? (y/n)" << endl;
+    cin >> sym;
+    while (sym != 'y' && sym != 'n')
+    {
+        cout << "Please enter a valid input!" << endl;
+        cin >> sym;
+    }
+    if (sym == 'n')
+    {
+    }
+    else if (sym == 'y')
+    {
+        exerciseChecker++;
+        exerciseTwo(isCorrect);
+        if (isCorrect == true)
+        {
+            cout << "That's correct!";
+            correctExerciseCount++;
+        }
+        else if (isCorrect == false)
+        {
+            cout << "That's wrong!";
+        }
+    }
+
+
+    cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     cin >> sym;
 
     while (sym != 'c' && sym != 'p')
     {
         cout << "Please enter a valid input!" << endl;
-        cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
         cin >> sym;
     }
-
-
     if (sym == 'c')
     {
         cout << "Enter the unit we are searching (s/V)" << endl;
@@ -137,17 +188,25 @@ int main()
     }
     else if (sym == 'p')
     {
-        exerciseOne(isCorrect);
-        if (isCorrect == true)
+        if (exerciseChecker < 2)
         {
-            cout << "That's correct!";
-            correctExerciseCount++;
+            exerciseTwo(isCorrect);
+            if (isCorrect == true)
+            {
+                cout << "That's correct! ";
+                correctExerciseCount++;
+            }
+            else if (isCorrect == false)
+            {
+                cout << "That's wrong! ";
+            }
         }
-        else if (isCorrect == false)
+        else
         {
-            cout << "That's wrong!";
+            cout << "Ops! You've done 2 out of two exercises!" << endl;
         }
+
     }
 
-    cout << "You got " << correctExerciseCount << " out of *total exercises* points!";
+    cout << "You got " << correctExerciseCount << " out of 2 points!";
 }
