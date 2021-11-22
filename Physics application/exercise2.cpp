@@ -195,3 +195,4 @@ int main()
 
         cout << "You got " << correctExerciseCount << " out of 2 points!";
     }
+}

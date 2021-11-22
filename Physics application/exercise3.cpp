@@ -60,6 +60,23 @@ void gravityMassCalculator(char symbol)
     }
 }
 
+void exerciseOne(bool& pointAdd)
+{
+    double answer;
+    cout << "Try to solve this problem!" << endl;
+    cout << "Estimate the gravitational force of a sumo wrestler with mass 220 kg." << endl;
+    cout << "G = ?N (example input: 122)" << endl;
+    cin >> answer;
+    if (answer == 2200)
+    {
+        pointAdd = true;
+    }
+    else
+    {
+        pointAdd = false;
+    }
+}
+
 
 
 
@@ -79,13 +96,26 @@ int main()
     {
         cout << "Please enter a valid input!" << endl;
         cin >> sym;
-
     }
     if (sym == 'c')
     {
         cout << "Enter the unit we are searching (G/m)" << endl;
         cin >> sym;
         gravityMassCalculator(sym);
+    }
+    else if (sym == 'p')
+    {
+        exerciseChecker++;
+        exerciseOne(isCorrect);
+        if (isCorrect == true)
+        {
+            cout << "That's correct! ";
+            correctExerciseCount++;
+        }
+        else if (isCorrect == false)
+        {
+            cout << "That's wrong! ";
+        }
     }
 
 
