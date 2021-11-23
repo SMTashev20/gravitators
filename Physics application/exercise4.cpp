@@ -68,6 +68,23 @@ void densityMassCalculator(char symbol)
     }
 }
 
+void exerciseOne(bool& pointAdd)
+{
+    double answer;
+    cout << "Now, try to solve this problem!" << endl;
+    cout << "If the volume of a metal shpere of 200g mass is 20 cm3 what is the density of the metal?" << endl;
+    cout << "s = ?m (example input: 122)" << endl;
+    cin >> answer;
+    if (answer == 10)
+    {
+        pointAdd = true;
+    }
+    else
+    {
+        pointAdd = false;
+    }
+}
+
 
 
 
@@ -95,9 +112,20 @@ int main()
         cin >> sym;
         densityMassCalculator(sym);
     }
-
-
-
+    else if (sym == 'p')
+    {
+        exerciseChecker++;
+        exerciseOne(isCorrect);
+        if (isCorrect == true)
+        {
+            cout << "That's correct!";
+            correctExerciseCount++;
+        }
+        else if (isCorrect == false)
+        {
+            cout << "That's wrong!";
+        }
+    }
 
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
