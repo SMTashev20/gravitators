@@ -141,13 +141,13 @@ int main()
         exerciseOne(isCorrect);
         if (isCorrect == true)
         {
-            cout << "That's correct!";
+            cout << "That's correct! ";
             correctExerciseCount++;
             
         }
         else if (isCorrect == false)
         {
-            cout << "That's wrong!";
+            cout << "That's wrong! ";
         }
         exerciseOneChecker = 1;
     }
@@ -161,6 +161,7 @@ int main()
     }
     if (sym == 'n')
     {
+
     }
     else if (sym == 'y')
     {

@@ -74,11 +74,37 @@ void forceAccelerationCalculator(char symbol)
     }
 }
 
+void exerciseOne(bool& pointAdd)
+{
+    double answer;
+    cout << "Now, try to solve this problem!" << endl;
+    cout << "A block with a mass of 4kg is pushed across a frictionless surface with a force of 8N for a time of 3s. What is the velocity of the block after the push?" << endl;
+    cout << "Hint: We calculate the velocity by the formula: v = a * t" << endl;
+    cout << "v = ? m/s (example input: 122)" << endl;
+    cin >> answer;
+    if (answer == 6)
+    {
+        pointAdd = true;
+    }
+    else
+    {
+        pointAdd = false;
+    }
+
+
+}
+
 int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     char symbol;
     cin >> symbol;
+
+    int correctExerciseCount = 0;
+    bool isCorrect;
+
+    int exerciseCounter = 0;
+    bool exerciseOneChecker = 0;
 
     while (symbol != 'c' && symbol != 'p')
     {
@@ -95,6 +121,22 @@ int main()
             cin >> symbol;
         }
         forceAccelerationCalculator(symbol);
+    }
+    else if (symbol == 'p')
+    {
+        exerciseCounter++;
+        exerciseOne(isCorrect);
+        if (isCorrect == true)
+        {
+            cout << "That's correct! ";
+            correctExerciseCount++;
+
+        }
+        else if (isCorrect == false)
+        {
+            cout << "That's wrong! ";
+        }
+        exerciseOneChecker = 1;
     }
 
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
@@ -106,10 +148,11 @@ int main()
     }
     if (symbol == 'n')
     {
+
     }
 
 
-    cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
+    cout << "Would you like to use the calculator or solve a problem? (c/p) " << endl;
     cin >> symbol;
 
     while (symbol != 'c' && symbol != 'p')
@@ -128,5 +171,5 @@ int main()
         }
         forceAccelerationCalculator(symbol);
     }
-}
+
 }
