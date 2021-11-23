@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 void ignoreUserInput()
@@ -191,7 +192,7 @@ int main()
     {
         cout << "Enter the unit we are searching (G/m)" << endl;
         cin >> sym;
-        while (symbol != 'G' && symbol != 'm')
+        while (sym != 'G' && sym != 'm')
         {
             cout << "Please enter a valid input!" << endl;
             cin >> sym;
