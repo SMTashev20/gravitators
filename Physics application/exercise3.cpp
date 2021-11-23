@@ -22,30 +22,30 @@ void inputNumber(double& number)
 
 void gravityCalculator()
 {
-    double m;
+    double mass;
 
     cout << "Enter the mass of the object (m):" << endl;
-    inputNumber(m);
+    inputNumber(mass);
 
     cout << "Our formula is G = m * g" << endl;
     cout << "First we replace the values:" << endl;
-    cout << "G = " << m << " * " << 10 << endl;
+    cout << "G = " << mass << " * " << 10 << endl;
     cout << "Then we calculate our eqalation:" << endl;
-    cout << "G = " << 10 * m << " N" << endl;
+    cout << "G = " << 10 * mass << " N" << endl;
 }
 
 void massCalculator()
 {
-    double G;
+    double gravityForce;
 
     cout << "Enter the gravity force of the object (G):" << endl;
-    inputNumber(G);
+    inputNumber(gravityForce);
 
     cout << "Our formula is m = G / g" << endl;
     cout << "First we replace the values:" << endl;
-    cout << "m = " << G << " / " << 10 << endl;
+    cout << "m = " << gravityForce << " / " << 10 << endl;
     cout << "Then we calculate our eqalation:" << endl;
-    cout << "m = " << G / 10 << " kg" << endl;
+    cout << "m = " << gravityForce / 10 << " kg" << endl;
 }
 
 void gravityMassCalculator(char symbol)
@@ -90,7 +90,7 @@ int main()
     int correctExerciseCount = 0;
     bool isCorrect;
 
-    int exerciseChecker = 0;
+    int exerciseCounter = 0;
 
     while (sym != 'c' && sym != 'p')
     {
@@ -105,7 +105,7 @@ int main()
     }
     else if (sym == 'p')
     {
-        exerciseChecker++;
+        exerciseCounter++;
         exerciseOne(isCorrect);
         if (isCorrect == true)
         {
