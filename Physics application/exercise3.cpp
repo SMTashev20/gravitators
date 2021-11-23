@@ -77,8 +77,22 @@ void exerciseOne(bool& pointAdd)
     }
 }
 
-
-
+void exerciseTwo(bool& pointAdd)
+{
+    double answer;
+    cout << "Try to solve this problem!" << endl;
+    cout << "Evaluate the mass of a spherical steel ball with a magnitude of gravitational force 50 N." << endl;
+    cout << "m = ?kg (example input: 122)" << endl;
+    cin >> answer;
+    if (answer == 5)
+    {
+        pointAdd = true;
+    }
+    else
+    {
+        pointAdd = false;
+    }
+}
 
 
 int main()
@@ -118,9 +132,30 @@ int main()
         }
     }
 
-
-
-
+    cout << "Would you like to go to the next exercise? (y/n)" << endl;
+    cin >> sym;
+    while (sym != 'y' && sym != 'n')
+    {
+        cout << "Please enter a valid input!" << endl;
+        cin >> sym;
+    }
+    if (sym == 'n')
+    {
+    }
+    else if (sym == 'y')
+    {
+        exerciseCounter++;
+        exerciseTwo(isCorrect);
+        if (isCorrect == true)
+        {
+            cout << "That's correct!";
+            correctExerciseCount++;
+        }
+        else if (isCorrect == false)
+        {
+            cout << "That's wrong!";
+        }
+    }
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     cin >> sym;
@@ -136,6 +171,27 @@ int main()
         cin >> sym;
         gravityMassCalculator(sym);
     }
+    else if (sym == 'p')
+    {
+        if (exerciseCounter < 2)
+        {
+            exerciseTwo(isCorrect);
+            if (isCorrect == true)
+            {
+                cout << "That's correct! ";
+                correctExerciseCount++;
+            }
+            else if (isCorrect == false)
+            {
+                cout << "That's wrong! ";
+            }
+        }
+        else
+        {
+            cout << "Ops! You've done 2 out of two exercises!" << endl;
+        }
+    }
+
 
     cout << "You got " << correctExerciseCount << " out of 2 points!";
 }
