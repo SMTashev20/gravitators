@@ -94,6 +94,22 @@ void exerciseOne(bool& pointAdd)
 
 }
 
+void exerciseTwo(bool& pointAdd)
+{
+    double answer;
+    cout << "Try to solve this problem! " << endl;
+    cout << "What is the hydrostatic pressure at a depth of 0.5 meters in an alcohol solution? The alcohol's density is 790 kg/m^3." << endl;
+    cin >> answer;
+    if (answer == 3950)
+    {
+        pointAdd = true;
+    }
+    else
+    {
+        pointAdd = false;
+    }
+}
+
 int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
@@ -149,6 +165,22 @@ int main()
     }
     if (symbol == 'n')
     {
+
+    }
+    else if (symbol == 'y')
+    {
+        exerciseCounter++;
+        exerciseTwo(isCorrect);
+        if (isCorrect == true)
+        {
+            cout << "That's correct! ";
+            correctExerciseCount++;
+        }
+        else if (isCorrect == false)
+        {
+            cout << "That's wrong! ";
+        }
+
     }
 
 
@@ -171,4 +203,40 @@ int main()
         }
         heightHydrostaticPleasureCalculator(symbol);
     }
+    else if (symbol == 'p')
+    {
+        if (exerciseCounter < 2 and exerciseOneChecker != 0)
+        {
+            exerciseTwo(isCorrect);
+            if (isCorrect == true)
+            {
+                cout << "That's correct! ";
+                correctExerciseCount++;
+            }
+            else if (isCorrect == false)
+            {
+                cout << "That's wrong! ";
+            }
+        }
+        if (exerciseCounter < 2 and exerciseOneChecker == 0)
+        {
+            exerciseOne(isCorrect);
+            if (isCorrect == true)
+            {
+                cout << "That's correct! ";
+                correctExerciseCount++;
+            }
+            else if (isCorrect == false)
+            {
+                cout << "That's wrong! ";
+            }
+        }
+        else
+        {
+            cout << "Ops! You've done 2 out of 2 exercises!" << endl;
+        }
+    }
+
+
+    cout << "You got " << correctExerciseCount << " out of 2 points!";
 }
