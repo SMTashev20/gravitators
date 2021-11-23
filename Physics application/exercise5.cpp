@@ -94,9 +94,26 @@ void exerciseOne(bool& pointAdd)
 
 }
 
+void exerciseTwo(bool& pointAdd)
+{
+    double answer;
+    cout << "Try to solve this problem! " << endl;
+    cout << "A force of 15N is applied to a 5kg object in space. What is the acceleration of the object? " << endl;
+    cin >> answer;
+    if (answer == 3)
+    {
+        pointAdd = true;
+    }
+    else
+    {
+        pointAdd = false;
+    }
+}
+
+
 int main()
 {
-    cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
+    cout << "Would you like to use the calculator or solve a problem? (c/p) " << endl;
     char symbol;
     cin >> symbol;
 
@@ -108,16 +125,16 @@ int main()
 
     while (symbol != 'c' && symbol != 'p')
     {
-        cout << "Please enter a valid input!" << endl;
+        cout << "Please enter a valid input! " << endl;
         cin >> symbol;
     }
     if (symbol == 'c')
     {
-        cout << "Enter the unit we are searching (F/a)" << endl;
+        cout << "Enter the unit we are searching (F/a) " << endl;
         cin >> symbol;
         while (symbol != 'F' && symbol != 'a')
         {
-            cout << "Please enter a valid input!" << endl;
+            cout << "Please enter a valid input! " << endl;
             cin >> symbol;
         }
         forceAccelerationCalculator(symbol);
@@ -139,7 +156,7 @@ int main()
         exerciseOneChecker = 1;
     }
 
-    cout << "Would you like to go to the next exercise? (y/n)" << endl;
+    cout << "Would you like to go to the next exercise? (y/n) " << endl;
     cin >> symbol;
     while (symbol != 'y' && symbol != 'n')
     {
@@ -148,6 +165,21 @@ int main()
     }
     if (symbol == 'n')
     {
+
+    }
+    else if (symbol == 'y')
+    {
+        exerciseCounter++;
+        exerciseTwo(isCorrect);
+        if (isCorrect == true)
+        {
+            cout << "That's correct! ";
+            correctExerciseCount++;
+        }
+        else if (isCorrect == false)
+        {
+            cout << "That's wrong! ";
+        }
 
     }
 
@@ -166,10 +198,45 @@ int main()
         cin >> symbol;
         while (symbol != 'F' && symbol != 'a')
         {
-            cout << "Please enter a valid input!" << endl;
+            cout << "Please enter a valid input! " << endl;
             cin >> symbol;
         }
         forceAccelerationCalculator(symbol);
     }
+    else if (symbol == 'p')
+    {
+        if (exerciseCounter < 2 and exerciseOneChecker != 0)
+        {
+            exerciseTwo(isCorrect);
+            if (isCorrect == true)
+            {
+                cout << "That's correct! ";
+                correctExerciseCount++;
+            }
+            else if (isCorrect == false)
+            {
+                cout << "That's wrong! ";
+            }
+        }
+        if (exerciseCounter < 2 and exerciseOneChecker == 0)
+        {
+            exerciseOne(isCorrect);
+            if (isCorrect == true)
+            {
+                cout << "That's correct! ";
+                correctExerciseCount++;
+            }
+            else if (isCorrect == false)
+            {
+                cout << "That's wrong! ";
+            }
+        }
+        else
+        {
+            cout << "Ops! You've done 2 out of 2 exercises!" << endl;
+        }
+    }
 
+
+    cout << "You got " << correctExerciseCount << " out of 2 points!";
 }

@@ -191,6 +191,11 @@ int main()
     {
         cout << "Enter the unit we are searching (G/m)" << endl;
         cin >> sym;
+        while (symbol != 'G' && symbol != 'm')
+        {
+            cout << "Please enter a valid input!" << endl;
+            cin >> sym;
+        }
         densityMassCalculator(sym);
     }
     else if (sym == 'p')
