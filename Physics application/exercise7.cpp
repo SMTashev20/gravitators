@@ -59,7 +59,7 @@ void HeightCalculator()
     cout << "First we replace the values:" << endl;
     cout << "h = " << hydrostaticPressure << " / " << rho << " * 10" << endl;
     cout << "Then we calculate our eqalation:" << endl;
-    cout << "h = " << hydrostaticPressure / rho * 10 << " m" << endl;
+    cout << "h = " << hydrostaticPressure / (rho * 10) << " m" << endl;
 }
 
 void heightHydrostaticPleasureCalculator(char symbol)
@@ -74,11 +74,38 @@ void heightHydrostaticPleasureCalculator(char symbol)
     }
 }
 
+void exerciseOne(bool& pointAdd)
+{
+    double answer;
+    cout << "Now, try to solve this problem!" << endl;
+    cout << "A jar of water with 15 cm of height. Find the pressure of water at the bottom of the jar, ignore the atmospheric pressure and use the acceleration due to gravity g = 10 m/s2 and the density of water 1000 kg/m3." << endl;
+    cout << "Hint: 15cm = 0,15m" << endl;
+    cout << "P = ? Pa (example input: 122)" << endl;
+    cin >> answer;
+    if (answer == 1500)
+    {
+        pointAdd = true;
+    }
+    else
+    {
+        pointAdd = false;
+    }
+
+
+}
+
 int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     char symbol;
     cin >> symbol;
+
+    int correctExerciseCount = 0;
+    bool isCorrect;
+
+    int exerciseCounter = 0;
+    bool exerciseOneChecker = 0;
+
 
     while (symbol != 'c' && symbol != 'p')
     {
@@ -87,14 +114,30 @@ int main()
     }
     if (symbol == 'c')
     {
-        cout << "Enter the unit we are searching (F/a)" << endl;
+        cout << "Enter the unit we are searching (h/P)" << endl;
         cin >> symbol;
-        while (symbol != 'F' && symbol != 'a')
+        while (symbol != 'h' && symbol != 'P')
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
         heightHydrostaticPleasureCalculator(symbol);
+    }
+    else if (symbol == 'p')
+    {
+        exerciseCounter++;
+        exerciseOne(isCorrect);
+        if (isCorrect == true)
+        {
+            cout << "That's correct! ";
+            correctExerciseCount++;
+
+        }
+        else if (isCorrect == false)
+        {
+            cout << "That's wrong! ";
+        }
+        exerciseOneChecker = 1;
     }
 
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
