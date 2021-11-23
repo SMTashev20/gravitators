@@ -149,6 +149,7 @@ int main()
         {
             cout << "That's wrong!";
         }
+        exerciseOneChecker = 1;
     }
 
 

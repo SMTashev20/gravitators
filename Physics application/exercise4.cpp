@@ -123,7 +123,6 @@ int main()
     {
         cout << "Please enter a valid input!" << endl;
         cin >> sym;
-
     }
     if (sym == 'c')
     {
@@ -144,12 +143,13 @@ int main()
         {
             cout << "That's correct!";
             correctExerciseCount++;
-            exerciseOneChecker = 1;
+            
         }
         else if (isCorrect == false)
         {
             cout << "That's wrong!";
         }
+        exerciseOneChecker = 1;
     }
 
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
@@ -175,6 +175,7 @@ int main()
         {
             cout << "That's wrong!";
         }
+
     }
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;

@@ -105,6 +105,7 @@ int main()
     bool isCorrect;
 
     int exerciseCounter = 0;
+    bool exerciseOneChecker = 0;
 
     while (symbol != 'c' && symbol != 'p')
     {
@@ -114,8 +115,13 @@ int main()
     }
     if (symbol == 'c')
     {
-        cout << "Enter the unit we are searching (s/V)" << endl;
+        cout << "Enter the unit we are searching (V/s)" << endl;
         cin >> symbol;
+        while (symbol != 'V' && symbol != 's')
+        {
+            cout << "Please enter a valid input!" << endl;
+            cin >> symbol;
+        }
         velocityDistanceCalculator(symbol);
     }
     else if (symbol == 'p')
@@ -131,6 +137,7 @@ int main()
         {
             cout << "That's wrong! ";
         }
+        exerciseOneChecker = 1;
     }
 
     cout << "Would you like to do the next exercise? (y/n)" << endl;
@@ -168,13 +175,18 @@ int main()
     }
     if (symbol == 'c')
     {
-        cout << "Enter the unit we are searching (s/V)" << endl;
+        cout << "Enter the unit we are searching (V/s)" << endl;
         cin >> symbol;
+        while (symbol != 'V' && symbol != 's')
+        {
+            cout << "Please enter a valid input!" << endl;
+            cin >> symbol;
+        }
         velocityDistanceCalculator(symbol);
     }
     else if (symbol == 'p')
     {
-        if (exerciseCounter < 2)
+        if (exerciseCounter < 2 and exerciseOneChecker != 0)
         {
             exerciseTwo(isCorrect);
             if (isCorrect == true)
@@ -187,9 +199,22 @@ int main()
                 cout << "That's wrong! ";
             }
         }
+        else if (exerciseCounter < 2 and exerciseOneChecker == 0)
+        {
+            exerciseOne(isCorrect);
+            if (isCorrect == true)
+            {
+                cout << "That's correct! ";
+                correctExerciseCount++;
+            }
+            else if (isCorrect == false)
+            {
+                cout << "That's wrong! ";
+            }
+        }
         else
         {
-            cout << "Ops! You've done 2 out of two exercises!" << endl;
+            cout << "Ops! You've done 2 out of 2 exercises!" << endl;
         }
 
 

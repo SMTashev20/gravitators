@@ -98,28 +98,35 @@ void exerciseTwo(bool& pointAdd)
 int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
-    char sym;
-    cin >> sym;
+    char symbol;
+    cin >> symbol;
 
     int correctExerciseCount = 0;
     bool isCorrect;
 
     int exerciseCounter = 0;
+    bool exerciseOneChecker = 0;
 
-    while (sym != 'c' && sym != 'p')
+    while (symbol != 'c' && symbol != 'p')
     {
         cout << "Please enter a valid input!" << endl;
-        cin >> sym;
+        cin >> symbol;
     }
-    if (sym == 'c')
+    if (symbol == 'c')
     {
         cout << "Enter the unit we are searching (G/m)" << endl;
-        cin >> sym;
-        gravityMassCalculator(sym);
+        cin >> symbol;
+        while (symbol != 'G' && symbol != 'm')
+        {
+            cout << "Please enter a valid input!" << endl;
+            cin >> symbol;
+        }
+        gravityMassCalculator(symbol);
     }
-    else if (sym == 'p')
+    else if (symbol == 'p')
     {
         exerciseCounter++;
+        exerciseOneChecker = 1;
         exerciseOne(isCorrect);
         if (isCorrect == true)
         {
@@ -133,16 +140,16 @@ int main()
     }
 
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
-    cin >> sym;
-    while (sym != 'y' && sym != 'n')
+    cin >> symbol;
+    while (symbol != 'y' && symbol != 'n')
     {
         cout << "Please enter a valid input!" << endl;
-        cin >> sym;
+        cin >> symbol;
     }
-    if (sym == 'n')
+    if (symbol == 'n')
     {
     }
-    else if (sym == 'y')
+    else if (symbol == 'y')
     {
         exerciseCounter++;
         exerciseTwo(isCorrect);
@@ -158,24 +165,42 @@ int main()
     }
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
-    cin >> sym;
+    cin >> symbol;
 
-    while (sym != 'c' && sym != 'p')
+    while (symbol != 'c' && symbol != 'p')
     {
         cout << "Please enter a valid input!" << endl;
-        cin >> sym;
+        cin >> symbol;
     }
-    if (sym == 'c')
+    if (symbol == 'c')
     {
         cout << "Enter the unit we are searching (G/m)" << endl;
-        cin >> sym;
-        gravityMassCalculator(sym);
+        cin >> symbol;
+        while (symbol != 'G' && symbol != 'm')
+        {
+            cout << "Please enter a valid input!" << endl;
+            cin >> symbol;
+        }
+        gravityMassCalculator(symbol);
     }
-    else if (sym == 'p')
+    else if (symbol == 'p')
     {
-        if (exerciseCounter < 2)
+        if (exerciseCounter < 2 and exerciseOneChecker != 0)
         {
             exerciseTwo(isCorrect);
+            if (isCorrect == true)
+            {
+                cout << "That's correct! ";
+                correctExerciseCount++;
+            }
+            else if (isCorrect == false)
+            {
+                cout << "That's wrong! ";
+            }
+        }
+        else if (exerciseCounter < 2 and exerciseOneChecker == 0)
+        {
+            exerciseOne(isCorrect);
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
