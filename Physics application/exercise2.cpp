@@ -22,30 +22,30 @@ void inputNumber(double& number)
 
 void distanceCalculator()
 {
-    double t;
+    double time;
 
     cout << "Enter the time interval (t):" << endl;
-    inputNumber(t);
+    inputNumber(time);
 
     cout << "Our formula is s = (g * t * t ) / 2" << endl;
     cout << "First we replace the values:" << endl;
-    cout << "s = " << "(" << 10 << " * " << t << " * " << t << ")" << " / 2" << endl;
+    cout << "s = " << "(" << 10 << " * " << time << " * " << time << ")" << " / 2" << endl;
     cout << "Then we calculate our eqalation:" << endl;
-    cout << "s = " << (10 * t * t) / 2 << " m" << endl;
+    cout << "s = " << (10 * time * time) / 2 << " m" << endl;
 }
 
 void velocityCalculator()
 {
-    double t;
+    double time;
 
     cout << "Enter the time interval (t):" << endl;
-    inputNumber(t);
+    inputNumber(time);
 
     cout << "Our formula is V = g * t" << endl;
     cout << "First we replace the values:" << endl;
-    cout << "V = " << 10 << " * " << t << endl;
+    cout << "V = " << 10 << " * " << time << endl;
     cout << "Then we calculate our eqalation:" << endl;
-    cout << "s = " << 10 * t << " m/s" << endl;
+    cout << "s = " << 10 * time << " m/s" << endl;
 }
 
 void velocityDistanceCalculator(char symbol)
@@ -98,29 +98,29 @@ void exerciseTwo(bool& pointAdd)
 int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
-    char sym;
-    cin >> sym;
+    char symbol;
+    cin >> symbol;
 
     int correctExerciseCount = 0;
     bool isCorrect;
 
-    int exerciseChecker = 0;
+    int exerciseCounter = 0;
 
-    while (sym != 'c' && sym != 'p')
+    while (symbol != 'c' && symbol != 'p')
     {
         cout << "Please enter a valid input!" << endl;
-        cin >> sym;
+        cin >> symbol;
 
     }
-    if (sym == 'c')
+    if (symbol == 'c')
     {
         cout << "Enter the unit we are searching (s/V)" << endl;
-        cin >> sym;
-        velocityDistanceCalculator(sym);
+        cin >> symbol;
+        velocityDistanceCalculator(symbol);
     }
-    else if (sym == 'p')
+    else if (symbol == 'p')
     {
-        exerciseChecker++;
+        exerciseCounter++;
         exerciseOne(isCorrect);
         if (isCorrect == true)
         {
@@ -134,18 +134,18 @@ int main()
     }
 
     cout << "Would you like to do the next exercise? (y/n)" << endl;
-    cin >> sym;
-    while (sym != 'y' && sym != 'n')
+    cin >> symbol;
+    while (symbol != 'y' && symbol != 'n')
     {
         cout << "Please enter a valid input!" << endl;
-        cin >> sym;
+        cin >> symbol;
     }
-    if (sym == 'n')
+    if (symbol == 'n')
     {
     }
-    else if (sym == 'y')
+    else if (symbol == 'y')
     {
-        exerciseChecker++;
+        exerciseCounter++;
         exerciseTwo(isCorrect);
         if (isCorrect == true)
         {
@@ -159,22 +159,22 @@ int main()
     }
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
-    cin >> sym;
+    cin >> symbol;
 
-    while (sym != 'c' && sym != 'p')
+    while (symbol != 'c' && symbol != 'p')
     {
         cout << "Please enter a valid input!" << endl;
-        cin >> sym;
+        cin >> symbol;
     }
-    if (sym == 'c')
+    if (symbol == 'c')
     {
         cout << "Enter the unit we are searching (s/V)" << endl;
-        cin >> sym;
-        velocityDistanceCalculator(sym);
+        cin >> symbol;
+        velocityDistanceCalculator(symbol);
     }
-    else if (sym == 'p')
+    else if (symbol == 'p')
     {
-        if (exerciseChecker < 2)
+        if (exerciseCounter < 2)
         {
             exerciseTwo(isCorrect);
             if (isCorrect == true)
