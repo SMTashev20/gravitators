@@ -5,26 +5,17 @@
 </p>
 
 <p align = "center">
-   <img src = "https://img.shields.io/github/languages/count/SMTashev20/gravitators">
-   <img src = "https://img.shields.io/github/repo-size/SMTashev20/gravitators">
-   <img src = "https://img.shields.io/badge/License-MIT-yellow.svg">
-   <img src = "https://img.shields.io/github/stars/SMTashev20/gravitators?style=social">
-   <img src = "https://img.shields.io/github/contributors/SMTashev20/gravitators">
+   <img src = "https://img.shields.io/github/languages/count/SMTashev20/gravitators?style=for-the-badge">
+   <img src = "https://img.shields.io/github/contributors/SMTashev20/gravitators?style=for-the-badge">
+   <img src = "https://img.shields.io/github/repo-size/SMTashev20/gravitators?style=for-the-badge">
+   <img src = "https://img.shields.io/github/last-commit/SMTashev20/gravitators?style=for-the-badge">
+   <img src = "https://img.shields.io/github/languages/top/SMTashev20/gravitators?style=for-the-badge">
 </p>
 
 <br>
 
 ## 💻 About
-Application for practising some mechanics.
-
-   
-## ⛏️ Used technologies
-<img src = "https://imgur.com/1T5p6HM.jpg" width = "30px" height = "30px" alt = "c++">
-<img src = "" width = "30px" height = "30px" alt = "Word">
-<img src = "" width = "30px" height = "30px" alt = "Excel">
-<img src = "" width = "30px" height = "30px" alt = "PowerPoint">
-<img src = "" width = "30px" height = "30px" alt = "">
-
+Application for practicing mechanics.
 
 ## ✅ Features
 
