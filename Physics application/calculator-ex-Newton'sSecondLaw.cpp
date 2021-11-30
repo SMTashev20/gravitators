@@ -7,6 +7,12 @@ void ignoreUserInput()
     cin.ignore(INT_MAX, '\n');  // ignore last input
 }
 
+string outputErrorMessage()
+{
+    return "Please enter a valid input :)\n";
+    return "Enter a number.\n";
+}
+
 void inputNumber(double& number)
 {
     cin >> number;
@@ -14,10 +20,16 @@ void inputNumber(double& number)
     while (cin.fail())
     {
         ignoreUserInput();
-        cout << "Please enter a valid input :)\n";
-        cout << "Enter a number.\n";
+        cout << outputErrorMessage();
         cin >> number;
     }
+}
+
+string outputFormula(string formula)
+{
+    string text = "Our formula is ";
+    cout << text;
+    return formula;
 }
 
 void forceCalculator()
@@ -30,7 +42,8 @@ void forceCalculator()
     inputNumber(mass);
     cout << "Enter the acceleration of the object (a):" << endl;
     inputNumber(acceleration);
-    cout << "Our formula is F = m * a" << endl;
+
+    cout << outputFormula("F = m * a") << endl;
     cout << "First we replace the values:" << endl;
     cout << "F = " << mass << " * " << acceleration << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -55,7 +68,7 @@ void accelerationCalculator()
         inputNumber(mass);
     }
 
-    cout << "Our formula is a = F / m" << endl;
+    cout << outputFormula("a = F / m") << endl;
     cout << "First we replace the values:" << endl;
     cout << "a = " << force << " / " << mass << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -74,13 +87,24 @@ void forceAccelerationCalculator(char symbol)
     }
 }
 
+string outputProblem(string problem, string lookingFor)
+{
+    string text = "Now, try to solve this problem!";
+    cout << endl;
+    return text;
+    cout << endl;
+    return problem;
+    cout << endl;
+    return problem;
+}
+
+
 void exerciseOne(bool& pointAdd)
 {
     double answer;
-    cout << "Now, try to solve this problem!" << endl;
-    cout << "A block with a mass of 4kg is pushed across a frictionless surface with a force of 8N for a time of 3s. What is the velocity of the block after the push?" << endl;
-    cout << "Hint: We calculate the velocity by the formula: v = a * t" << endl;
-    cout << "v = ? m/s (example input: 122)" << endl;
+
+    outputProblem("A block with a mass of 4kg is pushed across a frictionless surface with a force of 8N for a time of 3s.", "v = ? m/s (example input: 122)");
+    cout << "Hint: 15cm = 0,15m" << endl;
     cin >> answer;
     if (answer == 6)
     {
@@ -97,9 +121,10 @@ void exerciseOne(bool& pointAdd)
 void exerciseTwo(bool& pointAdd)
 {
     double answer;
-    cout << "Try to solve this problem! " << endl;
-    cout << "A force of 15N is applied to a 5kg object in space. What is the acceleration of the object? " << endl;
+
+    outputProblem("A force of 15N is applied to a 5kg object in space.", "What is the acceleration of the object?");
     cin >> answer;
+
     if (answer == 3)
     {
         pointAdd = true;
@@ -205,7 +230,7 @@ int main()
     }
     else if (symbol == 'p')
     {
-        if (exerciseCounter < 2 and exerciseOneChecker != 0)
+        if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
             exerciseTwo(isCorrect);
             if (isCorrect == true)
@@ -218,7 +243,7 @@ int main()
                 cout << "That's wrong! ";
             }
         }
-        if (exerciseCounter < 2 and exerciseOneChecker == 0)
+        if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
             exerciseOne(isCorrect);
             if (isCorrect == true)
