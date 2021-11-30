@@ -7,6 +7,12 @@ void ignoreUserInput()
     cin.ignore(INT_MAX, '\n');  // ignore last input
 }
 
+string outputErrorMessage()
+{
+    return "Please enter a valid input :)\n";
+    return "Enter a number.\n";
+}
+
 void inputNumber(double& number)
 {
     cin >> number;
@@ -14,10 +20,16 @@ void inputNumber(double& number)
     while (cin.fail())
     {
         ignoreUserInput();
-        cout << "Please enter a valid input :)\n";
-        cout << "Enter a number.\n";
+        cout << outputErrorMessage();
         cin >> number;
     }
+}
+
+string outputFormula(string formula)
+{
+    string text = "Our formula is ";
+    cout << text;
+    return formula;
 }
 
 void hydrostaticPressureCalculator()
@@ -30,7 +42,8 @@ void hydrostaticPressureCalculator()
     inputNumber(rho);
     cout << "Enter the height of the contaner (h):" << endl;
     inputNumber(height);
-    cout << "Our formula is P = p * g * h" << endl;
+
+    cout << outputFormula("P = p * g * h") << endl;
     cout << "First we replace the values:" << endl;
     cout << "P " << rho << " * " << "10" << height << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -55,7 +68,7 @@ void HeightCalculator()
         inputNumber(rho);
     }
 
-    cout << "Our formula is h = P / p * g" << endl;
+    cout << outputFormula("h = P / p * g") << endl;
     cout << "First we replace the values:" << endl;
     cout << "h = " << hydrostaticPressure << " / " << rho << " * 10" << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -74,13 +87,22 @@ void heightHydrostaticPleasureCalculator(char symbol)
     }
 }
 
+string outputProblem(string problem, string lookingFor)
+{
+    string text = "Now, try to solve this problem!";
+    cout << endl;
+    return text;
+    cout << endl;
+    return problem;
+    cout << endl;
+    return problem;
+}
+
 void exerciseOne(bool& pointAdd)
 {
     double answer;
-    cout << "Now, try to solve this problem!" << endl;
-    cout << "A jar of water with 15 cm of height. Find the pressure of water at the bottom of the jar, ignore the atmospheric pressure and use the acceleration due to gravity g = 10 m/s2 and the density of water 1000 kg/m3." << endl;
+    outputProblem("A jar of water with 15 cm of height. Find the pressure of water at the bottom of the jar, ignore the atmospheric pressure and use the acceleration due to gravity g = 10 m/s2 and the density of water 1000 kg/m3.", "P = ? Pa (example input: 122)");
     cout << "Hint: 15cm = 0,15m" << endl;
-    cout << "P = ? Pa (example input: 122)" << endl;
     cin >> answer;
     if (answer == 1500)
     {
@@ -97,8 +119,7 @@ void exerciseOne(bool& pointAdd)
 void exerciseTwo(bool& pointAdd)
 {
     double answer;
-    cout << "Try to solve this problem! " << endl;
-    cout << "What is the hydrostatic pressure at a depth of 0.5 meters in an alcohol solution? The alcohol's density is 790 kg/m^3." << endl;
+    outputProblem("What is the hydrostatic pressure at a depth of 0.5 meters in an alcohol solution?", "The alcohol's density is 790 kg/m^3.");
     cin >> answer;
     if (answer == 3950)
     {
