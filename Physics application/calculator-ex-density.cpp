@@ -8,6 +8,12 @@ void ignoreUserInput()
     cin.ignore(INT_MAX, '\n');  // ignore last input
 }
 
+string outputErrorMessage()
+{
+    return "Please enter a valid input :)\n";
+    return "Enter a number.\n";
+}
+
 void inputNumber(double& number)
 {
     cin >> number;
@@ -15,10 +21,17 @@ void inputNumber(double& number)
     while (cin.fail())
     {
         ignoreUserInput();
-        cout << "Please enter a valid input :)\n";
-        cout << "Enter a number.\n";
+        cout << outputErrorMessage;
         cin >> number;
     }
+}
+
+string outputFormula(string formula)
+{
+    string text = "Our formula is ";
+    return text;
+    cout << endl;
+    return formula;
 }
 
 void densityCalculator()
@@ -33,11 +46,11 @@ void densityCalculator()
     inputNumber(volume);
     while (volume == 0)
     {
-        cout << "You can't devide by 0!" << endl;
+        cout << "You can't divide by 0!" << endl;
         cout << "Enter new value!" << endl;
         inputNumber(volume);
     }
-    cout << "Our formula is p = m / V" << endl;
+    cout << outputFormula("p = m / V") << endl;
     cout << "First we replace the values:" << endl;
     cout << "p = " << mass << " / " << volume << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -55,8 +68,7 @@ void massCalculator()
     cout << "Enter the volume of the object (V):" << endl;
     inputNumber(volume);
 
-    cout << "Our formula is m = p * V" << endl;
-    cout << "First we replace the values:" << endl;
+    cout << outputFormula("m = p * V") << endl;
     cout << "m = " << density << " * " << volume << endl;
     cout << "Then we calculate our eqalation:" << endl;
     cout << "m = " << density * volume << " kg" << endl;
@@ -74,12 +86,22 @@ void densityMassCalculator(char symbol)
     }
 }
 
+
+string outputProblem(string problem, string lookingFor)
+{
+    string text = "Now, try to solve this problem!";
+    cout << endl;
+    return text;
+    cout << endl;
+    return problem;
+    cout << endl;
+    return problem;
+}
+
 void exerciseOne(bool& pointAdd)
 {
     double answer;
-    cout << "Now, try to solve this problem!" << endl;
-    cout << "If the volume of a metal shpere of 200g mass is 20 cm3 what is the density of the metal?" << endl;
-    cout << "s = ?m (example input: 122)" << endl;
+    outputProblem("If the volume of a metal shpere of 200g mass is 20 cm3 what is the density of the metal?", "s = ?m (example input: 122)");
     cin >> answer;
     if (answer == 10)
     {
@@ -94,8 +116,7 @@ void exerciseOne(bool& pointAdd)
 void exerciseTwo(bool& pointAdd)
 {
     double answer;
-    cout << "Try to solve this problem!" << endl;
-    cout << "You have a rock with a volume of 15cm3 and a mass of 45 g. What is its density?" << endl;
+    outputProblem("You have a rock with a volume of 15cm3 and a mass of 45 g.", "What is its density?");
     cin >> answer;
     if (answer == 3)
     {
@@ -144,7 +165,7 @@ int main()
         {
             cout << "That's correct! ";
             correctExerciseCount++;
-            
+
         }
         else if (isCorrect == false)
         {
