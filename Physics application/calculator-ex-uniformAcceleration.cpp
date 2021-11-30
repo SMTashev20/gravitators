@@ -7,6 +7,12 @@ void ignoreUserInput()
     cin.ignore(INT_MAX, '\n');  // ignore last input
 }
 
+string outputErrorMessage()
+{
+    return "Please enter a valid input :)\n";
+    return "Enter a number.\n";
+}
+
 void inputNumber(double& number)
 {
     cin >> number;
@@ -14,10 +20,16 @@ void inputNumber(double& number)
     while (cin.fail())
     {
         ignoreUserInput();
-        cout << "Please enter a valid input :)\n";
-        cout << "Enter a number.\n";
+        cout << outputErrorMessage();
         cin >> number;
     }
+}
+
+string outputFormula(string formula)
+{
+    string text = "Our formula is ";
+    cout << text;
+    return formula;
 }
 
 void distanceCalculator()
@@ -32,7 +44,7 @@ void distanceCalculator()
     cout << "Enter the acceleration of the body (a):" << endl;
     inputNumber(acceleration);
 
-    cout << "Our formula is s = Vo * t + (a * t * t) / 2" << endl;
+    cout << outputFormula("s = Vo * t + (a * t * t) / 2") << endl;
     cout << "First we replace the values:" << endl;
     cout << "s = " << initialVelocity << " * " << time << " + " << "(" << acceleration << " * " << time * time << ")" << " / 2" << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -52,7 +64,7 @@ void velocityCalculator()
     cout << "Enter the time interval (t):" << endl;
     inputNumber(time);
 
-    cout << "Our formula is V = Vo + a * t" << endl;
+    cout << outputFormula("V = Vo + a * t") << endl;
     cout << "First we replace the values:" << endl;
     cout << "V = " << initialVelocity << " + " << acceleration << " * " << time << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -72,12 +84,23 @@ void velocityDistanceCalculator(char symbol)
     }
 }
 
+string outputProblem(string problem, string lookingFor)
+{
+    string text = "Now, try to solve this problem!";
+    cout << endl;
+    return text;
+    cout << endl;
+    return problem;
+    cout << endl;
+    return problem;
+}
+
 void exerciseOne(bool& pointAdd)
 {
     double answer;
-    cout << "Now, try to solve this problem!" << endl;
-    cout << "A car was driving with speed of 5m/s. The car accelerated at 10 m/s2 for 12 seconds. What is the position of the car at the end of the 12 seconds?" << endl;
-    cout << "s = ?m (example input: 122)" << endl;
+    outputProblem("A car was driving with speed of 5m/s. The car accelerated at 10 m/s2 for 12 seconds. What is the position of the car at the end of the 12 seconds?", "s = ?m (example input: 122)");
+    cout << "Hint: 15cm = 0,15m" << endl;
+    cout << "hint : F = m * g and g = 10" << endl;
     cin >> answer;
     if (answer == 780)
     {
@@ -92,10 +115,9 @@ void exerciseOne(bool& pointAdd)
 void exerciseTwo(bool& pointAdd)
 {
     double answer;
-    cout << "Try to solve this problem!" << endl;
-    cout << "With an initial velocity of 36 km/h, a car accelerated at 8 m/s2 for 10 seconds. What is the position of the car at the end of the 10 seconds?" << endl;
+
+    outputProblem("With an initial velocity of 36 km/h, a car accelerated at 8 m/s2 for 10 seconds. What is the position of the car at the end of the 10 seconds?", "s = ?m (example input: 122)");
     cout << "hint: 36 km/h = 10 m/s" << endl;
-    cout << "s = ?m (example input: 122)" << endl;
     cin >> answer;
     if (answer == 500)
     {
