@@ -226,7 +226,7 @@ int main()
     }
     else if (symbol == 'p')
     {
-        if (exerciseCounter < 2 and exerciseOneChecker != 0)
+        if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
             exerciseTwo(isCorrect);
             if (isCorrect == true)
@@ -239,7 +239,7 @@ int main()
                 cout << "That's wrong! ";
             }
         }
-        if (exerciseCounter < 2 and exerciseOneChecker == 0)
+        if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
             exerciseOne(isCorrect);
             if (isCorrect == true)

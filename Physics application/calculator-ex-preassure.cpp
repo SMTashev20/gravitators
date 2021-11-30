@@ -7,6 +7,12 @@ void ignoreUserInput()
     cin.ignore(INT_MAX, '\n');  // ignore last input
 }
 
+string outputErrorMessage()
+{
+    return "Please enter a valid input :)\n";
+    return "Enter a number.\n";
+}
+
 void inputNumber(double& number)
 {
     cin >> number;
@@ -14,10 +20,16 @@ void inputNumber(double& number)
     while (cin.fail())
     {
         ignoreUserInput();
-        cout << "Please enter a valid input :)\n";
-        cout << "Enter a number.\n";
+        cout << outputErrorMessage();
         cin >> number;
     }
+}
+
+string outputFormula(string formula)
+{
+    string text = "Our formula is ";
+    cout << text;
+    return formula;
 }
 
 void forceCalculator()
@@ -30,7 +42,8 @@ void forceCalculator()
     inputNumber(pressure);
     cout << "Enter the area of the object (S):" << endl;
     inputNumber(area);
-    cout << "Our formula is F = P * S" << endl;
+
+    cout << outputFormula("F = P * S") << endl;
     cout << "First we replace the values:" << endl;
     cout << "F = " << pressure << " * " << area << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -55,7 +68,7 @@ void pressureCalculator()
         inputNumber(area);
     }
 
-    cout << "Our formula is a = F / m" << endl;
+    cout << outputFormula("a = F / m") << endl;
     cout << "First we replace the values:" << endl;
     cout << "P = " << force << " / " << area << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -74,13 +87,23 @@ void forcePressureCalculator(char symbol)
     }
 }
 
+string outputProblem(string problem, string lookingFor)
+{
+    string text = "Now, try to solve this problem!";
+    cout << endl;
+    return text;
+    cout << endl;
+    return problem;
+    cout << endl;
+    return problem;
+}
+
 void exerciseOne(bool& pointAdd)
 {
     double answer;
-    cout << "Now, try to solve this problem!" << endl;
-    cout << "If your mass is 80kg and the total area of the soles of your feet is 0.2 m2, what pressure would you exert on the ground ?" << endl;
+    outputProblem("If your mass is 80kg and the total area of the soles of your feet is 0.2 m2, what pressure would you exert on the ground ?", "P = ?N (example input: 122)");
+    cout << "Hint: 15cm = 0,15m" << endl;
     cout << "hint : F = m * g and g = 10" << endl;
-    cout << "P = ?N (example input: 122)" << endl;
     cin >> answer;
     if (answer == 4000)
     {
