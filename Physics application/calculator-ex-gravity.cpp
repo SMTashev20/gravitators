@@ -7,6 +7,13 @@ void ignoreUserInput()
     cin.ignore(INT_MAX, '\n');  // ignore last input
 }
 
+string outputErrorMessage()
+{
+    return "Please enter a valid input :)\n";
+    return "Enter a number.\n";
+}
+
+
 void inputNumber(double& number)
 {
     cin >> number;
@@ -14,10 +21,16 @@ void inputNumber(double& number)
     while (cin.fail())
     {
         ignoreUserInput();
-        cout << "Please enter a valid input :)\n";
-        cout << "Enter a number.\n";
+        cout << outputErrorMessage();
         cin >> number;
     }
+}
+
+string outputFormula(string formula)
+{
+    string text = "Our formula is ";
+    cout << text;
+    return formula;
 }
 
 void gravityCalculator()
@@ -27,7 +40,7 @@ void gravityCalculator()
     cout << "Enter the mass of the object (m):" << endl;
     inputNumber(mass);
 
-    cout << "Our formula is G = m * g" << endl;
+    cout << outputFormula("G = m * g") << endl;
     cout << "First we replace the values:" << endl;
     cout << "G = " << mass << " * " << 10 << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -41,7 +54,7 @@ void massCalculator()
     cout << "Enter the gravity force of the object (G):" << endl;
     inputNumber(gravityForce);
 
-    cout << "Our formula is m = G / g" << endl;
+    cout << outputFormula("m = G / g") << endl;
     cout << "First we replace the values:" << endl;
     cout << "m = " << gravityForce << " / " << 10 << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -60,12 +73,21 @@ void gravityMassCalculator(char symbol)
     }
 }
 
+string outputProblem(string problem, string lookingFor)
+{
+    string text = "Now, try to solve this problem!";
+    cout << endl;
+    return text;
+    cout << endl;
+    return problem;
+    cout << endl;
+    return problem;
+}
+
 void exerciseOne(bool& pointAdd)
 {
     double answer;
-    cout << "Try to solve this problem!" << endl;
-    cout << "Estimate the gravitational force of a sumo wrestler with mass 220 kg." << endl;
-    cout << "G = ?N (example input: 122)" << endl;
+    outputProblem("Estimate the gravitational force of a sumo wrestler with mass 220 kg.", "s = ?m (example input: 122)");
     cin >> answer;
     if (answer == 2200)
     {
@@ -80,9 +102,7 @@ void exerciseOne(bool& pointAdd)
 void exerciseTwo(bool& pointAdd)
 {
     double answer;
-    cout << "Try to solve this problem!" << endl;
-    cout << "Evaluate the mass of a spherical steel ball with a magnitude of gravitational force 50 N." << endl;
-    cout << "m = ?kg (example input: 122)" << endl;
+    outputProblem("Evaluate the mass of a spherical steel ball with a magnitude of gravitational force 50 N.", "m = ?kg (example input: 122)");
     cin >> answer;
     if (answer == 5)
     {
@@ -185,7 +205,7 @@ int main()
     }
     else if (symbol == 'p')
     {
-        if (exerciseCounter < 2 and exerciseOneChecker != 0)
+        if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
             exerciseTwo(isCorrect);
             if (isCorrect == true)
@@ -198,7 +218,7 @@ int main()
                 cout << "That's wrong! ";
             }
         }
-        else if (exerciseCounter < 2 and exerciseOneChecker == 0)
+        else if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
             exerciseOne(isCorrect);
             if (isCorrect == true)
