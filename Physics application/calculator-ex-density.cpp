@@ -21,7 +21,7 @@ void inputNumber(double& number)
     while (cin.fail())
     {
         ignoreUserInput();
-        cout << outputErrorMessage;
+        cout << outputErrorMessage();
         cin >> number;
     }
 }
@@ -29,8 +29,7 @@ void inputNumber(double& number)
 string outputFormula(string formula)
 {
     string text = "Our formula is ";
-    return text;
-    cout << endl;
+    cout << text;
     return formula;
 }
 
@@ -222,7 +221,7 @@ int main()
     }
     else if (sym == 'p')
     {
-        if (exerciseCounter < 2 and exerciseOneChecker != 0)
+        if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
             exerciseTwo(isCorrect);
             if (isCorrect == true)
@@ -235,7 +234,7 @@ int main()
                 cout << "That's wrong! ";
             }
         }
-        if (exerciseCounter < 2 and exerciseOneChecker == 0)
+        if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
             exerciseOne(isCorrect);
             if (isCorrect == true)

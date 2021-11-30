@@ -7,6 +7,12 @@ void ignoreUserInput()
     cin.ignore(INT_MAX, '\n');  // ignore last input
 }
 
+string outputErrorMessage()
+{
+    return "Please enter a valid input :)\n";
+    return "Enter a number.\n";
+}
+
 void inputNumber(double& number)
 {
     cin >> number;
@@ -14,10 +20,16 @@ void inputNumber(double& number)
     while (cin.fail())
     {
         ignoreUserInput();
-        cout << "Please enter a valid input :)\n";
-        cout << "Enter a number.\n";
+        cout << outputErrorMessage();
         cin >> number;
     }
+}
+
+string outputFormula(string formula)
+{
+    string text = "Our formula is ";
+    cout << text;
+    return formula;
 }
 
 void distanceCalculator()
@@ -26,8 +38,7 @@ void distanceCalculator()
 
     cout << "Enter the time interval (t):" << endl;
     inputNumber(time);
-
-    cout << "Our formula is s = (g * t * t ) / 2" << endl;
+    cout << outputFormula("s = (g * t * t ) / 2") << endl;
     cout << "First we replace the values:" << endl;
     cout << "s = " << "(" << 10 << " * " << time << " * " << time << ")" << " / 2" << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -40,8 +51,7 @@ void velocityCalculator()
 
     cout << "Enter the time interval (t):" << endl;
     inputNumber(time);
-
-    cout << "Our formula is V = g * t" << endl;
+    cout << outputFormula("V = g * t") << endl;
     cout << "First we replace the values:" << endl;
     cout << "V = " << 10 << " * " << time << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -60,12 +70,22 @@ void velocityDistanceCalculator(char symbol)
     }
 }
 
+string outputProblem(string problem, string lookingFor)
+{
+    string text = "Now, try to solve this problem!";
+    cout << endl;
+    return text;
+    cout << endl;
+    return problem;
+    cout << endl;
+    return problem;
+}
+
 void exerciseOne(bool& pointAdd)
 {
     double answer;
     cout << "Now, try to solve this problem!" << endl;
-    cout << "A construction worker accidentally drops a brick from a high scaffold. If you know the gravitational acceleration g is ~10 m/s2 and the brick falls 4 seconds, how far does the brick fall during this time?" << endl;
-    cout << "s = ?m (example input: 122)" << endl;
+    outputProblem("A construction worker accidentally drops a brick from a high scaffold.", "If you know the gravitational acceleration g is ~10 m/s2 and the brick falls 4 seconds, how far does the brick fall during this time?");
     cin >> answer;
     if (answer == 80)
     {
@@ -80,9 +100,7 @@ void exerciseOne(bool& pointAdd)
 void exerciseTwo(bool& pointAdd)
 {
     double answer;
-    cout << "Try to solve this problem!" << endl;
-    cout << "A stone that starts at rest is in free fall for 6 s. What is the stone’s velocity after these 6 seconds?" << endl;
-    cout << "s = ?m (example input: 122)" << endl;
+    outputProblem("A stone that starts at rest is in free fall for 6 s. What is the stone’s velocity after these 6 seconds?", "s = ?m (example input: 122)");
     cin >> answer;
     if (answer == 60)
     {
