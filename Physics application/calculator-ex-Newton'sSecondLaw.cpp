@@ -9,8 +9,7 @@ void ignoreUserInput()
 
 string outputErrorMessage()
 {
-    return "Please enter a valid input :)\n";
-    return "Enter a number.\n";
+    return "Please enter a valid input!\n";
 }
 
 void inputNumber(double& number)
@@ -25,10 +24,9 @@ void inputNumber(double& number)
     }
 }
 
-string outputFormula(string formula)
+string outputFormula(string& openingSentence, string formula)
 {
-    string text = "Our formula is ";
-    cout << text;
+    openingSentence = "Our formula is ";
     return formula;
 }
 
@@ -36,6 +34,7 @@ void forceCalculator()
 {
     double acceleration;
     double mass;
+    string opening;
     // F = m * a
 
     cout << "Enter the mass of the object (m):" << endl;
@@ -43,7 +42,9 @@ void forceCalculator()
     cout << "Enter the acceleration of the object (a):" << endl;
     inputNumber(acceleration);
 
-    cout << outputFormula("F = m * a") << endl;
+    outputFormula(opening, "");
+    cout << opening;
+    cout << outputFormula(opening, "F = m * a") << endl;
     cout << "First we replace the values:" << endl;
     cout << "F = " << mass << " * " << acceleration << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -54,6 +55,7 @@ void accelerationCalculator()
 {
     double force;
     double mass;
+    string opening;
     // a = F / m
 
     cout << "Enter the force of the object (F):" << endl;
@@ -68,16 +70,18 @@ void accelerationCalculator()
         inputNumber(mass);
     }
 
-    cout << outputFormula("a = F / m") << endl;
+    outputFormula(opening, "");
+    cout << opening;
+    cout << outputFormula(opening, "a = F / m") << endl;
     cout << "First we replace the values:" << endl;
     cout << "a = " << force << " / " << mass << endl;
     cout << "Then we calculate our eqalation:" << endl;
     cout << "a = " << force / mass << " m/s^2" << endl;
 }
 
-void forceAccelerationCalculator(char symbol)
+void forceAccelerationCalculator(string symbol)
 {
-    if (symbol == 'F')
+    if (symbol == "F")
     {
         forceCalculator();
     }
@@ -87,14 +91,9 @@ void forceAccelerationCalculator(char symbol)
     }
 }
 
-string outputProblem(string problem, string lookingFor)
+string outputProblem(string& openingSentence, string problem)
 {
-    string text = "Now, try to solve this problem!";
-    cout << endl;
-    return text;
-    cout << endl;
-    return problem;
-    cout << endl;
+    openingSentence = "Now, try to solve this problem!\n";
     return problem;
 }
 
@@ -102,8 +101,13 @@ string outputProblem(string problem, string lookingFor)
 void exerciseOne(bool& pointAdd)
 {
     double answer;
+    string opening;
+    string question = "A block with a mass of 4kg is pushed across a frictionless surface with a force of 8N for a time of 3s. \n"
+        "v = ? m / s(example input : 122)";
 
-    outputProblem("A block with a mass of 4kg is pushed across a frictionless surface with a force of 8N for a time of 3s.", "v = ? m/s (example input: 122)");
+    outputProblem(opening, question);
+    cout << opening;
+    cout << outputProblem(opening, question);
     cout << "Hint: 15cm = 0,15m" << endl;
     cin >> answer;
     if (answer == 6)
@@ -121,8 +125,13 @@ void exerciseOne(bool& pointAdd)
 void exerciseTwo(bool& pointAdd)
 {
     double answer;
+    string opening;
+    string question = "A force of 15N is applied to a 5kg object in space.\n"
+        "What is the acceleration of the object?\n";
 
-    outputProblem("A force of 15N is applied to a 5kg object in space.", "What is the acceleration of the object?");
+    outputProblem(opening, question);
+    cout << opening;
+    cout << outputProblem(opening, question);
     cin >> answer;
 
     if (answer == 3)
@@ -139,7 +148,7 @@ void exerciseTwo(bool& pointAdd)
 int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p) " << endl;
-    char symbol;
+    string symbol;
     cin >> symbol;
 
     int correctExerciseCount = 0;
@@ -148,23 +157,23 @@ int main()
     int exerciseCounter = 0;
     bool exerciseOneChecker = 0;
 
-    while (symbol != 'c' && symbol != 'p')
+    while (symbol != "c" && symbol != "p")
     {
         cout << "Please enter a valid input! " << endl;
         cin >> symbol;
     }
-    if (symbol == 'c')
+    if (symbol == "c")
     {
         cout << "Enter the unit we are searching (F/a) " << endl;
         cin >> symbol;
-        while (symbol != 'F' && symbol != 'a')
+        while (symbol != "F" && symbol != "a")
         {
             cout << "Please enter a valid input! " << endl;
             cin >> symbol;
         }
         forceAccelerationCalculator(symbol);
     }
-    else if (symbol == 'p')
+    else if (symbol == "p")
     {
         exerciseCounter++;
         exerciseOne(isCorrect);
@@ -183,16 +192,16 @@ int main()
 
     cout << "Would you like to go to the next exercise? (y/n) " << endl;
     cin >> symbol;
-    while (symbol != 'y' && symbol != 'n')
+    while (symbol != "y" && symbol != "n")
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == 'n')
+    if (symbol == "n")
     {
 
     }
-    else if (symbol == 'y')
+    else if (symbol == "y")
     {
         exerciseCounter++;
         exerciseTwo(isCorrect);
@@ -212,23 +221,23 @@ int main()
     cout << "Would you like to use the calculator or solve a problem? (c/p) " << endl;
     cin >> symbol;
 
-    while (symbol != 'c' && symbol != 'p')
+    while (symbol != "c" && symbol != "p")
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == 'c')
+    if (symbol == "c")
     {
         cout << "Enter the unit we are searching (F/a)" << endl;
         cin >> symbol;
-        while (symbol != 'F' && symbol != 'a')
+        while (symbol != "F" && symbol != "a")
         {
             cout << "Please enter a valid input! " << endl;
             cin >> symbol;
         }
         forceAccelerationCalculator(symbol);
     }
-    else if (symbol == 'p')
+    else if (symbol == "p")
     {
         if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
@@ -258,7 +267,7 @@ int main()
         }
         else
         {
-            cout << "Ops! You've done 2 out of 2 exercises!" << endl;
+            cout << "Oops! You've finished all of the exercises!" << endl;
         }
     }
 
