@@ -9,8 +9,7 @@ void ignoreUserInput()
 
 string outputErrorMessage()
 {
-    return "Please enter a valid input :)\n";
-    return "Enter a number.\n";
+    return "Please enter a valid input!\n";
 }
 
 void inputNumber(double& number)
@@ -25,20 +24,23 @@ void inputNumber(double& number)
     }
 }
 
-string outputFormula(string formula)
+string outputFormula(string& openingSentence, string formula)
 {
-    string text = "Our formula is ";
-    cout << text;
+    openingSentence = "Our formula is ";
     return formula;
 }
 
 void distanceCalculator()
 {
     double time;
+    string opening;
 
     cout << "Enter the time interval (t):" << endl;
     inputNumber(time);
-    cout << outputFormula("s = (g * t * t ) / 2") << endl;
+	
+	outputFormula(opening, "");
+    cout << opening;
+    cout << outputFormula(opening, "s = (g * t * t ) / 2") << endl;
     cout << "First we replace the values:" << endl;
     cout << "s = " << "(" << 10 << " * " << time << " * " << time << ")" << " / 2" << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -48,19 +50,23 @@ void distanceCalculator()
 void velocityCalculator()
 {
     double time;
+    string opening;
 
     cout << "Enter the time interval (t):" << endl;
     inputNumber(time);
-    cout << outputFormula("V = g * t") << endl;
+	
+	outputFormula(opening, "");
+    cout << opening;
+    cout << outputFormula(opening, "V = g * t") << endl;
     cout << "First we replace the values:" << endl;
     cout << "V = " << 10 << " * " << time << endl;
     cout << "Then we calculate our eqalation:" << endl;
     cout << "s = " << 10 * time << " m/s" << endl;
 }
 
-void velocityDistanceCalculator(char symbol)
+void velocityDistanceCalculator(string symbol)
 {
-    if (symbol == 's')
+    if (symbol == "s")
     {
         distanceCalculator();
     }
@@ -70,22 +76,22 @@ void velocityDistanceCalculator(char symbol)
     }
 }
 
-string outputProblem(string problem, string lookingFor)
+string outputProblem(string& openingSentence, string problem)
 {
-    string text = "Now, try to solve this problem!";
-    cout << endl;
-    return text;
-    cout << endl;
-    return problem;
-    cout << endl;
+    openingSentence = "Now, try to solve this problem!\n";
     return problem;
 }
 
 void exerciseOne(bool& pointAdd)
 {
     double answer;
-    cout << "Now, try to solve this problem!" << endl;
-    outputProblem("A construction worker accidentally drops a brick from a high scaffold.", "If you know the gravitational acceleration g is ~10 m/s2 and the brick falls 4 seconds, how far does the brick fall during this time?");
+    string opening;
+    string question = "A construction worker accidentally drops a brick from a high scaffold. If you know the gravitational \n"
+                      "acceleration g is ~10 m/s2 and the brick falls 4 seconds, how far does the brick fall during this time?\n";
+
+    outputProblem(opening, question);
+    cout << opening << '\n';
+    cout << outputProblem(opening, question);
     cin >> answer;
     if (answer == 80)
     {
@@ -100,7 +106,13 @@ void exerciseOne(bool& pointAdd)
 void exerciseTwo(bool& pointAdd)
 {
     double answer;
-    outputProblem("A stone that starts at rest is in free fall for 6 s. What is the stone’s velocity after these 6 seconds?", "s = ?m (example input: 122)");
+    string opening;
+    string question = "A stone that starts at rest is in free fall for 6 s. What is the \n"
+                      "velocity of the stone after these 6 seconds? s = ?m (example input: 122)\n";
+    
+    outputProblem(opening, question);
+    cout << opening << '\n';
+    cout << outputProblem(opening, question);
     cin >> answer;
     if (answer == 60)
     {
@@ -116,7 +128,7 @@ void exerciseTwo(bool& pointAdd)
 int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
-    char symbol;
+    string symbol;
     cin >> symbol;
 
     int correctExerciseCount = 0;
@@ -125,24 +137,24 @@ int main()
     int exerciseCounter = 0;
     bool exerciseOneChecker = 0;
 
-    while (symbol != 'c' && symbol != 'p')
+    while (symbol != "c" && symbol != "p")
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
 
     }
-    if (symbol == 'c')
+    if (symbol == "c")
     {
         cout << "Enter the unit we are searching (V/s)" << endl;
         cin >> symbol;
-        while (symbol != 'V' && symbol != 's')
+        while (symbol != "V" && symbol != "s")
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
         velocityDistanceCalculator(symbol);
     }
-    else if (symbol == 'p')
+    else if (symbol == "p")
     {
         exerciseCounter++;
         exerciseOne(isCorrect);
@@ -160,15 +172,15 @@ int main()
 
     cout << "Would you like to do the next exercise? (y/n)" << endl;
     cin >> symbol;
-    while (symbol != 'y' && symbol != 'n')
+    while (symbol != "y" && symbol != "n")
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == 'n')
+    if (symbol == "n")
     {
     }
-    else if (symbol == 'y')
+    else if (symbol == "y")
     {
         exerciseCounter++;
         exerciseTwo(isCorrect);
@@ -186,23 +198,23 @@ int main()
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     cin >> symbol;
 
-    while (symbol != 'c' && symbol != 'p')
+    while (symbol != "c" && symbol != "p")
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == 'c')
+    if (symbol == "c")
     {
         cout << "Enter the unit we are searching (V/s)" << endl;
         cin >> symbol;
-        while (symbol != 'V' && symbol != 's')
+        while (symbol != "V" && symbol != "s")
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
         velocityDistanceCalculator(symbol);
     }
-    else if (symbol == 'p')
+    else if (symbol == "p")
     {
         if (exerciseCounter < 2 and exerciseOneChecker != 0)
         {
@@ -232,9 +244,8 @@ int main()
         }
         else
         {
-            cout << "Ops! You've done 2 out of 2 exercises!" << endl;
+           cout << "Oops! You've finished all of the exercises!" << endl;
         }
-
 
         cout << "You got " << correctExerciseCount << " out of 2 points!";
     }

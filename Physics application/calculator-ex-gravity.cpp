@@ -9,10 +9,8 @@ void ignoreUserInput()
 
 string outputErrorMessage()
 {
-    return "Please enter a valid input :)\n";
-    return "Enter a number.\n";
+    return "Please enter a valid input!\n";
 }
-
 
 void inputNumber(double& number)
 {
@@ -26,21 +24,23 @@ void inputNumber(double& number)
     }
 }
 
-string outputFormula(string formula)
+string outputFormula(string& openingSentence, string formula)
 {
-    string text = "Our formula is ";
-    cout << text;
+    openingSentence = "Our formula is ";
     return formula;
 }
 
 void gravityCalculator()
 {
     double mass;
+    string opening;
 
     cout << "Enter the mass of the object (m):" << endl;
     inputNumber(mass);
 
-    cout << outputFormula("G = m * g") << endl;
+	outputFormula(opening, "");
+    cout << opening;
+    cout << outputFormula(opening, "G = m * g") << endl;
     cout << "First we replace the values:" << endl;
     cout << "G = " << mass << " * " << 10 << endl;
     cout << "Then we calculate our eqalation:" << endl;
@@ -50,20 +50,23 @@ void gravityCalculator()
 void massCalculator()
 {
     double gravityForce;
+    string opening;
 
     cout << "Enter the gravity force of the object (G):" << endl;
     inputNumber(gravityForce);
 
-    cout << outputFormula("m = G / g") << endl;
+	outputFormula(opening, "");
+    cout << opening;
+    cout << outputFormula(opening, "m = G / g") << endl;
     cout << "First we replace the values:" << endl;
     cout << "m = " << gravityForce << " / " << 10 << endl;
     cout << "Then we calculate our eqalation:" << endl;
     cout << "m = " << gravityForce / 10 << " kg" << endl;
 }
 
-void gravityMassCalculator(char symbol)
+void gravityMassCalculator(string symbol)
 {
-    if (symbol == 'G')
+    if (symbol == "G")
     {
         gravityCalculator();
     }
@@ -73,21 +76,21 @@ void gravityMassCalculator(char symbol)
     }
 }
 
-string outputProblem(string problem, string lookingFor)
+string outputProblem(string& openingSentence, string problem)
 {
-    string text = "Now, try to solve this problem!";
-    cout << endl;
-    return text;
-    cout << endl;
-    return problem;
-    cout << endl;
+    openingSentence = "Now, try to solve this problem!\n";
     return problem;
 }
 
 void exerciseOne(bool& pointAdd)
 {
     double answer;
-    outputProblem("Estimate the gravitational force of a sumo wrestler with mass 220 kg.", "s = ?m (example input: 122)");
+    string opening;
+    string question = "Estimate the gravitational force of a sumo wrestler with mass 220 kg.\ns = ?m (example input: 122)\n";
+
+    outputProblem(opening, question);
+    cout << opening;
+    cout << outputProblem(opening, question);
     cin >> answer;
     if (answer == 2200)
     {
@@ -102,7 +105,12 @@ void exerciseOne(bool& pointAdd)
 void exerciseTwo(bool& pointAdd)
 {
     double answer;
-    outputProblem("Evaluate the mass of a spherical steel ball with a magnitude of gravitational force 50 N.", "m = ?kg (example input: 122)");
+    string opening;
+    string question = "Evaluate the mass of a spherical steel ball with a magnitude of gravitational force 50 N.\nm = ? kg(example input : 122)\n";
+
+    outputProblem(opening, question);
+    cout << opening;
+    cout << outputProblem(opening, question);
     cin >> answer;
     if (answer == 5)
     {
@@ -118,7 +126,7 @@ void exerciseTwo(bool& pointAdd)
 int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
-    char symbol;
+    string symbol;
     cin >> symbol;
 
     int correctExerciseCount = 0;
@@ -127,23 +135,23 @@ int main()
     int exerciseCounter = 0;
     bool exerciseOneChecker = 0;
 
-    while (symbol != 'c' && symbol != 'p')
+    while (symbol != "c" && symbol != "p")
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == 'c')
+    if (symbol == "c")
     {
         cout << "Enter the unit we are searching (G/m)" << endl;
         cin >> symbol;
-        while (symbol != 'G' && symbol != 'm')
+        while (symbol != "G" && symbol != "m")
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
         gravityMassCalculator(symbol);
     }
-    else if (symbol == 'p')
+    else if (symbol == "p")
     {
         exerciseCounter++;
         exerciseOneChecker = 1;
@@ -161,49 +169,49 @@ int main()
 
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
     cin >> symbol;
-    while (symbol != 'y' && symbol != 'n')
+    while (symbol != "y" && symbol != "n")
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == 'n')
+    if (symbol == "n")
     {
     }
-    else if (symbol == 'y')
+    else if (symbol == "y")
     {
         exerciseCounter++;
         exerciseTwo(isCorrect);
         if (isCorrect == true)
         {
-            cout << "That's correct!";
+            cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
-            cout << "That's wrong!";
+            cout << "That's wrong! ";
         }
     }
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     cin >> symbol;
 
-    while (symbol != 'c' && symbol != 'p')
+    while (symbol != "c" && symbol != "p")
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == 'c')
+    if (symbol == "c")
     {
         cout << "Enter the unit we are searching (G/m)" << endl;
         cin >> symbol;
-        while (symbol != 'G' && symbol != 'm')
+        while (symbol != "G" && symbol != "m")
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
         gravityMassCalculator(symbol);
     }
-    else if (symbol == 'p')
+    else if (symbol == "p")
     {
         if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
@@ -233,10 +241,9 @@ int main()
         }
         else
         {
-            cout << "Ops! You've done 2 out of two exercises!" << endl;
+            cout << "Oops! You've finished all of the exercises!" << endl;
         }
     }
-
 
     cout << "You got " << correctExerciseCount << " out of 2 points!";
 }
