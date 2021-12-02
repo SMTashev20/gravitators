@@ -1,35 +1,8 @@
 #include <iostream>
+#include "MainFunctions.h"
+#include "HydrostaticPressure.h"
+
 using namespace std;
-
-void ignoreUserInput()
-{
-    cin.clear(); // removes cin error flag
-    cin.ignore(INT_MAX, '\n');  // ignore last input
-}
-
-// check if input is valid
-string outputErrorMessage()
-{
-    return "Please enter a valid input!\n";
-}
-
-void inputNumber(double& number)
-{
-    cin >> number;
-
-    while (cin.fail())
-    {
-        ignoreUserInput();
-        cout << outputErrorMessage();
-        cin >> number;
-    }
-}
-
-string outputFormula(string& openingSentence, string formula)
-{
-    openingSentence = "Our formula is ";
-    return formula;
-}
 
 void hydrostaticPressureCalculator()
 {
@@ -75,7 +48,7 @@ void HeightCalculator()
     cout << outputFormula(opening, "h = P / p * g") << endl;
     cout << "First we replace the values:" << endl;
     // calculate using the formula
-    cout << "h = " << hydrostaticPressure << " / " << rho << " * 10" << endl; 
+    cout << "h = " << hydrostaticPressure << " / " << rho << " * 10" << endl;
     cout << "Then we calculate our equation:" << endl;
     cout << "h = " << hydrostaticPressure / (rho * 10) << " m" << endl;
 }
@@ -93,20 +66,14 @@ void heightHydrostaticPleasureCalculator(string symbol)
     }
 }
 
-string outputProblem(string& openingSentence, string problem)
-{
-    openingSentence = "Now, try to solve this problem!\n";
-    return problem;
-}
-
 // problem 1
-void exerciseOne(bool& pointAdd)
+void exerciseOneHP(bool& pointAdd)
 {
     double answer;  // declare variable
     string opening;
     string question = "A jar of water with 15 cm of height. Find the pressure of water at the bottom of the jar,\n"
-                      "ignore the atmospheric pressure and use the acceleration due to gravity g = 10 m/s2 and \n"
-                      "the density of water 1000 kg/m3. P = ? Pa (example input: 122)\n";
+        "ignore the atmospheric pressure and use the acceleration due to gravity g = 10 m/s2 and \n"
+        "the density of water 1000 kg/m3. P = ? Pa (example input: 122)\n";
 
     outputProblem(opening, question);
     cout << opening;
@@ -115,7 +82,7 @@ void exerciseOne(bool& pointAdd)
     cin >> answer;
     // the right answer is 1500, if user inputs 1500
     //then it is correct and if returns true
-    if (answer == 1500) 
+    if (answer == 1500)
     {
         pointAdd = true;
     }
@@ -128,20 +95,20 @@ void exerciseOne(bool& pointAdd)
 }
 
 // problem 2
-void exerciseTwo(bool& pointAdd)
+void exerciseTwoHP(bool& pointAdd)
 {
     double answer;  // declare variable
     string opening;
     string question = "What is the hydrostatic pressure at a depth of 0.5 meters in an alcohol solution?\n"
-                      "The alcohol's density is 790 kg/m^3.\n";
+        "The alcohol's density is 790 kg/m^3.\n";
 
-    outputProblem(opening, question); 
+    outputProblem(opening, question);
     cout << opening;
     cout << outputProblem(opening, question); // output the problem
     cin >> answer;
     // the right answer is 3950, if user inputs 3950
     //then it is correct and if returns true
-    if (answer == 3950) 
+    if (answer == 3950)
     {
         pointAdd = true;
     }
@@ -181,9 +148,9 @@ int main()
         heightHydrostaticPleasureCalculator(symbol);
     }
     else if (symbol == "p") // output problem 1
-    { 
+    {
         exerciseCounter++;
-        exerciseOne(isCorrect); // check if problem 1 is answered correctly
+        exerciseOneHP(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -211,7 +178,7 @@ int main()
     else if (symbol == "y") // output problem 2
     {
         exerciseCounter++;
-        exerciseTwo(isCorrect); // check if problem 2 is answered correctly
+        exerciseTwoHP(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -247,9 +214,9 @@ int main()
     else if (symbol == "p") // user wants to solve another problem
     {
         // if problem 1 is already done, output problem 2
-        if (exerciseCounter < 2 && exerciseOneChecker != 0) 
+        if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
-            exerciseTwo(isCorrect); // check if problem 2 is answered correctly
+            exerciseTwoHP(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -261,9 +228,9 @@ int main()
             }
         }
         // if problem 1 is not already done, output problem 1
-        if (exerciseCounter < 2 && exerciseOneChecker == 0) 
+        if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
-            exerciseOne(isCorrect); // check if problem 1 is answered correctly
+            exerciseOneHP(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -281,5 +248,5 @@ int main()
     }
 
     // output user's score
-    cout << "You got " << correctExerciseCount << " out of 2 points!"; 
+    cout << "You got " << correctExerciseCount << " out of 2 points!";
 }

@@ -1,110 +1,74 @@
 #include <iostream>
+#include "MainFunctions.h"
+#include "Gravity.h"
+
 using namespace std;
 
-void ignoreUserInput()
+void gravityCalculator()
 {
-    cin.clear(); // removes cin error flag
-    cin.ignore(INT_MAX, '\n');  // ignore last input
-}
-
-
-// check if input is valid
-string outputErrorMessage()
-{
-    return "Please enter a valid input!\n";
-}
-
-void inputNumber(double& number)
-{
-    cin >> number;
-
-    while (cin.fail())
-    {
-        ignoreUserInput();
-        cout << outputErrorMessage();
-        cin >> number;
-    }
-}
-
-string outputFormula(string& openingSentence, string formula)
-{
-    openingSentence = "Our formula is ";
-    return formula;
-}
-
-void distanceCalculator()
-{
-    double time; // declare variable
+    double mass; // declare variable
     string opening;
 
-    // enter value for t
-    cout << "Enter the time interval (t):" << endl;
-    inputNumber(time);
-	
-	outputFormula(opening, ""); // output formula
+    // enter value for m
+    cout << "Enter the mass of the object (m):" << endl;
+    inputNumber(mass);
+
+    outputFormula(opening, ""); // output formula
     cout << opening;
-    cout << outputFormula(opening, "s = (g * t * t ) / 2") << endl;
+    cout << outputFormula(opening, "G = m * g") << endl;
     cout << "First we replace the values:" << endl;
     // calculate using the formula
-    cout << "s = " << "(" << 10 << " * ";
-    cout << time << " * " << time << ")" << " / 2" << endl;
+    cout << "G = " << mass << " * " << 10 << endl;
     cout << "Then we calculate our equation:" << endl;
-    cout << "s = " << (10 * time * time) / 2 << " m" << endl;
+    cout << "G = " << 10 * mass << " N" << endl;
 }
 
-void velocityCalculator()
+void massCalculator()
 {
-    double time; // declare variable
+    double gravityForce; // declare variable
     string opening;
 
-    // enter value for t
-    cout << "Enter the time interval (t):" << endl;
-    inputNumber(time);
-	
-	outputFormula(opening, ""); // output formula
+    // enter value for G
+    cout << "Enter the gravity force of the object (G):" << endl;
+    inputNumber(gravityForce);
+
+    outputFormula(opening, "");
     cout << opening;
-    cout << outputFormula(opening, "V = g * t") << endl;
+    cout << outputFormula(opening, "m = G / g") << endl;
     cout << "First we replace the values:" << endl;
     // calculate using the formula
-    cout << "V = " << 10 << " * " << time << endl;
+    cout << "m = " << gravityForce << " / " << 10 << endl;
     cout << "Then we calculate our equation:" << endl;
-    cout << "V = " << 10 * time << " m/s" << endl;
+    cout << "m = " << gravityForce / 10 << " kg" << endl;
 }
 
-// check if user wants to calculate velosity or distance
-void velocityDistanceCalculator(string symbol)
+// check if user wants to calculate gravity or mass
+void gravityMassCalculator(string symbol)
 {
-    if (symbol == "s")
+    if (symbol == "G")
     {
-        distanceCalculator();
+        gravityCalculator();
     }
     else
     {
-        velocityCalculator();
+        massCalculator();
     }
 }
 
-string outputProblem(string& openingSentence, string problem)
-{
-    openingSentence = "Now, try to solve this problem!\n";
-    return problem;
-}
-
 // problem 1
-void exerciseOne(bool& pointAdd)
+void exerciseOneGravity(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
-    string question = "A construction worker accidentally drops a brick from a high scaffold. If you know the gravitational \n"
-                      "acceleration g is ~10 m/s2 and the brick falls 4 seconds, how far does the brick fall during this time?\n";
+    string question = "Estimate the gravitational force of a sumo wrestler with mass 220 kg.\ns = ?m (example input: 122)\n";
 
-    outputProblem(opening, question);
-    cout << opening << '\n';
-    cout << outputProblem(opening, question); // output the problem
+    outputProblem(opening, question); // output the problem
+    cout << opening;
+    cout << outputProblem(opening, question);
     cin >> answer;
-    // the right answer is 80, if user inputs 80
+    // the right answer is 2200, if user inputs 2200
     // then it is correct and if returns true
-    if (answer == 80)
+    if (answer == 2200)
     {
         pointAdd = true;
     }
@@ -115,20 +79,19 @@ void exerciseOne(bool& pointAdd)
 }
 
 // problem 2
-void exerciseTwo(bool& pointAdd)
+void exerciseTwoGravity(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
-    string question = "A stone that starts at rest is in free fall for 6 s. What is the \n"
-                      "velocity of the stone after these 6 seconds? s = ?m (example input: 122)\n";
-    
-    outputProblem(opening, question);
-    cout << opening << '\n';
-    cout << outputProblem(opening, question); // output the problem
+    string question = "Evaluate the mass of a spherical steel ball with a magnitude of gravitational force 50 N.\nm = ? kg(example input : 122)\n";
+
+    outputProblem(opening, question);  // output the problem
+    cout << opening;
+    cout << outputProblem(opening, question);
     cin >> answer;
-    // the right answer is 60, if user inputs 60
+    // the right answer is 5, if user inputs 5
     // then it is correct and if returns true
-    if (answer == 60)
+    if (answer == 5)
     {
         pointAdd = true;
     }
@@ -151,26 +114,27 @@ int main()
     int exerciseCounter = 0; // count how many problems the user has answered
     bool exerciseOneChecker = 0; // check if problem 1 is already done or not
 
-    while (symbol != "c" && symbol != "p") // check if input is valid
+    while (symbol != "c" && symbol != "p")  // check if input is valid
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == "c") // user is using calculator
+    if (symbol == "c")  // user is using calculator
     {
-        cout << "Enter the unit we are searching (V/s)" << endl;
+        cout << "Enter the unit we are searching (G/m)" << endl;
         cin >> symbol;
-        while (symbol != "V" && symbol != "s") // check if input is valid
+        while (symbol != "G" && symbol != "m") // check if input is valid
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
-        velocityDistanceCalculator(symbol);
+        gravityMassCalculator(symbol);
     }
     else if (symbol == "p") // output problem 1
     {
         exerciseCounter++;
-        exerciseOne(isCorrect); // check if problem 1 is answered correctly
+        exerciseOneChecker = 1;
+        exerciseOneGravity(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -180,10 +144,9 @@ int main()
         {
             cout << "That's wrong! ";
         }
-        exerciseOneChecker = 1;
     }
 
-    cout << "Would you like to do the next exercise? (y/n)" << endl;
+    cout << "Would you like to go to the next exercise? (y/n)" << endl;
     cin >> symbol; // input symbol to answer the question
     while (symbol != "y" && symbol != "n") // check if input is valid
     {
@@ -196,7 +159,7 @@ int main()
     else if (symbol == "y") // output problem 2
     {
         exerciseCounter++;
-        exerciseTwo(isCorrect); // check if problem 2 is answered correctly
+        exerciseTwoGravity(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -218,21 +181,21 @@ int main()
     }
     if (symbol == "c") // user is using calculator
     {
-        cout << "Enter the unit we are searching (V/s)" << endl;
+        cout << "Enter the unit we are searching (G/m)" << endl;
         cin >> symbol;
-        while (symbol != "V" && symbol != "s") // check if input is valid
+        while (symbol != "G" && symbol != "m") // check if input is valid
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
-        velocityDistanceCalculator(symbol);
+        gravityMassCalculator(symbol);
     }
     else if (symbol == "p") // user wants to solve another problem
     {
         // if problem 1 is already done, output problem 2
-        if (exerciseCounter < 2 and exerciseOneChecker != 0)
+        if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
-            exerciseTwo(isCorrect); // check if problem 2 is answered correctly
+            exerciseTwoGravity(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -244,9 +207,9 @@ int main()
             }
         }
         // if problem 1 is not already done, output problem 1
-        else if (exerciseCounter < 2 and exerciseOneChecker == 0)
+        else if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
-            exerciseOne(isCorrect); // check if problem 1 is answered correctly
+            exerciseOneGravity(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -259,9 +222,10 @@ int main()
         }
         else // output this if user has done problem 1 and problem 2
         {
-           cout << "Oops! You've finished all of the exercises!" << endl;
-        }  
+            cout << "Oops! You've finished all of the exercises!" << endl;
+        }
     }
+
     // output user's score
     cout << "You got " << correctExerciseCount << " out of 2 points!";
 }

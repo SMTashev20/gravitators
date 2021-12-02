@@ -1,35 +1,8 @@
 #include <iostream>
+#include "Newton'sSecondLaw.h"
+#include "MainFunctions.h"
+
 using namespace std;
-
-void ignoreUserInput()
-{
-    cin.clear(); // removes cin error flag
-    cin.ignore(INT_MAX, '\n');  // ignore last input
-}
-
-// check if input is valid
-string outputErrorMessage()
-{
-    return "Please enter a valid input!\n";
-}
-
-void inputNumber(double& number)
-{
-    cin >> number;
-
-    while (cin.fail())
-    {
-        ignoreUserInput();
-        cout << outputErrorMessage();
-        cin >> number;
-    }
-}
-
-string outputFormula(string& openingSentence, string formula)
-{
-    openingSentence = "Our formula is ";
-    return formula;
-}
 
 void forceCalculator()
 {
@@ -79,13 +52,13 @@ void accelerationCalculator()
     cout << outputFormula(opening, "a = F / m") << endl;
     cout << "First we replace the values:" << endl;
     // calculate using the formula
-    cout << "a = " << force << " / " << mass << endl; 
+    cout << "a = " << force << " / " << mass << endl;
     cout << "Then we calculate our equation:" << endl;
     cout << "a = " << force / mass << " m/s^2" << endl;
 }
 
 // check if user wants to calculate force or acceleration
-void forceAccelerationCalculator(string symbol) 
+void forceAccelerationCalculator(string symbol)
 {
     if (symbol == "F")
     {
@@ -97,14 +70,9 @@ void forceAccelerationCalculator(string symbol)
     }
 }
 
-string outputProblem(string& openingSentence, string problem)
-{
-    openingSentence = "Now, try to solve this problem!\n";
-    return problem;
-}
 
 // problem 1
-void exerciseOne(bool& pointAdd)
+void exerciseOneNSL(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
@@ -118,7 +86,7 @@ void exerciseOne(bool& pointAdd)
     cin >> answer;
     // the right answer is 6, if user inputs 6
     // then it is correct and if returns true
-    if (answer == 6) 
+    if (answer == 6)
     {
         pointAdd = true;
     }
@@ -131,7 +99,7 @@ void exerciseOne(bool& pointAdd)
 }
 
 // problem 2
-void exerciseTwo(bool& pointAdd)
+void exerciseTwoNSL(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
@@ -144,7 +112,7 @@ void exerciseTwo(bool& pointAdd)
     cin >> answer;
     // the right answer is 3, if user inputs 3
     // then it is correct and if returns true
-    if (answer == 3) 
+    if (answer == 3)
     {
         pointAdd = true;
     }
@@ -186,7 +154,7 @@ int main()
     else if (symbol == "p") // output problem 1
     {
         exerciseCounter++;
-        exerciseOne(isCorrect); // check if problem 1 is answered correctly
+        exerciseOneNSL(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -214,7 +182,7 @@ int main()
     else if (symbol == "y") // output problem 2
     {
         exerciseCounter++;
-        exerciseTwo(isCorrect); // check if problem 2 is answered correctly
+        exerciseTwoNSL(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -250,9 +218,9 @@ int main()
     else if (symbol == "p") // user wants to solve another problem
     {
         // if problem 1 is already done, output problem 2
-        if (exerciseCounter < 2 && exerciseOneChecker != 0) 
+        if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
-            exerciseTwo(isCorrect); // check if problem 2 is answered correctly
+            exerciseTwoNSL(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -264,9 +232,9 @@ int main()
             }
         }
         // if problem 1 is not already done, output problem 1
-        if (exerciseCounter < 2 && exerciseOneChecker == 0) 
+        if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
-            exerciseOne(isCorrect); // check if problem 1 is answered correctly
+            exerciseOneNSL(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -284,5 +252,5 @@ int main()
     }
 
     // output user's score
-    cout << "You got " << correctExerciseCount << " out of 2 points!"; 
+    cout << "You got " << correctExerciseCount << " out of 2 points!";
 }

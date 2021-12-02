@@ -110,7 +110,7 @@ string outputOptions(string question, string option1, string option2, string opt
 	return option3;
 }
 
-int outputTotalPoints(int &pointsTotal)
+int outputTotalPoints(int& pointsTotal)
 {
 	setColor(COLOR_WHITE);
 	setOutputPosition(25, 10);
@@ -194,10 +194,10 @@ int main()
 	printStars();
 
 	int pointsTotal = 0;
-	 cout << outputOptions("Question?", "Answer" , "no" , "no");
-	 cout << printUser(pointsTotal, 10);
+	cout << outputOptions("Question?", "Answer", "no", "no");
+	cout << printUser(pointsTotal, 10);
 
-	 cout << outputOptions("Question?", "no", "no", "Answer");
+	cout << outputOptions("Question?", "no", "no", "Answer");
 	cout << printUser(pointsTotal, 12);
 
 	cout << outputTotalPoints(pointsTotal);

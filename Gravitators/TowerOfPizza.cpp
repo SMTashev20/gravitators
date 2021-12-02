@@ -132,12 +132,12 @@ int main()
 			case 'd':
 			case 'D':
 			{
-			setOutputPosition(userCol, userRow);
-			cout << " ";
-			userCol++;
-			userRow++;
-			setOutputPosition(userCol, userRow);
-			cout << user;
+				setOutputPosition(userCol, userRow);
+				cout << " ";
+				userCol++;
+				userRow++;
+				setOutputPosition(userCol, userRow);
+				cout << user;
 			}
 			break;
 			default:

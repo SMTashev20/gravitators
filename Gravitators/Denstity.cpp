@@ -1,36 +1,8 @@
 #include <iostream>
+#include "MainFunctions.h"
+#include "Density.h"
 
 using namespace std;
-
-void ignoreUserInput()
-{
-    cin.clear(); // removes cin error flag
-    cin.ignore(INT_MAX, '\n');  // ignore last input
-}
-
-// check if input is valid
-string outputErrorMessage()
-{
-    return "Please enter a valid input!";
-}
-
-void inputNumber(double& number)
-{
-    cin >> number;
-
-    while (cin.fail())
-    {
-        ignoreUserInput();
-        cout << outputErrorMessage();
-        cin >> number;
-    }
-}
-
-string outputFormula(string& openingSentence, string formula)
-{
-    openingSentence = "Our formula is ";
-    return formula;
-}
 
 void densityCalculator()
 {
@@ -51,7 +23,7 @@ void densityCalculator()
         cout << "Enter new value!" << endl;
         inputNumber(volume);
     }
-	outputFormula(opening, ""); // output formula
+    outputFormula(opening, ""); // output formula
     cout << opening;
     cout << outputFormula(opening, "p = m / V") << endl;
     cout << "First we replace the values:" << endl;
@@ -74,7 +46,7 @@ void massCalculator()
     cout << "Enter the volume of the object (V):" << endl;
     inputNumber(volume);
 
-	outputFormula(opening, "");
+    outputFormula(opening, "");
     cout << opening;
     cout << outputFormula(opening, "m = p * V") << endl;
     cout << "First we replace the values:" << endl;
@@ -97,14 +69,8 @@ void densityMassCalculator(string symbol)
     }
 }
 
-string outputProblem(string& openingSentence, string problem)
-{
-    openingSentence = "Now, try to solve this problem!\n";
-    return problem;
-}
-
 // problem 1
-void exerciseOne(bool& pointAdd)
+void exerciseOneGravity(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
@@ -127,7 +93,7 @@ void exerciseOne(bool& pointAdd)
 }
 
 // problem 2
-void exerciseTwo(bool& pointAdd)
+void exerciseTwoHP(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
@@ -181,7 +147,7 @@ int main()
     else if (sym == "p") // output problem 1
     {
         exerciseCounter++;
-        exerciseOne(isCorrect); // check if problem 1 is answered correctly
+        exerciseOneGravity(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -207,7 +173,7 @@ int main()
     else if (sym == "y") // output problem 2
     {
         exerciseCounter++;
-        exerciseTwo(isCorrect); // check if problem 2 is answered correctly
+        exerciseTwoHP(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -244,7 +210,7 @@ int main()
         // if problem 1 is already done, output problem 2
         if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
-            exerciseTwo(isCorrect); // check if problem 2 is answered correctly
+            exerciseTwoHP(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -258,7 +224,7 @@ int main()
         // if problem 1 is not already done, output problem 1
         if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
-            exerciseOne(isCorrect); // check if problem 1 is answered correctly
+            exerciseOneGravity(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";

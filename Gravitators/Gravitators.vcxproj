@@ -21,34 +21,34 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9a39076f-9035-4d93-ba9f-59b889ccbe15}</ProjectGuid>
-    <RootNamespace>PhysicsProject</RootNamespace>
+    <ProjectGuid>{10f64024-314d-4bf0-9dd0-ea6699424263}</ProjectGuid>
+    <RootNamespace>Gravitators</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -120,6 +120,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>uniformAcceleration.obj;Gravity.obj;HydrostaticPressure.obj;Pressure.obj;TowerOfPizza.obj;FreeFall.obj;Gravitators.obj;Quiz.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,7 +141,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="PhysicsProject.cpp" />
+    <ClCompile Include="Denstity.cpp" />
+    <ClCompile Include="FreeFall.cpp" />
+    <ClCompile Include="Gravitators.cpp" />
+    <ClCompile Include="Gravity.cpp" />
+    <ClCompile Include="HydrostaticPressure.cpp" />
+    <ClCompile Include="MainFunctions.cpp" />
+    <ClCompile Include="Newton%27sSecondLaw.cpp" />
+    <ClCompile Include="Pressure.cpp" />
+    <ClCompile Include="Quiz.cpp" />
+    <ClCompile Include="Frame.cpp" />
+    <ClCompile Include="TowerOfPizza.cpp" />
+    <ClCompile Include="uniformAcceleration.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Density.h" />
+    <ClInclude Include="FreeFall.h" />
+    <ClInclude Include="Gravity.h" />
+    <ClInclude Include="Frame.h" />
+    <ClInclude Include="uniformAcceleration.h" />
+    <ClInclude Include="Pressure.h" />
+    <ClInclude Include="Newton%27sSecondLaw.h" />
+    <ClInclude Include="HydrostaticPressure.h" />
+    <ClInclude Include="MainFunctions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
