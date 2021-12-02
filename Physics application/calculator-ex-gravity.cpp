@@ -7,6 +7,7 @@ void ignoreUserInput()
     cin.ignore(INT_MAX, '\n');  // ignore last input
 }
 
+// check if input is valid
 string outputErrorMessage()
 {
     return "Please enter a valid input!\n";
@@ -32,26 +33,29 @@ string outputFormula(string& openingSentence, string formula)
 
 void gravityCalculator()
 {
-    double mass;
+    double mass; // declare variable
     string opening;
 
+    // enter value for m
     cout << "Enter the mass of the object (m):" << endl;
     inputNumber(mass);
 
-	outputFormula(opening, "");
+	outputFormula(opening, ""); // output formula
     cout << opening;
     cout << outputFormula(opening, "G = m * g") << endl;
     cout << "First we replace the values:" << endl;
-    cout << "G = " << mass << " * " << 10 << endl;
-    cout << "Then we calculate our eqalation:" << endl;
+    // calculate using the formula
+    cout << "G = " << mass << " * " << 10 << endl; 
+    cout << "Then we calculate our equation:" << endl;
     cout << "G = " << 10 * mass << " N" << endl;
 }
 
 void massCalculator()
 {
-    double gravityForce;
+    double gravityForce; // declare variable
     string opening;
 
+    // enter value for G
     cout << "Enter the gravity force of the object (G):" << endl;
     inputNumber(gravityForce);
 
@@ -59,11 +63,13 @@ void massCalculator()
     cout << opening;
     cout << outputFormula(opening, "m = G / g") << endl;
     cout << "First we replace the values:" << endl;
+    // calculate using the formula
     cout << "m = " << gravityForce << " / " << 10 << endl;
-    cout << "Then we calculate our eqalation:" << endl;
+    cout << "Then we calculate our equation:" << endl;
     cout << "m = " << gravityForce / 10 << " kg" << endl;
 }
 
+// check if user wants to calculate gravity or mass
 void gravityMassCalculator(string symbol)
 {
     if (symbol == "G")
@@ -82,16 +88,19 @@ string outputProblem(string& openingSentence, string problem)
     return problem;
 }
 
+// problem 1
 void exerciseOne(bool& pointAdd)
 {
-    double answer;
+    double answer; // declare variable
     string opening;
     string question = "Estimate the gravitational force of a sumo wrestler with mass 220 kg.\ns = ?m (example input: 122)\n";
 
-    outputProblem(opening, question);
+    outputProblem(opening, question); // output the problem
     cout << opening;
     cout << outputProblem(opening, question);
     cin >> answer;
+    // the right answer is 2200, if user inputs 2200
+    // then it is correct and if returns true
     if (answer == 2200)
     {
         pointAdd = true;
@@ -102,16 +111,19 @@ void exerciseOne(bool& pointAdd)
     }
 }
 
+// problem 2
 void exerciseTwo(bool& pointAdd)
 {
-    double answer;
+    double answer; // declare variable
     string opening;
     string question = "Evaluate the mass of a spherical steel ball with a magnitude of gravitational force 50 N.\nm = ? kg(example input : 122)\n";
 
-    outputProblem(opening, question);
+    outputProblem(opening, question);  // output the problem
     cout << opening;
     cout << outputProblem(opening, question);
     cin >> answer;
+    // the right answer is 5, if user inputs 5
+    // then it is correct and if returns true
     if (answer == 5)
     {
         pointAdd = true;
@@ -127,35 +139,35 @@ int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     string symbol;
-    cin >> symbol;
+    cin >> symbol; // input symbol to answer the question
 
-    int correctExerciseCount = 0;
-    bool isCorrect;
+    int correctExerciseCount = 0; // count user's points
+    bool isCorrect; // check if the exercise is answered correctly
 
-    int exerciseCounter = 0;
-    bool exerciseOneChecker = 0;
+    int exerciseCounter = 0; // count how many problems the user has answered
+    bool exerciseOneChecker = 0; // check if problem 1 is already done or not
 
-    while (symbol != "c" && symbol != "p")
+    while (symbol != "c" && symbol != "p")  // check if input is valid
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == "c")
+    if (symbol == "c")  // user is using calculator
     {
         cout << "Enter the unit we are searching (G/m)" << endl;
         cin >> symbol;
-        while (symbol != "G" && symbol != "m")
+        while (symbol != "G" && symbol != "m") // check if input is valid
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
         gravityMassCalculator(symbol);
     }
-    else if (symbol == "p")
+    else if (symbol == "p") // output problem 1
     {
         exerciseCounter++;
         exerciseOneChecker = 1;
-        exerciseOne(isCorrect);
+        exerciseOne(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -168,8 +180,8 @@ int main()
     }
 
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
-    cin >> symbol;
-    while (symbol != "y" && symbol != "n")
+    cin >> symbol; // input symbol to answer the question
+    while (symbol != "y" && symbol != "n") // check if input is valid
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
@@ -177,10 +189,10 @@ int main()
     if (symbol == "n")
     {
     }
-    else if (symbol == "y")
+    else if (symbol == "y") // output problem 2
     {
         exerciseCounter++;
-        exerciseTwo(isCorrect);
+        exerciseTwo(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -193,29 +205,30 @@ int main()
     }
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
-    cin >> symbol;
+    cin >> symbol; // input symbol to answer the question
 
-    while (symbol != "c" && symbol != "p")
+    while (symbol != "c" && symbol != "p") // check if input is valid
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == "c")
+    if (symbol == "c") // user is using calculator
     {
         cout << "Enter the unit we are searching (G/m)" << endl;
         cin >> symbol;
-        while (symbol != "G" && symbol != "m")
+        while (symbol != "G" && symbol != "m") // check if input is valid
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
         gravityMassCalculator(symbol);
     }
-    else if (symbol == "p")
+    else if (symbol == "p") // user wants to solve another problem
     {
+        // if problem 1 is already done, output problem 2
         if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
-            exerciseTwo(isCorrect);
+            exerciseTwo(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -226,9 +239,10 @@ int main()
                 cout << "That's wrong! ";
             }
         }
+        // if problem 1 is not already done, output problem 1
         else if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
-            exerciseOne(isCorrect);
+            exerciseOne(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -239,11 +253,12 @@ int main()
                 cout << "That's wrong! ";
             }
         }
-        else
+        else // output this if user has done problem 1 and problem 2
         {
             cout << "Oops! You've finished all of the exercises!" << endl;
         }
     }
 
+    // output user's score
     cout << "You got " << correctExerciseCount << " out of 2 points!";
 }

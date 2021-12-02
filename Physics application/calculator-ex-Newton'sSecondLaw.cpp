@@ -48,8 +48,9 @@ void forceCalculator()
     cout << opening;
     cout << outputFormula(opening, "F = m * a") << endl;
     cout << "First we replace the values:" << endl;
-    cout << "F = " << mass << " * " << acceleration << endl; // calculate using the formula
-    cout << "Then we calculate our eqalation:" << endl;
+    // calculate using the formula
+    cout << "F = " << mass << " * " << acceleration << endl;
+    cout << "Then we calculate our equation:" << endl;
     cout << "F = " << mass * acceleration << " N" << endl;
 }
 
@@ -77,12 +78,14 @@ void accelerationCalculator()
     cout << opening;
     cout << outputFormula(opening, "a = F / m") << endl;
     cout << "First we replace the values:" << endl;
-    cout << "a = " << force << " / " << mass << endl; // calculate using the formula
-    cout << "Then we calculate our eqalation:" << endl;
+    // calculate using the formula
+    cout << "a = " << force << " / " << mass << endl; 
+    cout << "Then we calculate our equation:" << endl;
     cout << "a = " << force / mass << " m/s^2" << endl;
 }
 
-void forceAccelerationCalculator(string symbol) // check if user wants to calculate force or acceleration
+// check if user wants to calculate force or acceleration
+void forceAccelerationCalculator(string symbol) 
 {
     if (symbol == "F")
     {
@@ -113,7 +116,9 @@ void exerciseOne(bool& pointAdd)
     cout << outputProblem(opening, question); // output the problem
     cout << "Hint: 15cm = 0,15m" << endl;
     cin >> answer;
-    if (answer == 6) // the right answer is 6, if user inputs 6, then it is correct and if returns
+    // the right answer is 6, if user inputs 6
+    // then it is correct and if returns true
+    if (answer == 6) 
     {
         pointAdd = true;
     }
@@ -137,8 +142,9 @@ void exerciseTwo(bool& pointAdd)
     cout << opening;
     cout << outputProblem(opening, question);
     cin >> answer;
-
-    if (answer == 3) // the right answer is 3, if user inputs 3, then it is correct and if returns true
+    // the right answer is 3, if user inputs 3
+    // then it is correct and if returns true
+    if (answer == 3) 
     {
         pointAdd = true;
     }
@@ -243,7 +249,8 @@ int main()
     }
     else if (symbol == "p") // user wants to solve another problem
     {
-        if (exerciseCounter < 2 && exerciseOneChecker != 0) // if problem 1 is already done, output problem 2
+        // if problem 1 is already done, output problem 2
+        if (exerciseCounter < 2 && exerciseOneChecker != 0) 
         {
             exerciseTwo(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
@@ -256,7 +263,8 @@ int main()
                 cout << "That's wrong! ";
             }
         }
-        if (exerciseCounter < 2 && exerciseOneChecker == 0) // if problem 1 is not already done, output problem 1
+        // if problem 1 is not already done, output problem 1
+        if (exerciseCounter < 2 && exerciseOneChecker == 0) 
         {
             exerciseOne(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
@@ -275,6 +283,6 @@ int main()
         }
     }
 
-
-    cout << "You got " << correctExerciseCount << " out of 2 points!"; // output user's score
+    // output user's score
+    cout << "You got " << correctExerciseCount << " out of 2 points!"; 
 }

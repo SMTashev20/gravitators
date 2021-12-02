@@ -7,6 +7,7 @@ void ignoreUserInput()
     cin.ignore(INT_MAX, '\n');  // ignore last input
 }
 
+// check if input is valid
 string outputErrorMessage()
 {
     return "Please enter a valid input!\n";
@@ -32,11 +33,12 @@ string outputFormula(string& openingSentence, string formula)
 
 void hydrostaticPressureCalculator()
 {
-    double rho;
+    double rho; // declare variables
     double height;
     string opening;
     // F = m * a
 
+    // enter values for rho and h
     cout << "Enter the rho of the object (p):" << endl;
     inputNumber(rho);
     cout << "Enter the height of the contaner (h):" << endl;
@@ -45,23 +47,24 @@ void hydrostaticPressureCalculator()
     cout << outputFormula(opening, "P = p * g * h") << endl;
     cout << "First we replace the values:" << endl;
     cout << "P " << rho << " * " << "10" << height << endl;
-    cout << "Then we calculate our eqalation:" << endl;
+    cout << "Then we calculate our equation:" << endl;
     cout << "F = " << rho * 10 * height << " Pa" << endl;
 }
 
 void HeightCalculator()
 {
-    double hydrostaticPressure;
+    double hydrostaticPressure; // declare variables
     double rho;
     string opening;
     // h = P / p * g
 
+    // enter values for P and rho
     cout << "Enter the Hydrostatic Pressure of the object (P):" << endl;
     inputNumber(hydrostaticPressure);
     cout << "Enter the rho of the object (p):" << endl;
     inputNumber(rho);
 
-    while (rho == 0)
+    while (rho == 0) // check for dividing by zero
     {
         cout << "You can't devide by 0!" << endl;
         cout << "Enter new value!" << endl;
@@ -71,11 +74,13 @@ void HeightCalculator()
     cout << opening;
     cout << outputFormula(opening, "h = P / p * g") << endl;
     cout << "First we replace the values:" << endl;
-    cout << "h = " << hydrostaticPressure << " / " << rho << " * 10" << endl;
-    cout << "Then we calculate our eqalation:" << endl;
+    // calculate using the formula
+    cout << "h = " << hydrostaticPressure << " / " << rho << " * 10" << endl; 
+    cout << "Then we calculate our equation:" << endl;
     cout << "h = " << hydrostaticPressure / (rho * 10) << " m" << endl;
 }
 
+// check if user wants to calculate height or hydrostatic pressure
 void heightHydrostaticPleasureCalculator(string symbol)
 {
     if (symbol == "h")
@@ -94,9 +99,10 @@ string outputProblem(string& openingSentence, string problem)
     return problem;
 }
 
+// problem 1
 void exerciseOne(bool& pointAdd)
 {
-    double answer;
+    double answer;  // declare variable
     string opening;
     string question = "A jar of water with 15 cm of height. Find the pressure of water at the bottom of the jar,\n"
                       "ignore the atmospheric pressure and use the acceleration due to gravity g = 10 m/s2 and \n"
@@ -104,10 +110,12 @@ void exerciseOne(bool& pointAdd)
 
     outputProblem(opening, question);
     cout << opening;
-    cout << outputProblem(opening, question);
+    cout << outputProblem(opening, question); // output the problem
     cout << "Hint: 15cm = 0,15m" << endl;
     cin >> answer;
-    if (answer == 1500)
+    // the right answer is 1500, if user inputs 1500
+    //then it is correct and if returns true
+    if (answer == 1500) 
     {
         pointAdd = true;
     }
@@ -119,19 +127,21 @@ void exerciseOne(bool& pointAdd)
 
 }
 
+// problem 2
 void exerciseTwo(bool& pointAdd)
 {
-    double answer;
+    double answer;  // declare variable
     string opening;
     string question = "What is the hydrostatic pressure at a depth of 0.5 meters in an alcohol solution?\n"
                       "The alcohol's density is 790 kg/m^3.\n";
 
-    outputProblem(opening, question);
+    outputProblem(opening, question); 
     cout << opening;
-    cout << outputProblem(opening, question);
+    cout << outputProblem(opening, question); // output the problem
     cin >> answer;
-
-    if (answer == 3950)
+    // the right answer is 3950, if user inputs 3950
+    //then it is correct and if returns true
+    if (answer == 3950) 
     {
         pointAdd = true;
     }
@@ -145,35 +155,35 @@ int main()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     string symbol;
-    cin >> symbol;
+    cin >> symbol; // input symbol to answer the question
 
-    int correctExerciseCount = 0;
-    bool isCorrect;
+    int correctExerciseCount = 0; // count user's points
+    bool isCorrect; // check if the exercise is answered correctly
 
-    int exerciseCounter = 0;
-    bool exerciseOneChecker = 0;
+    int exerciseCounter = 0; // count how many problems the user has answered
+    bool exerciseOneChecker = 0; // check if problem 1 is already done or not
 
 
-    while (symbol != "c" && symbol != "p")
+    while (symbol != "c" && symbol != "p") // check if input is valid
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == "c")
+    if (symbol == "c") // user is using calculator
     {
         cout << "Enter the unit we are searching (h/P)" << endl;
         cin >> symbol;
-        while (symbol != "h" && symbol != "P")
+        while (symbol != "h" && symbol != "P") // check if input is valid
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
         heightHydrostaticPleasureCalculator(symbol);
     }
-    else if (symbol == "p")
-    {
+    else if (symbol == "p") // output problem 1
+    { 
         exerciseCounter++;
-        exerciseOne(isCorrect);
+        exerciseOne(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -188,8 +198,8 @@ int main()
     }
 
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
-    cin >> symbol;
-    while (symbol != "y" && symbol != "n")
+    cin >> symbol; // input symbol to answer the question
+    while (symbol != "y" && symbol != "n") // check if input is valid
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
@@ -198,10 +208,10 @@ int main()
     {
 
     }
-    else if (symbol == "y")
+    else if (symbol == "y") // output problem 2
     {
         exerciseCounter++;
-        exerciseTwo(isCorrect);
+        exerciseTwo(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -216,29 +226,30 @@ int main()
 
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
-    cin >> symbol;
+    cin >> symbol; // input symbol to answer the question
 
-    while (symbol != "c" && symbol != "p")
+    while (symbol != "c" && symbol != "p") // check if input is valid
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == "c")
+    if (symbol == "c") // user is using calculator
     {
         cout << "Enter the unit we are searching (h/P)" << endl;
         cin >> symbol;
-        while (symbol != "h" && symbol != "P")
+        while (symbol != "h" && symbol != "P") // check if input is valid
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
         heightHydrostaticPleasureCalculator(symbol);
     }
-    else if (symbol == "p")
+    else if (symbol == "p") // user wants to solve another problem
     {
-        if (exerciseCounter < 2 && exerciseOneChecker != 0)
+        // if problem 1 is already done, output problem 2
+        if (exerciseCounter < 2 && exerciseOneChecker != 0) 
         {
-            exerciseTwo(isCorrect);
+            exerciseTwo(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -249,9 +260,10 @@ int main()
                 cout << "That's wrong! ";
             }
         }
-        if (exerciseCounter < 2 && exerciseOneChecker == 0)
+        // if problem 1 is not already done, output problem 1
+        if (exerciseCounter < 2 && exerciseOneChecker == 0) 
         {
-            exerciseOne(isCorrect);
+            exerciseOne(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -262,11 +274,12 @@ int main()
                 cout << "That's wrong! ";
             }
         }
-        else
+        else // output this if user has done problem 1 and problem 2
         {
             cout << "Oops! You've finished all of the exercises!" << endl;
         }
     }
 
-    cout << "You got " << correctExerciseCount << " out of 2 points!";
+    // output user's score
+    cout << "You got " << correctExerciseCount << " out of 2 points!"; 
 }

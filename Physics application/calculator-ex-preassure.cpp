@@ -48,7 +48,8 @@ void forceCalculator()
     cout << opening;
     cout << outputFormula(opening, "F = P * S") << endl;
     cout << "First we replace the values:" << endl;
-    cout << "F = " << pressure << " * " << area << endl; // calculate using the formula
+    // calculate using the formula
+    cout << "F = " << pressure << " * " << area << endl; 
     cout << "Then we calculate our eqalation:" << endl;
     cout << "F = " << pressure * area << " N" << endl;
 }
@@ -77,12 +78,14 @@ void pressureCalculator()
     cout << opening;
     cout << outputFormula(opening, "a = F / m") << endl;
     cout << "First we replace the values:" << endl;
-    cout << "P = " << force << " / " << area << endl; // calculate using the formula
+    // calculate using the formula
+    cout << "P = " << force << " / " << area << endl; 
     cout << "Then we calculate our equation:" << endl;
     cout << "P = " << force / area << " Pa" << endl;
 }
 
-void forcePressureCalculator(string symbol) // check if user wants to calculate force or pressure
+// check if user wants to calculate force or pressure
+void forcePressureCalculator(string symbol) 
 {
     if (symbol == "F")
     {
@@ -113,7 +116,9 @@ void exerciseOne(bool& pointAdd)
     cout << outputProblem(opening, question); // output the problem
     cout << "Hints: 15cm = 0,15m, F = m * g and g = 10" << endl;
     cin >> answer;
-    if (answer == 4000) // the right answer is 4000, if user inputs 4000, then it is correct and if returns true
+    // the right answer is 4000, if user inputs 4000
+    // then it is correct and if returns true
+    if (answer == 4000) 
     {
         pointAdd = true;
     }
@@ -135,8 +140,9 @@ void exerciseTwo(bool& pointAdd)
     cout << opening;
     cout << outputProblem(opening, question); // output the problem
     cin >> answer;
-
-    if (answer == 3) // the right answer is 3, if user inputs 3, then it is correct and if returns true
+    // the right answer is 3, if user inputs 3
+    // then it is correct and if returns true
+    if (answer == 3) 
     {
         pointAdd = true;
     }
@@ -237,7 +243,8 @@ int main()
     }
     else if (symbol == "p") // user wants to solve another problem
     {
-        if (exerciseCounter < 2 && exerciseOneChecker != 0) // if problem 1 is already done, output problem 2
+        // if problem 1 is already done, output problem 2
+        if (exerciseCounter < 2 && exerciseOneChecker != 0) 
         {
             exerciseTwo(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
@@ -250,7 +257,8 @@ int main()
                 cout << "That's wrong! ";
             }
         }
-        if (exerciseCounter < 2 && exerciseOneChecker == 0) // if problem 1 is not already done, output problem 1
+        // if problem 1 is not already done, output problem 1
+        if (exerciseCounter < 2 && exerciseOneChecker == 0) 
         {
             exerciseOne(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
@@ -269,6 +277,6 @@ int main()
         }
     }
 
-
-    cout << "You got " << correctExerciseCount << " out of 2 points!"; // output user's score
+    // output user's score
+    cout << "You got " << correctExerciseCount << " out of 2 points!"; 
 }

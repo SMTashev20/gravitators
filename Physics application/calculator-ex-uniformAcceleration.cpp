@@ -50,9 +50,12 @@ void distanceCalculator()
     cout << opening;
     cout << outputFormula(opening, "s = Vo * t + (a * t * t) / 2") << endl;
     cout << "First we replace the values:" << endl;
-    cout << "s = " << initialVelocity << " * " << time << " + " << "(" << acceleration << " * " << time * time << ")" << " / 2" << endl;
+    cout << "s = " << initialVelocity << " * " << time << " + ";
+    cout << "(" << acceleration << " * " << time * time << ")" << " / 2" << endl;
     cout << "Then we calculate our equation:" << endl;
-    cout << "s = " << initialVelocity * time << " + " << (acceleration * time * time) / 2 << endl; // calculate using the formula
+    // calculate using the formula
+    cout << "s = " << initialVelocity * time << " + ";
+    cout << (acceleration * time * time) / 2 << endl;
     cout << "s = " << initialVelocity * time + (acceleration * time * time) / 2 << " m" << endl;
 }
 
@@ -77,11 +80,13 @@ void velocityCalculator()
     cout << "First we replace the values:" << endl;
     cout << "V = " << initialVelocity << " + " << acceleration << " * " << time << endl;
     cout << "Then we calculate our equation:" << endl;
-    cout << "V = " << initialVelocity << " + " << acceleration * time << endl; // calculate using the formula
+    // calculate using the formula
+    cout << "V = " << initialVelocity << " + " << acceleration * time << endl;
     cout << "V = " << initialVelocity + acceleration * time << " m/s" << endl;
 }
 
-void velocityDistanceCalculator(string symbol) // check if user wants to calculate velosity or distance
+// check if user wants to calculate velosity or distance
+void velocityDistanceCalculator(string symbol) 
 {
     if (symbol == "s")
     {
@@ -112,7 +117,9 @@ void exerciseOne(bool& pointAdd)
     cout << outputProblem(opening, question); // output the problem
     cout << "Hint: 15cm = 0,15m, F = m * g and g = 10" << endl;
     cin >> answer;
-    if (answer == 780) // the right answer is 780, if user inputs 780, then it is correct and if returns true
+    // the right answer is 780, if user inputs 780
+    // then it is correct and if returns true
+    if (answer == 780) 
     {
         pointAdd = true;
     }
@@ -135,7 +142,9 @@ void exerciseTwo(bool& pointAdd)
     cout << outputProblem(opening, question); // output the problem
     cout << "Hint: 36 km/h = 10 m/s\n" << endl;
     cin >> answer;
-    if (answer == 500) // the right answer is 500, if user inputs 500, then it is correct and if returns true
+    // the right answer is 500, if user inputs 500
+    // then it is correct and if returns true
+    if (answer == 500) 
     {
         pointAdd = true;
     }
@@ -238,7 +247,8 @@ int main()
     }
     else if (symbol == "p") // user wants to solve another problem
     {
-        if (exerciseCounter < 2 && exerciseOneChecker != 0) // if problem 1 is already done, output problem 2
+        // if problem 1 is already done, output problem 2
+        if (exerciseCounter < 2 && exerciseOneChecker != 0) 
         {
             exerciseTwo(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
@@ -251,7 +261,8 @@ int main()
                 cout << "That's wrong! ";
             }
         }
-        if (exerciseCounter < 2 && exerciseOneChecker == 0) // if problem 1 is not already done, output problem 1
+        // if problem 1 is not already done, output problem 1
+        if (exerciseCounter < 2 && exerciseOneChecker == 0) 
         {
             exerciseOne(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
@@ -270,5 +281,6 @@ int main()
         }
     }
 
-    cout << "You got " << correctExerciseCount << " out of 2 points!"; // output user's score
+    // output user's score
+    cout << "You got " << correctExerciseCount << " out of 2 points!"; 
 }
