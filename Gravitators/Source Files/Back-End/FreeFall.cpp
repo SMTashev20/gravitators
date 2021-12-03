@@ -1,91 +1,77 @@
 #include <iostream>
-#include "MainFunctions.h"
-#include "Pressure.h"
+
+#include "../../Header Files/Back-End/MainFunctions.h"
+#include "../../Header Files/Back-End/FreeFall.h"
 
 using namespace std;
 
-void forceCalculator()
+void distanceCalculatorFreeFall()
 {
-    double pressure; // declare variables
-    double area;
+    double time; // declare variable
     string opening;
-    //F = P * S
 
-    // enter values for P and S
-    cout << "Enter the pressure of the object (P):" << endl;
-    inputNumber(pressure);
-    cout << "Enter the area of the object (S):" << endl;
-    inputNumber(area);
+    // enter value for t
+    cout << "Enter the time interval (t):" << endl;
+    inputNumber(time);
 
     outputFormula(opening, ""); // output formula
     cout << opening;
-    cout << outputFormula(opening, "F = P * S") << endl;
+    cout << outputFormula(opening, "s = (g * t * t ) / 2") << endl;
     cout << "First we replace the values:" << endl;
     // calculate using the formula
-    cout << "F = " << pressure << " * " << area << endl;
-    cout << "Then we calculate our eqalation:" << endl;
-    cout << "F = " << pressure * area << " N" << endl;
-}
-
-void pressureCalculator()
-{
-    double force; // declare variables
-    double area;
-    string opening;
-    // P = F / S
-
-    // enter values for F and S
-    cout << "Enter the force of the object (F):" << endl;
-    inputNumber(force);
-    cout << "Enter the area of the object (S):" << endl;
-    inputNumber(area);
-
-    while (area == 0) // check for dividing by zero
-    {
-        cout << "You can't devide by 0!" << endl;
-        cout << "Enter new value!" << endl;
-        inputNumber(area);
-    }
-
-    outputFormula(opening, "");
-    cout << opening;
-    cout << outputFormula(opening, "a = F / m") << endl;
-    cout << "First we replace the values:" << endl;
-    // calculate using the formula
-    cout << "P = " << force << " / " << area << endl;
+    cout << "s = " << "(" << 10 << " * ";
+    cout << time << " * " << time << ")" << " / 2" << endl;
     cout << "Then we calculate our equation:" << endl;
-    cout << "P = " << force / area << " Pa" << endl;
+    cout << "s = " << (10 * time * time) / 2 << " m" << endl;
 }
 
-// check if user wants to calculate force or pressure
-void forcePressureCalculator(string symbol)
+void velocityCalculatorFreeFall()
 {
-    if (symbol == "F")
+    double time; // declare variable
+    string opening;
+
+    // enter value for t
+    cout << "Enter the time interval (t):" << endl;
+    inputNumber(time);
+
+    outputFormula(opening, ""); // output formula
+    cout << opening;
+    cout << outputFormula(opening, "V = g * t") << endl;
+    cout << "First we replace the values:" << endl;
+    // calculate using the formula
+    cout << "V = " << 10 << " * " << time << endl;
+    cout << "Then we calculate our equation:" << endl;
+    cout << "V = " << 10 * time << " m/s" << endl;
+}
+
+// check if user wants to calculate velosity or distance
+void velocityDistanceCalculatorFreeFall(string symbol)
+{
+    if (symbol == "s")
     {
-        forceCalculator();
+        distanceCalculatorFreeFall();
     }
     else
     {
-        pressureCalculator();
+        velocityCalculatorFreeFall();
     }
 }
 
 // problem 1
-void exerciseOnePressure(bool& pointAdd)
+void exerciseOneFreeFall(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
-    string question = "If your mass is 80kg and the total area of the soles of your feet is 0.2 m2,\n"
-        "what pressure would you exert on the ground? P = ?N (example input: 122)\n";
+    string question = "A construction worker accidentally drops a brick from a high scaffold. If you know the gravitational \n"
+        "acceleration g is ~10 m/s2 and the brick falls 4 seconds, how far does the brick fall during this time?\n";
 
     outputProblem(opening, question);
-    cout << opening;
+    cout << opening << '\n';
     cout << outputProblem(opening, question); // output the problem
-    cout << "Hints: 15cm = 0,15m, F = m * g and g = 10" << endl;
     cin >> answer;
-    // the right answer is 4000, if user inputs 4000
+    // the right answer is 80, if user inputs 80
     // then it is correct and if returns true
-    if (answer == 4000)
+    if (answer == 80)
     {
         pointAdd = true;
     }
@@ -96,20 +82,20 @@ void exerciseOnePressure(bool& pointAdd)
 }
 
 // problem 2
-void exerciseTwoPressure(bool& pointAdd)
+void exerciseTwoFreeFall(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
-    string question = "A force of 15N is applied to a 5kg object in space. \n"
-        "What is the acceleration of the object?\n";
+    string question = "A stone that starts at rest is in free fall for 6 s. What is the \n"
+        "velocity of the stone after these 6 seconds? s = ?m (example input: 122)\n";
 
     outputProblem(opening, question);
-    cout << opening;
+    cout << opening << '\n';
     cout << outputProblem(opening, question); // output the problem
     cin >> answer;
-    // the right answer is 3, if user inputs 3
+    // the right answer is 60, if user inputs 60
     // then it is correct and if returns true
-    if (answer == 3)
+    if (answer == 60)
     {
         pointAdd = true;
     }
@@ -119,13 +105,14 @@ void exerciseTwoPressure(bool& pointAdd)
     }
 }
 
-int main()
+
+void FreeFall()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     string symbol;
     cin >> symbol; // input symbol to answer the question
 
-    int correctExerciseCount = 0; // counts user's points
+    int correctExerciseCount = 0; // count user's points
     bool isCorrect; // check if the exercise is answered correctly
 
     int exerciseCounter = 0; // count how many problems the user has answered
@@ -138,19 +125,19 @@ int main()
     }
     if (symbol == "c") // user is using calculator
     {
-        cout << "Enter the unit we are searching (F/S)" << endl;
+        cout << "Enter the unit we are searching (V/s)" << endl;
         cin >> symbol;
-        while (symbol != "F" && symbol != "S") // check if input is valid
+        while (symbol != "V" && symbol != "s") // check if input is valid
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
-        forcePressureCalculator(symbol);
+        velocityDistanceCalculatorFreeFall(symbol);
     }
     else if (symbol == "p") // output problem 1
     {
         exerciseCounter++;
-        exerciseOnePressure(isCorrect); // check if problem 1 is answered correctly
+        exerciseOneFreeFall (isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -163,7 +150,7 @@ int main()
         exerciseOneChecker = 1;
     }
 
-    cout << "Would you like to go to the next exercise? (y/n)" << endl;
+    cout << "Would you like to do the next exercise? (y/n)" << endl;
     cin >> symbol; // input symbol to answer the question
     while (symbol != "y" && symbol != "n") // check if input is valid
     {
@@ -172,12 +159,11 @@ int main()
     }
     if (symbol == "n")
     {
-
     }
     else if (symbol == "y") // output problem 2
     {
         exerciseCounter++;
-        exerciseTwoPressure(isCorrect); // check if problem 2 is answered correctly
+        exerciseTwoFreeFall(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -187,9 +173,9 @@ int main()
         {
             cout << "That's wrong! ";
         }
-
     }
-    cout << "Would you like to use the calculator or solve a problem? (c/p) " << endl;
+
+    cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     cin >> symbol; // input symbol to answer the question
 
     while (symbol != "c" && symbol != "p") // check if input is valid
@@ -199,21 +185,21 @@ int main()
     }
     if (symbol == "c") // user is using calculator
     {
-        cout << "Enter the unit we are searching (F/a)" << endl;
+        cout << "Enter the unit we are searching (V/s)" << endl;
         cin >> symbol;
-        while (symbol != "F" && symbol != "a") // check if input is valid
+        while (symbol != "V" && symbol != "s") // check if input is valid
         {
-            cout << "Please enter a valid input! " << endl;
+            cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
-        forcePressureCalculator(symbol);
+        velocityDistanceCalculatorFreeFall(symbol);
     }
     else if (symbol == "p") // user wants to solve another problem
     {
         // if problem 1 is already done, output problem 2
-        if (exerciseCounter < 2 && exerciseOneChecker != 0)
+        if (exerciseCounter < 2 and exerciseOneChecker != 0)
         {
-            exerciseTwoPressure(isCorrect); // check if problem 2 is answered correctly
+            exerciseTwoFreeFall(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -225,9 +211,9 @@ int main()
             }
         }
         // if problem 1 is not already done, output problem 1
-        if (exerciseCounter < 2 && exerciseOneChecker == 0)
+        else if (exerciseCounter < 2 and exerciseOneChecker == 0)
         {
-            exerciseOnePressure(isCorrect); // check if problem 1 is answered correctly
+            exerciseOneFreeFall(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -243,7 +229,6 @@ int main()
             cout << "Oops! You've finished all of the exercises!" << endl;
         }
     }
-
     // output user's score
     cout << "You got " << correctExerciseCount << " out of 2 points!";
 }

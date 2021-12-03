@@ -13,72 +13,93 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Source Files">
+      <UniqueIdentifier>{375af0c3-125f-4f61-b160-bad72a16d953}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Source Files\Back-End">
+      <UniqueIdentifier>{2e59bac2-3433-4f05-92cc-9819c003025d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Source Files\Front-End">
+      <UniqueIdentifier>{7ef532b8-4118-428d-b219-4c3c6846e2e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Back-End">
+      <UniqueIdentifier>{26f2112a-8c50-4e96-a31f-d85d539abfaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Front-End">
+      <UniqueIdentifier>{c9580d8f-e48c-4d24-8dbb-714cb289f7b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Gravitators.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Denstity.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Back-End\MainFunctions.cpp">
+      <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
-    <ClCompile Include="FreeFall.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Back-End\Newton%27sSecondLaw.cpp">
+      <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
-    <ClCompile Include="Gravity.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Back-End\Pressure.cpp">
+      <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
-    <ClCompile Include="HydrostaticPressure.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Back-End\Quiz.cpp">
+      <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
-    <ClCompile Include="Newton%27sSecondLaw.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Back-End\uniformAcceleration.cpp">
+      <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
-    <ClCompile Include="Pressure.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Back-End\Denstity.cpp">
+      <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
-    <ClCompile Include="uniformAcceleration.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Back-End\FreeFall.cpp">
+      <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
-    <ClCompile Include="Quiz.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Back-End\Gravity.cpp">
+      <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
-    <ClCompile Include="TowerOfPizza.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Back-End\HydrostaticPressure.cpp">
+      <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
-    <ClCompile Include="MainFunctions.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Front-End\TowerOfPizza.cpp">
+      <Filter>Source Files\Source Files\Front-End</Filter>
     </ClCompile>
-    <ClCompile Include="Frame.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source Files\Front-End\Frame.cpp">
+      <Filter>Source Files\Source Files\Front-End</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Files\Back-End\mainMenuControl.cpp">
+      <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Density.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Header Files\Back-End\HydrostaticPressure.h">
+      <Filter>Header Files\Back-End</Filter>
     </ClInclude>
-    <ClInclude Include="FreeFall.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Header Files\Back-End\MainFunctions.h">
+      <Filter>Header Files\Back-End</Filter>
     </ClInclude>
-    <ClInclude Include="MainFunctions.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Header Files\Back-End\Newton%27sSecondLaw.h">
+      <Filter>Header Files\Back-End</Filter>
     </ClInclude>
-    <ClInclude Include="Gravity.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Header Files\Back-End\Pressure.h">
+      <Filter>Header Files\Back-End</Filter>
     </ClInclude>
-    <ClInclude Include="HydrostaticPressure.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Header Files\Back-End\uniformAcceleration.h">
+      <Filter>Header Files\Back-End</Filter>
     </ClInclude>
-    <ClInclude Include="Newton%27sSecondLaw.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Header Files\Back-End\Density.h">
+      <Filter>Header Files\Back-End</Filter>
     </ClInclude>
-    <ClInclude Include="Pressure.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Header Files\Back-End\FreeFall.h">
+      <Filter>Header Files\Back-End</Filter>
     </ClInclude>
-    <ClInclude Include="uniformAcceleration.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Header Files\Back-End\Gravity.h">
+      <Filter>Header Files\Back-End</Filter>
     </ClInclude>
-    <ClInclude Include="Frame.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Header Files\Front-End\Frame.h">
+      <Filter>Header Files\Front-End</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\Back-End\mainMenuControl.h">
+      <Filter>Header Files\Back-End</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,77 +1,92 @@
 #include <iostream>
-
-#include "MainFunctions.h"
-#include "FreeFall.h"
+#include "../../Header Files/Back-End/MainFunctions.h"
+#include "../../Header Files/Back-End/uniformAcceleration.h"
 
 using namespace std;
 
-void distanceCalculator()
+void distanceCalculatorUniformAcceleration()
 {
-    double time; // declare variable
+    double initialVelocity, time, acceleration; // declare variables
     string opening;
 
-    // enter value for t
+    // enter values for Vo, a, t
+    cout << "Enter the initial velocity of the body (Vo):" << endl;
+    inputNumber(initialVelocity);
+
     cout << "Enter the time interval (t):" << endl;
     inputNumber(time);
 
+    cout << "Enter the acceleration of the body (a):" << endl;
+    inputNumber(acceleration);
+
     outputFormula(opening, ""); // output formula
     cout << opening;
-    cout << outputFormula(opening, "s = (g * t * t ) / 2") << endl;
+    cout << outputFormula(opening, "s = Vo * t + (a * t * t) / 2") << endl;
     cout << "First we replace the values:" << endl;
-    // calculate using the formula
-    cout << "s = " << "(" << 10 << " * ";
-    cout << time << " * " << time << ")" << " / 2" << endl;
+    cout << "s = " << initialVelocity << " * " << time << " + ";
+    cout << "(" << acceleration << " * " << time * time << ")" << " / 2" << endl;
     cout << "Then we calculate our equation:" << endl;
-    cout << "s = " << (10 * time * time) / 2 << " m" << endl;
+    // calculate using the formula
+    cout << "s = " << initialVelocity * time << " + ";
+    cout << (acceleration * time * time) / 2 << endl;
+    cout << "s = " << initialVelocity * time + (acceleration * time * time) / 2 << " m" << endl;
 }
 
-void velocityCalculator()
+void velocityCalculatorUniformAcceleration()
 {
-    double time; // declare variable
+    double initialVelocity, time, acceleration; // declare variables
     string opening;
 
-    // enter value for t
+    // enter values for Vo, a, t
+    cout << "Enter the initial velocity of the body (Vo):" << endl;
+    inputNumber(initialVelocity);
+
+    cout << "Enter the acceleration of the body (a):" << endl;
+    inputNumber(acceleration);
+
     cout << "Enter the time interval (t):" << endl;
     inputNumber(time);
 
-    outputFormula(opening, ""); // output formula
+    outputFormula(opening, "");
     cout << opening;
-    cout << outputFormula(opening, "V = g * t") << endl;
+    cout << outputFormula(opening, "V = Vo + a * t") << endl;
     cout << "First we replace the values:" << endl;
-    // calculate using the formula
-    cout << "V = " << 10 << " * " << time << endl;
+    cout << "V = " << initialVelocity << " + " << acceleration << " * " << time << endl;
     cout << "Then we calculate our equation:" << endl;
-    cout << "V = " << 10 * time << " m/s" << endl;
+    // calculate using the formula
+    cout << "V = " << initialVelocity << " + " << acceleration * time << endl;
+    cout << "V = " << initialVelocity + acceleration * time << " m/s" << endl;
 }
 
 // check if user wants to calculate velosity or distance
-void velocityDistanceCalculator(string symbol)
+void velocityDistanceCalculatorUniformAcceleration(string symbol)
 {
     if (symbol == "s")
     {
-        distanceCalculator();
+        distanceCalculatorUniformAcceleration();
     }
     else
     {
-        velocityCalculator();
+        velocityCalculatorUniformAcceleration();
     }
 }
 
 // problem 1
-void exerciseOneFreeFall(bool& pointAdd)
+void exerciseOneUA(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
-    string question = "A construction worker accidentally drops a brick from a high scaffold. If you know the gravitational \n"
-        "acceleration g is ~10 m/s2 and the brick falls 4 seconds, how far does the brick fall during this time?\n";
+    string question = "A car was driving with speed of 5m/s. The car accelerated at 10 m/s2 for 12 seconds.\n"
+        "What is the position of the car at the end of the 12 seconds? s = ?m (example input: 122)\n";
 
     outputProblem(opening, question);
-    cout << opening << '\n';
+    cout << opening;
     cout << outputProblem(opening, question); // output the problem
+    cout << "Hint: 15cm = 0,15m, F = m * g and g = 10" << endl;
     cin >> answer;
-    // the right answer is 80, if user inputs 80
+    // the right answer is 780, if user inputs 780
     // then it is correct and if returns true
-    if (answer == 80)
+    if (answer == 780)
     {
         pointAdd = true;
     }
@@ -82,20 +97,21 @@ void exerciseOneFreeFall(bool& pointAdd)
 }
 
 // problem 2
-void exerciseTwoFreeFall(bool& pointAdd)
+void exerciseTwoUA(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
-    string question = "A stone that starts at rest is in free fall for 6 s. What is the \n"
-        "velocity of the stone after these 6 seconds? s = ?m (example input: 122)\n";
+    string question = "With an initial velocity of 36 km/h, a car accelerated at 8 m/s2 for 10 seconds.\n"
+        "What is the position of the car at the end of the 10 seconds? s = ?m (example input: 122)\n";
 
     outputProblem(opening, question);
-    cout << opening << '\n';
+    cout << opening;
     cout << outputProblem(opening, question); // output the problem
+    cout << "Hint: 36 km/h = 10 m/s\n" << endl;
     cin >> answer;
-    // the right answer is 60, if user inputs 60
+    // the right answer is 500, if user inputs 500
     // then it is correct and if returns true
-    if (answer == 60)
+    if (answer == 500)
     {
         pointAdd = true;
     }
@@ -105,8 +121,7 @@ void exerciseTwoFreeFall(bool& pointAdd)
     }
 }
 
-
-int main()
+void uniformAcceleration()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     string symbol;
@@ -123,6 +138,7 @@ int main()
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
+
     if (symbol == "c") // user is using calculator
     {
         cout << "Enter the unit we are searching (V/s)" << endl;
@@ -132,12 +148,12 @@ int main()
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
-        velocityDistanceCalculator(symbol);
+        velocityDistanceCalculatorUniformAcceleration(symbol);
     }
     else if (symbol == "p") // output problem 1
     {
         exerciseCounter++;
-        exerciseOneFreeFall (isCorrect); // check if problem 1 is answered correctly
+        exerciseOneUA(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -150,7 +166,8 @@ int main()
         exerciseOneChecker = 1;
     }
 
-    cout << "Would you like to do the next exercise? (y/n)" << endl;
+
+    cout << "Would you like to go to the next exercise? (y/n)" << endl;
     cin >> symbol; // input symbol to answer the question
     while (symbol != "y" && symbol != "n") // check if input is valid
     {
@@ -163,7 +180,7 @@ int main()
     else if (symbol == "y") // output problem 2
     {
         exerciseCounter++;
-        exerciseTwoFreeFall(isCorrect); // check if problem 2 is answered correctly
+        exerciseTwoUA(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -174,6 +191,7 @@ int main()
             cout << "That's wrong! ";
         }
     }
+
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     cin >> symbol; // input symbol to answer the question
@@ -192,14 +210,14 @@ int main()
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
-        velocityDistanceCalculator(symbol);
+        velocityDistanceCalculatorUniformAcceleration(symbol);
     }
     else if (symbol == "p") // user wants to solve another problem
     {
         // if problem 1 is already done, output problem 2
-        if (exerciseCounter < 2 and exerciseOneChecker != 0)
+        if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
-            exerciseTwoFreeFall(isCorrect); // check if problem 2 is answered correctly
+            exerciseTwoUA(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -211,9 +229,9 @@ int main()
             }
         }
         // if problem 1 is not already done, output problem 1
-        else if (exerciseCounter < 2 and exerciseOneChecker == 0)
+        if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
-            exerciseOneFreeFall(isCorrect); // check if problem 1 is answered correctly
+            exerciseOneUA(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -226,9 +244,10 @@ int main()
         }
         else // output this if user has done problem 1 and problem 2
         {
-            cout << "Oops! You've finished all of the exercises!" << endl;
+            cout << "Oops! You've done all of the exercises!" << endl;
         }
     }
+
     // output user's score
     cout << "You got " << correctExerciseCount << " out of 2 points!";
 }

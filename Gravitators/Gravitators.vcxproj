@@ -120,7 +120,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>uniformAcceleration.obj;Gravity.obj;HydrostaticPressure.obj;Pressure.obj;TowerOfPizza.obj;FreeFall.obj;Gravitators.obj;Quiz.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -141,29 +141,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Denstity.cpp" />
-    <ClCompile Include="FreeFall.cpp" />
     <ClCompile Include="Gravitators.cpp" />
-    <ClCompile Include="Gravity.cpp" />
-    <ClCompile Include="HydrostaticPressure.cpp" />
-    <ClCompile Include="MainFunctions.cpp" />
-    <ClCompile Include="Newton%27sSecondLaw.cpp" />
-    <ClCompile Include="Pressure.cpp" />
-    <ClCompile Include="Quiz.cpp" />
-    <ClCompile Include="Frame.cpp" />
-    <ClCompile Include="TowerOfPizza.cpp" />
-    <ClCompile Include="uniformAcceleration.cpp" />
+    <ClCompile Include="Source Files\Back-End\Denstity.cpp" />
+    <ClCompile Include="Source Files\Back-End\FreeFall.cpp" />
+    <ClCompile Include="Source Files\Back-End\Gravity.cpp" />
+    <ClCompile Include="Source Files\Back-End\HydrostaticPressure.cpp" />
+    <ClCompile Include="Source Files\Back-End\MainFunctions.cpp" />
+    <ClCompile Include="Source Files\Back-End\mainMenuControl.cpp" />
+    <ClCompile Include="Source Files\Back-End\Newton%27sSecondLaw.cpp" />
+    <ClCompile Include="Source Files\Back-End\Pressure.cpp" />
+    <ClCompile Include="Source Files\Back-End\Quiz.cpp" />
+    <ClCompile Include="Source Files\Back-End\uniformAcceleration.cpp" />
+    <ClCompile Include="Source Files\Front-End\Frame.cpp" />
+    <ClCompile Include="Source Files\Front-End\TowerOfPizza.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Density.h" />
-    <ClInclude Include="FreeFall.h" />
-    <ClInclude Include="Gravity.h" />
-    <ClInclude Include="Frame.h" />
-    <ClInclude Include="uniformAcceleration.h" />
-    <ClInclude Include="Pressure.h" />
-    <ClInclude Include="Newton%27sSecondLaw.h" />
-    <ClInclude Include="HydrostaticPressure.h" />
-    <ClInclude Include="MainFunctions.h" />
+    <ClInclude Include="Header Files\Back-End\Density.h" />
+    <ClInclude Include="Header Files\Back-End\FreeFall.h" />
+    <ClInclude Include="Header Files\Back-End\Gravity.h" />
+    <ClInclude Include="Header Files\Back-End\HydrostaticPressure.h" />
+    <ClInclude Include="Header Files\Back-End\MainFunctions.h" />
+    <ClInclude Include="Header Files\Back-End\mainMenuControl.h" />
+    <ClInclude Include="Header Files\Back-End\Newton%27sSecondLaw.h" />
+    <ClInclude Include="Header Files\Back-End\Pressure.h" />
+    <ClInclude Include="Header Files\Back-End\uniformAcceleration.h" />
+    <ClInclude Include="Header Files\Front-End\Frame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

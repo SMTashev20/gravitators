@@ -1,74 +1,89 @@
 #include <iostream>
-#include "MainFunctions.h"
-#include "Gravity.h"
+
+#include "../../Header Files/Back-End/MainFunctions.h"
+#include "../../Header Files/Back-End/HydrostaticPressure.h"
 
 using namespace std;
 
-void gravityCalculator()
+void hydrostaticPressureCalculatorHydrostaticPressure()
 {
-    double mass; // declare variable
+    double rho; // declare variables
+    double height;
     string opening;
+    // F = m * a
 
-    // enter value for m
-    cout << "Enter the mass of the object (m):" << endl;
-    inputNumber(mass);
+    // enter values for rho and h
+    cout << "Enter the rho of the object (p):" << endl;
+    inputNumber(rho);
+    cout << "Enter the height of the contaner (h):" << endl;
+    inputNumber(height);
 
-    outputFormula(opening, ""); // output formula
-    cout << opening;
-    cout << outputFormula(opening, "G = m * g") << endl;
+    cout << outputFormula(opening, "P = p * g * h") << endl;
     cout << "First we replace the values:" << endl;
-    // calculate using the formula
-    cout << "G = " << mass << " * " << 10 << endl;
+    cout << "P " << rho << " * " << "10" << height << endl;
     cout << "Then we calculate our equation:" << endl;
-    cout << "G = " << 10 * mass << " N" << endl;
+    cout << "F = " << rho * 10 * height << " Pa" << endl;
 }
 
-void massCalculator()
+void HeightCalculatorHydrostaticPressure()
 {
-    double gravityForce; // declare variable
+    double hydrostaticPressure; // declare variables
+    double rho;
     string opening;
+    // h = P / p * g
 
-    // enter value for G
-    cout << "Enter the gravity force of the object (G):" << endl;
-    inputNumber(gravityForce);
+    // enter values for P and rho
+    cout << "Enter the Hydrostatic Pressure of the object (P):" << endl;
+    inputNumber(hydrostaticPressure);
+    cout << "Enter the rho of the object (p):" << endl;
+    inputNumber(rho);
 
+    while (rho == 0) // check for dividing by zero
+    {
+        cout << "You can't devide by 0!" << endl;
+        cout << "Enter new value!" << endl;
+        inputNumber(rho);
+    }
     outputFormula(opening, "");
     cout << opening;
-    cout << outputFormula(opening, "m = G / g") << endl;
+    cout << outputFormula(opening, "h = P / p * g") << endl;
     cout << "First we replace the values:" << endl;
     // calculate using the formula
-    cout << "m = " << gravityForce << " / " << 10 << endl;
+    cout << "h = " << hydrostaticPressure << " / " << rho << " * 10" << endl;
     cout << "Then we calculate our equation:" << endl;
-    cout << "m = " << gravityForce / 10 << " kg" << endl;
+    cout << "h = " << hydrostaticPressure / (rho * 10) << " m" << endl;
 }
 
-// check if user wants to calculate gravity or mass
-void gravityMassCalculator(string symbol)
+// check if user wants to calculate height or hydrostatic pressure
+void heightHydrostaticPleasureCalculatorHydrostaticPressure(string symbol)
 {
-    if (symbol == "G")
+    if (symbol == "h")
     {
-        gravityCalculator();
+        HeightCalculatorHydrostaticPressure();
     }
     else
     {
-        massCalculator();
+        hydrostaticPressureCalculatorHydrostaticPressure();
     }
 }
 
 // problem 1
-void exerciseOneGravity(bool& pointAdd)
+void exerciseOneHP(bool& pointAdd)
 {
-    double answer; // declare variable
+    double answer;  // declare variable
     string opening;
-    string question = "Estimate the gravitational force of a sumo wrestler with mass 220 kg.\ns = ?m (example input: 122)\n";
+    string question = "A jar of water with 15 cm of height. Find the pressure of water at the bottom of the jar,\n"
+        "ignore the atmospheric pressure and use the acceleration due to gravity g = 10 m/s2 and \n"
+        "the density of water 1000 kg/m3. P = ? Pa (example input: 122)\n";
 
-    outputProblem(opening, question); // output the problem
+    outputProblem(opening, question);
     cout << opening;
-    cout << outputProblem(opening, question);
+    cout << outputProblem(opening, question); // output the problem
+    cout << "Hint: 15cm = 0,15m" << endl;
     cin >> answer;
-    // the right answer is 2200, if user inputs 2200
-    // then it is correct and if returns true
-    if (answer == 2200)
+    // the right answer is 1500, if user inputs 1500
+    //then it is correct and if returns true
+    if (answer == 1500)
     {
         pointAdd = true;
     }
@@ -76,22 +91,25 @@ void exerciseOneGravity(bool& pointAdd)
     {
         pointAdd = false;
     }
+
+
 }
 
 // problem 2
-void exerciseTwoGravity(bool& pointAdd)
+void exerciseTwoHP(bool& pointAdd)
 {
-    double answer; // declare variable
+    double answer;  // declare variable
     string opening;
-    string question = "Evaluate the mass of a spherical steel ball with a magnitude of gravitational force 50 N.\nm = ? kg(example input : 122)\n";
+    string question = "What is the hydrostatic pressure at a depth of 0.5 meters in an alcohol solution?\n"
+        "The alcohol's density is 790 kg/m^3.\n";
 
-    outputProblem(opening, question);  // output the problem
+    outputProblem(opening, question);
     cout << opening;
-    cout << outputProblem(opening, question);
+    cout << outputProblem(opening, question); // output the problem
     cin >> answer;
-    // the right answer is 5, if user inputs 5
-    // then it is correct and if returns true
-    if (answer == 5)
+    // the right answer is 3950, if user inputs 3950
+    //then it is correct and if returns true
+    if (answer == 3950)
     {
         pointAdd = true;
     }
@@ -101,8 +119,7 @@ void exerciseTwoGravity(bool& pointAdd)
     }
 }
 
-
-int main()
+void hydrostaticPressure()
 {
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     string symbol;
@@ -114,36 +131,38 @@ int main()
     int exerciseCounter = 0; // count how many problems the user has answered
     bool exerciseOneChecker = 0; // check if problem 1 is already done or not
 
-    while (symbol != "c" && symbol != "p")  // check if input is valid
+
+    while (symbol != "c" && symbol != "p") // check if input is valid
     {
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
-    if (symbol == "c")  // user is using calculator
+    if (symbol == "c") // user is using calculator
     {
-        cout << "Enter the unit we are searching (G/m)" << endl;
+        cout << "Enter the unit we are searching (h/P)" << endl;
         cin >> symbol;
-        while (symbol != "G" && symbol != "m") // check if input is valid
+        while (symbol != "h" && symbol != "P") // check if input is valid
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
-        gravityMassCalculator(symbol);
+        heightHydrostaticPleasureCalculatorHydrostaticPressure(symbol);
     }
     else if (symbol == "p") // output problem 1
     {
         exerciseCounter++;
-        exerciseOneChecker = 1;
-        exerciseOneGravity(isCorrect); // check if problem 1 is answered correctly
+        exerciseOneHP(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
             correctExerciseCount++;
+
         }
         else if (isCorrect == false)
         {
             cout << "That's wrong! ";
         }
+        exerciseOneChecker = 1;
     }
 
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
@@ -155,11 +174,12 @@ int main()
     }
     if (symbol == "n")
     {
+
     }
     else if (symbol == "y") // output problem 2
     {
         exerciseCounter++;
-        exerciseTwoGravity(isCorrect); // check if problem 2 is answered correctly
+        exerciseTwoHP(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
             cout << "That's correct! ";
@@ -169,7 +189,9 @@ int main()
         {
             cout << "That's wrong! ";
         }
+
     }
+
 
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     cin >> symbol; // input symbol to answer the question
@@ -181,21 +203,21 @@ int main()
     }
     if (symbol == "c") // user is using calculator
     {
-        cout << "Enter the unit we are searching (G/m)" << endl;
+        cout << "Enter the unit we are searching (h/P)" << endl;
         cin >> symbol;
-        while (symbol != "G" && symbol != "m") // check if input is valid
+        while (symbol != "h" && symbol != "P") // check if input is valid
         {
             cout << "Please enter a valid input!" << endl;
             cin >> symbol;
         }
-        gravityMassCalculator(symbol);
+        heightHydrostaticPleasureCalculatorHydrostaticPressure(symbol);
     }
     else if (symbol == "p") // user wants to solve another problem
     {
         // if problem 1 is already done, output problem 2
         if (exerciseCounter < 2 && exerciseOneChecker != 0)
         {
-            exerciseTwoGravity(isCorrect); // check if problem 2 is answered correctly
+            exerciseTwoHP(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
@@ -207,9 +229,9 @@ int main()
             }
         }
         // if problem 1 is not already done, output problem 1
-        else if (exerciseCounter < 2 && exerciseOneChecker == 0)
+        if (exerciseCounter < 2 && exerciseOneChecker == 0)
         {
-            exerciseOneGravity(isCorrect); // check if problem 1 is answered correctly
+            exerciseOneHP(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
                 cout << "That's correct! ";
