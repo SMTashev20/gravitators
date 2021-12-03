@@ -5,6 +5,7 @@
 
 #include "../../Header Files/Back-End/mainMenuControl.h"
 #include "../../Header Files/Front-End/Frame.h"
+#include "../../Header Files/Front-End/FormulaList.h"
 
 #include "../../Header Files/Back-End/Density.h"
 #include "../../Header Files/Back-End/FreeFall.h"
@@ -83,6 +84,7 @@ void start()
 		}
 		case 8:
 		{
+			FormulaList();
 			break;
 		}
 		case 9:

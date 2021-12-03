@@ -152,6 +152,7 @@
     <ClCompile Include="Source Files\Back-End\Pressure.cpp" />
     <ClCompile Include="Source Files\Back-End\Quiz.cpp" />
     <ClCompile Include="Source Files\Back-End\uniformAcceleration.cpp" />
+    <ClCompile Include="Source Files\Front-End\FormulaList.cpp" />
     <ClCompile Include="Source Files\Front-End\Frame.cpp" />
     <ClCompile Include="Source Files\Front-End\TowerOfPizza.cpp" />
   </ItemGroup>
@@ -165,7 +166,10 @@
     <ClInclude Include="Header Files\Back-End\Newton%27sSecondLaw.h" />
     <ClInclude Include="Header Files\Back-End\Pressure.h" />
     <ClInclude Include="Header Files\Back-End\uniformAcceleration.h" />
+    <ClInclude Include="Header Files\Front-End\FormulaList.h" />
     <ClInclude Include="Header Files\Front-End\Frame.h" />
+    <ClInclude Include="Header Files\Front-End\MainFront-EndFunctions.h" />
+    <ClInclude Include="Header Files\Front-End\TowerOfPizza.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

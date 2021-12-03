@@ -69,6 +69,9 @@
     <ClCompile Include="Source Files\Back-End\mainMenuControl.cpp">
       <Filter>Source Files\Source Files\Back-End</Filter>
     </ClCompile>
+    <ClCompile Include="Source Files\Front-End\FormulaList.cpp">
+      <Filter>Source Files\Source Files\Front-End</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\Back-End\HydrostaticPressure.h">
@@ -100,6 +103,15 @@
     </ClInclude>
     <ClInclude Include="Header Files\Back-End\mainMenuControl.h">
       <Filter>Header Files\Back-End</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\Front-End\FormulaList.h">
+      <Filter>Header Files\Front-End</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\Front-End\MainFront-EndFunctions.h">
+      <Filter>Header Files\Front-End</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\Front-End\TowerOfPizza.h">
+      <Filter>Header Files\Front-End</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
