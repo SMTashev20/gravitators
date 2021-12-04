@@ -10,7 +10,7 @@
    <img src = "https://img.shields.io/github/repo-size/SMTashev20/gravitators?style=for-the-badge">
    <img src = "https://img.shields.io/github/last-commit/SMTashev20/gravitators?style=for-the-badge">
    <img src = "https://img.shields.io/github/languages/top/SMTashev20/gravitators?style=for-the-badge">
-</p>
+
 
 <br>
 
@@ -21,21 +21,20 @@ Application for practicing mechanics.
 
 - Interesting problems to slove about different things in mechanics
 - User-friendly interface
-- Main menu
-- Calculator about each section
+- Calculator and Quiz about each section
 
 
 ## 📄 Documents
 
-- [Documentation]()
-- [Presentation]()
-- [Game Testing]()
-- [Doxygen]()
+- [Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/smtashev20_codingburgas_bg/EdTqM0a8r9pIjn9tQe_Tv4oB-Zvg1AMdNjPzSbMeK9z1eQ?e=jezRBE)
+- [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/smtashev20_codingburgas_bg/EQD-zvML-VlCgcbjCCFjlDIBq4T9opb6jnAPeHCmkWke4g?e=5Q1kJw)
+- [QA Documentation](href="")
+- [Doxygen](href="")
 
 
 ## 🧒 Our Team
 
 - <a href = "https://github.com/SMTashev20"> Stanislav Tashev </a> (Scrum trainer)
-- <a href = "https://github.com/VZKardjeva20"> Vanessa Kardjeva </a> (Back-end Developer)
+- <a href = "https://github.com/VZKardzheva20"> Vanesa Kardzheva </a> (Back-end Developer)
 - <a href = "https://github.com/ESGenova20"> Elina Genova </a> (Front-end Developer)
-- <a href = "https://github.com/RZMavranganova"> Raya Mavranganova </a> (QA Engineer)
+- <a href = "https://github.com/RZMavraganova20"> Raya Mavraganova </a> (QA Engineer)
