@@ -24,14 +24,26 @@ string outputErrorMessage()
     return "Please enter a valid input!\n";
 }
 
-void inputNumber(double& number)
+void inputNumber(double& number, int x = -1, int y = -1)
 {
     cin >> number;
 
     while (cin.fail())
     {
         ignoreUserInput();
+        if (x != -1 && y != -1)
+        {
+            setOutputPosition(x, y);
+            cout << "                                                                ";
+            setOutputPosition(x, y);
+        }
         cout << outputErrorMessage();
+        if (y != -1)
+        {
+            setOutputPosition(78, y);
+            cout << "          ";
+            setOutputPosition(78, y);
+        }
         cin >> number;
     }
 }

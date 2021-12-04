@@ -19,7 +19,7 @@ void distanceCalculatorFreeFall()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 8);
-    inputNumber(time);
+    inputNumber(time, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);
@@ -55,7 +55,7 @@ void velocityCalculatorFreeFall()
 
     setOutputPosition(78, 8);
     setColor(COLOR_YELLOW);
-    inputNumber(time);
+    inputNumber(time, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);

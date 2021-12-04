@@ -17,7 +17,7 @@ void gravityCalculatorGravity()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 8);
-    inputNumber(mass);
+    inputNumber(mass, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);
@@ -49,7 +49,7 @@ void massCalculatorGravity()
 
     setOutputPosition(78, 8);
     setColor(COLOR_YELLOW);
-    inputNumber(gravityForce);
+    inputNumber(gravityForce, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);

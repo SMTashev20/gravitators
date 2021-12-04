@@ -21,7 +21,7 @@ void densityCalculatorDensity()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 8);
-    inputNumber(mass);
+    inputNumber(mass, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);
@@ -29,7 +29,7 @@ void densityCalculatorDensity()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 10);
-    inputNumber(volume);
+    inputNumber(volume, 14, 10);
 
     setColor(COLOR_WHITE);
 
@@ -40,7 +40,7 @@ void densityCalculatorDensity()
         setColor(COLOR_YELLOW);
 
         setOutputPosition(78, 10);
-        inputNumber(volume);
+        inputNumber(volume, 14, 10);
         setColor(COLOR_WHITE);
     }
 
@@ -76,7 +76,7 @@ void massCalculatorDensity()
 
     setOutputPosition(78, 8);
     setColor(COLOR_YELLOW);
-    inputNumber(density);
+    inputNumber(density, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);
@@ -84,7 +84,7 @@ void massCalculatorDensity()
 
     setOutputPosition(78, 10);
     setColor(COLOR_YELLOW);
-    inputNumber(volume);
+    inputNumber(volume, 14, 10);
     setColor(COLOR_WHITE);
 
     setOutputPosition(14, 12);

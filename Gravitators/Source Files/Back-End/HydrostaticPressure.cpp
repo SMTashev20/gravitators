@@ -21,7 +21,7 @@ void hydrostaticPressureCalculatorHydrostaticPressure()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 8);
-    inputNumber(rho);
+    inputNumber(rho, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);
@@ -29,7 +29,7 @@ void hydrostaticPressureCalculatorHydrostaticPressure()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 10);
-    inputNumber(height);
+    inputNumber(height, 14, 10);
 
     setOutputPosition(14, 12);
     outputFormula(opening, ""); // output formula
@@ -63,14 +63,16 @@ void HeightCalculatorHydrostaticPressure()
 
     setOutputPosition(78, 8);
     setColor(COLOR_YELLOW);
-    inputNumber(hydrostaticPressure);
+    inputNumber(hydrostaticPressure, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);
     cout << "Enter the rho of the object (p):" << endl;
+
     setOutputPosition(78, 10);
     setColor(COLOR_YELLOW);
-    inputNumber(rho);
+    inputNumber(rho, 14, 10);
+
     setColor(COLOR_WHITE);
 
     while (rho == 0) // check for dividing by zero
@@ -80,7 +82,7 @@ void HeightCalculatorHydrostaticPressure()
         setColor(COLOR_YELLOW);
 
         setOutputPosition(78, 10);
-        inputNumber(rho);
+        inputNumber(rho, 14, 10);
         setColor(COLOR_WHITE);
     }
 

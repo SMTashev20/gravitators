@@ -11,7 +11,7 @@ void ClearScreen();
 
 string outputErrorMessage();
 
-void inputNumber(double& number);
+void inputNumber(double& number, int x = -1, int y = -1);
 
 string outputFormula(string& openingSentence, string formula);
 

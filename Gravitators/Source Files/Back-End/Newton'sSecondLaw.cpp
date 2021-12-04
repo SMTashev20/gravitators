@@ -21,7 +21,7 @@ void forceCalculatorNewtonSSecondLaw()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 8);
-    inputNumber(mass);
+    inputNumber(mass, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);
@@ -29,7 +29,7 @@ void forceCalculatorNewtonSSecondLaw()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 10);
-    inputNumber(acceleration);
+    inputNumber(acceleration, 14, 10);
     setColor(COLOR_WHITE);
 
     setOutputPosition(14, 12);
@@ -65,7 +65,7 @@ void accelerationCalculatorNewtonSSecondLaw()
 
     setOutputPosition(78, 8);
     setColor(COLOR_YELLOW);
-    inputNumber(force);
+    inputNumber(force, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);

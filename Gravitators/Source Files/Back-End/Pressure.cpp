@@ -20,7 +20,7 @@ void forceCalculatorPressure()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 8);
-    inputNumber(pressure);
+    inputNumber(pressure, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);
@@ -28,7 +28,7 @@ void forceCalculatorPressure()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 10);
-    inputNumber(area);
+    inputNumber(area, 14, 10);
     setColor(COLOR_WHITE);
 
     setOutputPosition(14, 12);
@@ -63,7 +63,7 @@ void pressureCalculatorPressure()
 
     setOutputPosition(78, 8);
     setColor(COLOR_YELLOW);
-    inputNumber(force);
+    inputNumber(force, 14, 8);
 
     setOutputPosition(14, 10);
     setColor(COLOR_WHITE);
@@ -71,7 +71,7 @@ void pressureCalculatorPressure()
 
     setOutputPosition(78, 10);
     setColor(COLOR_YELLOW);
-    inputNumber(area);
+    inputNumber(area, 14, 10);
     setColor(COLOR_WHITE);
 
     while (area == 0) // check for dividing by zero
@@ -81,7 +81,7 @@ void pressureCalculatorPressure()
         setColor(COLOR_YELLOW);
 
         setOutputPosition(78, 10);
-        inputNumber(area);
+        inputNumber(area, 14, 10);
         setColor(COLOR_WHITE);
     }
 

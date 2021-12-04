@@ -18,7 +18,7 @@ void distanceCalculatorUniformAcceleration()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 8);
-    inputNumber(initialVelocity);
+    inputNumber(initialVelocity, 14, 8);
 
     setOutputPosition(14, 9);
     setColor(COLOR_WHITE);
@@ -26,7 +26,7 @@ void distanceCalculatorUniformAcceleration()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 9);
-    inputNumber(time);
+    inputNumber(time, 14, 9);
 
     setColor(COLOR_WHITE);
     setOutputPosition(14, 10);
@@ -34,7 +34,7 @@ void distanceCalculatorUniformAcceleration()
 
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 10);
-    inputNumber(acceleration);
+    inputNumber(acceleration, 14, 10);
 
     setColor(COLOR_WHITE);
 
@@ -74,7 +74,7 @@ void velocityCalculatorUniformAcceleration()
 
     setOutputPosition(78, 8);
     setColor(COLOR_YELLOW);
-    inputNumber(initialVelocity);
+    inputNumber(initialVelocity, 14, 8);
 
     setOutputPosition(14, 9);
     setColor(COLOR_WHITE);
@@ -82,7 +82,7 @@ void velocityCalculatorUniformAcceleration()
 
     setOutputPosition(78, 9);
     setColor(COLOR_YELLOW);
-    inputNumber(acceleration);
+    inputNumber(acceleration, 14, 9);
      setColor(COLOR_WHITE);
 
      setOutputPosition(14, 10);
@@ -90,7 +90,7 @@ void velocityCalculatorUniformAcceleration()
 
     setOutputPosition(78, 10);
     setColor(COLOR_YELLOW);
-    inputNumber(time);
+    inputNumber(time, 14, 10);
     setColor(COLOR_WHITE);
 
     setOutputPosition(14, 12);
@@ -396,12 +396,12 @@ void uniformAcceleration()
 
             setOutputPosition(14, 6);
             cout << "Oops! You've finished all of the exercises!" << endl;
+            setOutputPosition(14, 12); // output user's score
+            cout << "You got " << correctExerciseCount << " out of 2 points!";
         }
     }
 
     // output user's score
-        setOutputPosition(14, 12);
-        cout << "You got " << correctExerciseCount << " out of 2 points!";
 
     setColor(COLOR_BLACK);
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
