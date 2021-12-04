@@ -3,12 +3,6 @@
 #include <iostream>
 using namespace std;
 
-#include <iostream>
-#include <cstring> 
-#include <ctime>
-#include <windows.h>
-#include <conio.h>
-
 void outputOptions(string question, string option1, string option2, string option3);
 
 void outputTotalPoints(int& pointsTotal);

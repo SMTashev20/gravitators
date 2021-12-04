@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cstring> 
 #include <ctime>
-#include<windows.h>
+#include <windows.h>
+#include <conio.h>
 
 #include "../../Header Files/Back-End/mainMenuControl.h"
 #include "../../Header Files/Front-End/Frame.h"
@@ -49,7 +50,6 @@ void start()
 	cout << "9. Recap Quiz" << endl;
 
 	setColor(COLOR_YELLOW);
-	int game;
     setOutputPosition(41, 22);
 
     while (true)

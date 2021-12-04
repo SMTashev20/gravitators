@@ -2,8 +2,8 @@
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Back-End/uniformAcceleration.h"
 #include "../../Header Files/Front-End/Frame.h"
-#include "../../Header Files/Front-End/MainFront-EndFunctions.h"
 #include "../../Header Files/Back-End/Quiz.h"
+#include "../../Header Files/Front-End/TowerOfPizza.h"
 
 using namespace std;
 
