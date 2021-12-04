@@ -282,3 +282,87 @@ void QuizDensity()
 	cout << endl << endl;
 	setColor(COLOR_BLACK);
 }
+
+void QuizFreeFall()
+{
+	printGameFrame_Exercises();
+	printStars_Exercises();
+
+	int pointsTotal = 0;
+	outputOptions("Controls:", "W, D - up, down", "Z - confirm", "N - continue");
+	printTutorialUser();
+
+	outputOptions("In free fall, where does an object have the slowest speed?", "Vi", "Vf", "Vtop"); //Correct rows: 9, 11 and 13
+	printUser(pointsTotal, 13);
+
+	outputOptions("What is terminal velocity?", "The highest speed an object reaches because of unbalanced forces", "The highest speed an object reaches because air resistance offsets gravity in the real world ", "When an object reaches its final velocity of zero");
+	printUser(pointsTotal, 11);
+
+	outputOptions("If you know the time an object is in the air, can you find the Vf of the object?", "Yes, you would have to halve the time since the Ttotal is for both rise and fall and you would have to calculate the height the object rose before finding the Vf ", "No, you are not given enough information", "When an object reaches its final velocity of zero");
+	printUser(pointsTotal, 9);
+
+	outputOptions("How does the Vi compare to the Vf in a free fall problem?", "Vi and Vf are exactly the same, this is because of symmetry", "Vi and Vf are close but Vf is larger because you would fall faster than you would rise, since you are slowing down", "Vi and Vf are the same in magnitude, but different in vector");
+	printUser(pointsTotal, 13);
+
+	outputOptions("The change in velocity in a given time period is?", "Vi", "Vf", "a");
+	printUser(pointsTotal, 13);
+
+	outputOptions("When the velocity of an object does not change, what happens to its acceleration?", "Nothing, it does accelerate", "It is a constant acceleration", "It is a changing acceleration");
+	printUser(pointsTotal, 9);
+
+	outputTotalPoints(pointsTotal);
+
+	setOutputPosition(11, 32);
+	cout << endl << endl;
+	setColor(COLOR_BLACK);
+}
+
+void QuizGravity()
+{
+	printGameFrame_Exercises();
+	printStars_Exercises();
+
+	int pointsTotal = 0;
+	outputOptions("Controls:", "W, D - up, down", "Z - confirm", "N - continue");
+	printTutorialUser();
+
+	outputOptions("What unit does the U.S use to measure gravity force?", "Ounces", "Newtons","Pounds"); //Correct rows: 9, 11 and 13
+	printUser(pointsTotal, 13);
+
+	outputOptions("Every object in the universe attracts every other object.", "True ", "False", "None of them are correct");
+	printUser(pointsTotal, 9);
+
+	outputOptions("Gravity attract all objects to towards one another.", "False", "True ", "It depends");
+	printUser(pointsTotal, 11);
+
+	outputOptions("Two factors effecting the magnitude of the force of gravity between 2 objects are...", "mass and distance", "mass and matter", "distance and weight");
+	printUser(pointsTotal, 9);
+
+	outputOptions("A person would weigh less on on the Moon than on the Earth because . . .", "Moon has more mass, and therefore more gravity", "Moon has less mass, and therefore less gravity", "Moon has more mass, and therefore less gravity");
+	printUser(pointsTotal, 11);
+
+	outputOptions("Which of the following never changes no matter where in the universe?", "weight", "force", "mass");
+	printUser(pointsTotal, 13);
+
+	outputOptions("The amount of matter in a object is? ", "pressure ", "weight", "mass");
+	printUser(pointsTotal, 13);
+
+	outputOptions("The law of universal gravitation is credited to who ? ", "Einstein", "Galileo", "Newton");
+	printUser(pointsTotal, 13);
+
+	outputOptions("The force of gravity acting on an object is the object's __.", "mass", "matter", "weight");
+	printUser(pointsTotal, 13);
+
+	outputOptions("Any object with mass has gravity.", "True ", "Sometimes", "False");
+	printUser(pointsTotal, 9);
+
+	outputOptions("What is the SI unit used to measure force? ", "pounds", "grams", "newtons");
+	printUser(pointsTotal, 13);
+
+
+	outputTotalPoints(pointsTotal);
+
+	setOutputPosition(11, 32);
+	cout << endl << endl;
+	setColor(COLOR_BLACK);
+}
