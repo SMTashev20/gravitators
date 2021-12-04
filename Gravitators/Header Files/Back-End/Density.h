@@ -15,7 +15,7 @@ void exerciseOneDensity(bool& pointAdd);
 
 void exerciseTwoHP(bool& pointAdd);
 
-void Denisty();
+void Density();
 
 
 

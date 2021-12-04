@@ -8,6 +8,8 @@ using namespace std;
 #include <conio.h>
 
 #include "../../Header Files/Front-End/TowerOfPizza.h"
+#include "../../Header Files/Front-End/Frame.h"
+#include "../../Header Files/Back-End/MainFunctions.h"
 
 #define COLOR_BLACK 0
 #define COLOR_AQUA 3
@@ -16,11 +18,6 @@ using namespace std;
 #define COLOR_YELLOW 6
 
 using namespace std;
-
-string ClearScreen()
-{
-	return string(100, '\n');
-}
 
 string outputOptions(string question, string option1, string option2, string option3)
 {
@@ -102,9 +99,9 @@ void printUser(int& pointsTotal, int correctRow)
 			case 'n':
 			case 'N':
 			{
-				cout << ClearScreen();
-				printGameFrame();
-				printStars();
+				ClearScreen();
+				printGameFrame_TowerOfPisa();
+				printStars_TowerOfPisa();
 				cout << 0;
 
 			}
@@ -118,8 +115,8 @@ void printUser(int& pointsTotal, int correctRow)
 
 void Quiz()
 {
-	printGameFrame();
-	printStars();
+	printGameFrame_TowerOfPisa();
+	printStars_TowerOfPisa();
 
 	int pointsTotal = 0;
 	cout << outputOptions("Question?", "Answer", "no", "no");

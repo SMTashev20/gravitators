@@ -9,6 +9,12 @@ void setOutputPosition(short x, short y);
 
 void setColor(int color);
 
-void printGameFrame();
+void printPhysicsLogo();
+void printGameFrame_mainMenu();
+void printStars_mainMenu();
 
-void printStars();
+void printGameFrame_Exercises();
+
+void printGameFrame_TowerOfPisa();
+void printStars_TowerOfPisa();
+

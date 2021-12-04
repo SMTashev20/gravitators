@@ -14,81 +14,104 @@
 #include "../../Header Files/Back-End/Newton'sSecondLaw.h"
 #include "../../Header Files/Back-End/Pressure.h"
 #include "../../Header Files/Back-End/uniformAcceleration.h"
+#include "../../Header Files/Back-End/MainFunctions.h"
 
 using namespace std;
 
 void start()
 {
+	printGameFrame_mainMenu();
+	printStars_mainMenu();
+	printPhysicsLogo();
 	setColor(7);
-	setOutputPosition(28, 12);
+
+	setOutputPosition(27, 10);
 	cout << "Welcome! Please pick your game." << endl;
-	setOutputPosition(22, 14);
+	setOutputPosition(10, 13);
 	cout << "1. Density" << endl;
-	setOutputPosition(38, 14);
-	cout << "2. FreeFall" << endl;
-	setOutputPosition(54, 14);
+	setOutputPosition(37, 13);
+	cout << "2. Free Fall" << endl;
+	setOutputPosition(62, 13);
 	cout << "3. Gravity" << endl;
-	setOutputPosition(22, 16);
+	setOutputPosition(10, 16);
 	cout << "4. Hydrostatic Pressure" << endl;
-	setOutputPosition(38, 16);
+	setOutputPosition(37, 16);
 	cout << "5. Newton's Second Law" << endl;
-	setOutputPosition(54, 16);
+	setOutputPosition(62, 16);
 	cout << "6. Pressure" << endl;
-	setOutputPosition(22, 18);
+	setOutputPosition(10, 19);
 	cout << "7. Uniforms Acceleration" << endl;
-	setOutputPosition(38, 18);
+	setOutputPosition(37, 19);
 	cout << "8. Formula list" << endl;
-	setOutputPosition(54, 18);
+	setOutputPosition(62, 19);
 	cout << "9. Recap Quiz" << endl;
 
 	setColor(6);
 	int game;
-	setOutputPosition(41, 20);
+	setOutputPosition(41, 22);
 	cin >> game;
+
+	while (!(game > 0 && game < 10))
+	{
+		setOutputPosition(41, 22);
+		cout << "                                ";
+		setOutputPosition(41, 22);
+		cin >> game;
+	}
+
 	switch (game)
 	{
 		case 1:
 		{
-			Denisty();
+			ClearScreen();
+			Density();
 			break;
 		}
 		case 2:
 		{
+			ClearScreen();
 			FreeFall();
 			break;
 		}
 		case 3:
 		{
+			ClearScreen();
 			Gravity();
 			break;
 		}
 		case 4:
 		{
+			ClearScreen();
 			hydrostaticPressure();
 			break;
 		}
 		case 5:
 		{
+			ClearScreen();
 			newtonSecondLaw();
 			break;
 		}
 		case 6:
 		{
+			ClearScreen();
 			Pressure();
 			break;
 		}
 		case 7:
 		{
+			ClearScreen();
 			uniformAcceleration();
 			break;
 		}
 		case 8:
 		{
+			ClearScreen();
 			FormulaList();
 			break;
 		}
 		case 9:
 		{
+			ClearScreen();
 			break;
 		}
 	}
