@@ -19,36 +19,36 @@ using namespace std;
 
 using namespace std;
 
-string outputOptions(string question, string option1, string option2, string option3)
+void outputOptions(string question, string option1, string option2, string option3)
 {
 	setColor(COLOR_WHITE);
-	setOutputPosition(40, 9);
+	setOutputPosition(36, 6);
 	cout << question;
 
-	setOutputPosition(35, 10);
+	setOutputPosition(34, 9);
 	cout << option1;
-	setOutputPosition(35, 11);
+	setOutputPosition(34, 11);
 	cout << option2;
-	setOutputPosition(35, 12);
-	return option3;
+	setOutputPosition(34, 13);
+	cout << option3;
 }
 
-int outputTotalPoints(int& pointsTotal)
+void outputTotalPoints(int& pointsTotal)
 {
 	setColor(COLOR_WHITE);
-	setOutputPosition(25, 10);
-	cout << "Congratulations on finishing the quiz!" << endl;
+	setOutputPosition(30, 10);
+	cout << "Congratulations! You have finished the quiz!" << endl;
 	setOutputPosition(34, 11);
 	cout << "Your total points are: ";
 	setColor(COLOR_YELLOW);
-	return pointsTotal;
+	cout << pointsTotal;
 }
 
 void printUser(int& pointsTotal, int correctRow)
 {
 	string user = "-->";
 	setColor(COLOR_YELLOW);
-	int userRow = 10, userCol = 25;
+	int userRow = 9, userCol = 28;
 	{
 		for (int moves = 100; moves >= 0; moves--)
 		{
@@ -80,18 +80,25 @@ void printUser(int& pointsTotal, int correctRow)
 			{
 				if (userRow == correctRow)
 				{
+					ClearScreen();
+					printGameFrame_Exercises();
+					printStars_Exercises();
+
 					setColor(COLOR_YELLOW);
-					setOutputPosition(30, 15);
+					setOutputPosition(35, 10);
 					cout << "+1pt! Press N to continue.";
 					pointsTotal++;
 					moves = 1;
 				}
 				else
 				{
+					ClearScreen();
+					printGameFrame_Exercises();
+					printStars_Exercises();
+
 					setColor(COLOR_YELLOW);
-					setOutputPosition(30, 15);
+					setOutputPosition(35, 10);
 					cout << "+0pt, press N to continue." << endl;
-					setOutputPosition(30, 16);
 					moves = 1;
 				}
 			}
@@ -100,8 +107,8 @@ void printUser(int& pointsTotal, int correctRow)
 			case 'N':
 			{
 				ClearScreen();
-				printGameFrame_TowerOfPisa();
-				printStars_TowerOfPisa();
+				printGameFrame_Exercises();
+				printStars_Exercises();
 				cout << 0;
 
 			}
@@ -113,21 +120,89 @@ void printUser(int& pointsTotal, int correctRow)
 	}
 }
 
-void Quiz()
+void printTutorialUser()
 {
-	printGameFrame_TowerOfPisa();
-	printStars_TowerOfPisa();
+	string user = "-->";
+	setColor(COLOR_YELLOW);
+	int userRow = 9, userCol = 28;
+	{
+		for (int moves = 100; moves >= 0; moves--)
+		{
+			switch (_getch())
+			{
+			case 'w':
+			case 'W':
+			{
+				setOutputPosition(userCol, userRow);
+				cout << "    ";
+				userRow--;
+				setOutputPosition(userCol, userRow);
+				cout << user;
+			}
+			break;
+			case 's':
+			case 'S':
+			{
+				setOutputPosition(userCol, userRow);
+				cout << "    ";
+				userRow++;
+				setOutputPosition(userCol, userRow);
+
+				cout << user;
+			}
+			break;
+			case 'z':
+			case 'Z':
+			{
+
+					ClearScreen();
+					printGameFrame_Exercises();
+					printStars_Exercises();
+
+					setColor(COLOR_YELLOW);
+					setOutputPosition(35, 10);
+					cout << "Great! Press N to continue.";
+					moves = 1;
+			}
+			break;
+			case 'n':
+			case 'N':
+			{
+				ClearScreen();
+				printGameFrame_Exercises();
+				printStars_Exercises();
+				cout << 0;
+
+			}
+			default:
+			{
+			}
+			}
+		}
+	}
+}
+
+void QuizRecap()
+{
+	printGameFrame_Exercises();
+	printStars_Exercises();
 
 	int pointsTotal = 0;
-	cout << outputOptions("Question?", "Answer", "no", "no");
-	printUser(pointsTotal, 10);
+	outputOptions("Controls:", "W, D - up, down", "Z - confirm", "N - continue");
+	printTutorialUser();
 
-	cout << outputOptions("Question?", "no", "no", "Answer");
-	printUser(pointsTotal, 12);
+	outputOptions("Question?", "Answer", "no", "no"); //Correct rows: 9, 11 and 13
+	printUser(pointsTotal, 9);
 
-	cout << outputTotalPoints(pointsTotal);
+    outputOptions("Question?", "no", "Answer", "no");
+	printUser(pointsTotal, 11);
 
-	setOutputPosition(11, 19);
+	outputOptions("Question?", "no", "no", "Answer");
+	printUser(pointsTotal, 13);
+
+	outputTotalPoints(pointsTotal);
+
+	setOutputPosition(11, 32);
 	cout << endl << endl;
 	setColor(COLOR_BLACK);
 }

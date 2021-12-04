@@ -14,6 +14,7 @@
 #include "../../Header Files/Back-End/Newton'sSecondLaw.h"
 #include "../../Header Files/Back-End/Pressure.h"
 #include "../../Header Files/Back-End/uniformAcceleration.h"
+#include "../../Header Files/Back-End/QuizRecap.h"
 #include "../../Header Files/Back-End/MainFunctions.h"
 
 using namespace std;
@@ -112,6 +113,7 @@ void start()
 		case 9:
 		{
 			ClearScreen();
+			QuizRecap();
 			break;
 		}
 	}

@@ -44,8 +44,8 @@ void printTower() {
 
 void towerOfPizza()
 {
-	printGameFrame_TowerOfPisa();
-	printStars_TowerOfPisa();
+	printGameFrame_small();
+	printStars_small();
 	printTower();
 	setColor(COLOR_YELLOW);
 	char user = 'O';

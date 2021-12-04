@@ -14,7 +14,8 @@ void printGameFrame_mainMenu();
 void printStars_mainMenu();
 
 void printGameFrame_Exercises();
+void printStars_Exercises();
 
-void printGameFrame_TowerOfPisa();
-void printStars_TowerOfPisa();
+void printGameFrame_small();
+void printStars_small();
 

@@ -85,7 +85,7 @@ void printGameFrame_Exercises() {
 	setColor(COLOR_WHITE);
 }
 
-void printGameFrame_TowerOfPisa() {
+void printGameFrame_small() {
 	setOutputPosition(0, 1);
 	setColor(COLOR_AQUA);
 	cout << "      _______________________________________" << endl;
@@ -105,7 +105,8 @@ void printGameFrame_TowerOfPisa() {
 	setColor(COLOR_WHITE);
 }
 
-void printStars_mainMenu() {
+void printStars_mainMenu()
+{
 	setColor(COLOR_GRAY);
 	setOutputPosition(8, 4);
 	cout << "                      *        '      ";
@@ -142,7 +143,43 @@ void printStars_mainMenu() {
 	cout << "    .                 .         *                          '       " << endl;
 }
 
-void printStars_TowerOfPisa()
+void printStars_Exercises()
+{
+	setColor(COLOR_GRAY);
+	setOutputPosition(8, 4);
+	cout << "                      *        '      ";
+	setColor(COLOR_YELLOW);
+	cout << "     .      " << endl;
+	setColor(COLOR_GRAY);
+	setOutputPosition(8, 5);
+	cout << "   *          '            +            *";
+	cout << "            .            '               ";
+	setColor(COLOR_YELLOW);
+	cout << "*" << endl;
+	setColor(COLOR_GRAY);
+	setOutputPosition(8, 6);
+	cout << "      .                   .            *                                   '       " << endl;
+	setOutputPosition(8, 8);
+	cout << "                           *          '                        *                   " << endl;
+	setOutputPosition(8, 9);
+	cout << "       *                                                             *     " << endl;
+	setOutputPosition(8, 11);
+	cout << "                                                 '                         " << endl;
+	setOutputPosition(8, 12);
+	cout << "   *                  *           .                                +               " << endl;
+	setOutputPosition(8, 14);  
+	cout << "    .                     .                                        .             " << endl;
+	setOutputPosition(8, 15);
+	cout << "           +                                                                   .    " << endl;
+	setOutputPosition(8, 16); 
+	cout << "                             '                         '     *                  " << endl;
+	setOutputPosition(8, 17);
+	cout << "                           *          '                        *                   " << endl;
+	setOutputPosition(8, 18);
+	cout << "   *                  *           .                                +               " << endl;
+}
+
+void printStars_small()
 {
 
 	setColor(COLOR_GRAY);
@@ -171,3 +208,4 @@ void printStars_TowerOfPisa()
 	setOutputPosition(8, 18);
 	cout << "       .          +  " << endl;
 }
+
