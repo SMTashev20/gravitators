@@ -16,4 +16,6 @@ void exerciseOneNSL(bool& pointAdd);
 
 void exerciseTwoNSL(bool& pointAdd);
 
+void optionMenuNewtonLaws();
+
 void newtonSecondLaw();

@@ -3,6 +3,7 @@
 #include "../../Header Files/Back-End/uniformAcceleration.h"
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Front-End/MainFront-EndFunctions.h"
+#include "../../Header Files/Back-End/Quiz.h"
 
 using namespace std;
 
@@ -196,6 +197,54 @@ void exerciseTwoUA(bool& pointAdd)
     else
     {
         pointAdd = false;
+    }
+}
+
+void optionMenuUniformAcceleration()
+{
+    printGameFrame_small();
+    printStars_small();
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 6);
+    cout << "1.";
+    setColor(COLOR_WHITE);
+    cout << "Exercise - calculator";
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 11);
+    cout << "2.";
+    setColor(COLOR_WHITE);
+    cout << "Quiz";
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 16);
+    cout << "3.";
+    setColor(COLOR_WHITE);
+    cout << "Tower of Pisa";
+    while (true)
+    {
+        switch (_getch())
+        {
+        case '1':
+        {
+            ClearScreen();
+            uniformAcceleration();
+            break;
+        }
+        case '2':
+        {
+            ClearScreen();
+            QuizUniformAcceleration();
+            break;
+        }
+        case '3':
+        {
+            ClearScreen();
+            towerOfPizza();
+            break;
+        }
+        }
     }
 }
 

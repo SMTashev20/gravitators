@@ -15,4 +15,6 @@ void exerciseOneFreeFall(bool& pointAdd);
 
 void exerciseTwoFreeFall(bool& pointAdd);
 
+void optionMenuFreeFall();
+
 void FreeFall();

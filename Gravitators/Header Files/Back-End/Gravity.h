@@ -15,4 +15,6 @@ void exerciseOneGravity(bool& pointAdd);
 
 void exerciseTwoGravity(bool& pointAdd);
 
+void optionMenuGravity();
+
 void Gravity();

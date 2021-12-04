@@ -15,31 +15,31 @@ void printTower() {
 	setOutputPosition(11, 5);
 	cout << " _________" << endl;
 	setOutputPosition(11, 6);
-	cout << "* \\       \\" << endl;
+	cout << " \\        \\" << endl;
 	setOutputPosition(11, 7);
-	cout << "|  \\       \\" << endl;
+	cout << "  \\        \\" << endl;
 	setOutputPosition(11, 8);
-	cout << "*   \\       \\" << endl;
+	cout << "   \\        \\" << endl;
 	setOutputPosition(11, 9);
-	cout << "|    \\       \\" << endl;
+	cout << "    \\        \\" << endl;
 	setOutputPosition(11, 10);
-	cout << "*     \\       \\" << endl;
+	cout << "     \\        \\" << endl;
 	setOutputPosition(11, 11);
-	cout << "|      \\       \\" << endl;
+	cout << "      \\        \\" << endl;
 	setOutputPosition(11, 12);
-	cout << "*       \\       \\" << endl;
+	cout << "       \\        \\" << endl;
 	setOutputPosition(11, 13);
-	cout << "|        \\       \\" << endl;
+	cout << "        \\        \\" << endl;
 	setOutputPosition(11, 14);
-	cout << "*         \\       \\" << endl;
+	cout << "         \\        \\" << endl;
 	setOutputPosition(11, 15);
-	cout << "|          \\       \\" << endl;
+	cout << "          \\        \\" << endl;
 	setOutputPosition(11, 16);
-	cout << "*           \\       \\" << endl;
+	cout << "           \\        \\" << endl;
 	setOutputPosition(11, 17);
-	cout << "|            \\       \\" << endl;
+	cout << "            \\        \\" << endl;
 	setOutputPosition(11, 18);
-	cout << "*             \\       \\" << endl;
+	cout << "             \\        \\" << endl;
 }
 
 void towerOfPizza()

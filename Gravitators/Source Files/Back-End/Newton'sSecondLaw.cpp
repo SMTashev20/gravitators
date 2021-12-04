@@ -4,6 +4,7 @@
 #include "../../Header Files/Back-End/Newton'sSecondLaw.h"
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Front-End/MainFront-EndFunctions.h"
+#include "../../Header Files/Back-End/Quiz.h"
 
 using namespace std;
 
@@ -189,6 +190,42 @@ void exerciseTwoNSL(bool& pointAdd)
     }
 }
 
+void optionMenuNewtonLaws()
+{
+    printGameFrame_small();
+    printStars_small();
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 9);
+    cout << "1.";
+    setColor(COLOR_WHITE);
+    cout << "Exercise - calculator";
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 14);
+    cout << "2.";
+    setColor(COLOR_WHITE);
+    cout << "Quiz";
+
+    while (true)
+    {
+        switch (_getch())
+        {
+        case '1':
+        {
+            ClearScreen();
+            newtonSecondLaw();
+            break;
+        }
+        case '2':
+        {
+            ClearScreen();
+            QuizNewtonLaws();
+            break;
+        }
+        }
+    }
+}
 
 void newtonSecondLaw()
 {

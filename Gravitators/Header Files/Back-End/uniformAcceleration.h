@@ -15,4 +15,6 @@ void exerciseOneUA(bool& pointAdd);
 
 void exerciseTwoUA(bool& pointAdd);
 
+void optionMenuUniformAcceleration();
+
 void uniformAcceleration();

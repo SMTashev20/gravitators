@@ -15,6 +15,8 @@ void exerciseOneDensity(bool& pointAdd);
 
 void exerciseTwoHP(bool& pointAdd);
 
+void optionMenuDensity();
+
 void Density();
 
 

@@ -3,6 +3,7 @@
 #include "../../Header Files/Back-End/Pressure.h"
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Front-End/MainFront-EndFunctions.h"
+#include "../../Header Files/Back-End/Quiz.h"
 
 using namespace std;
 
@@ -185,6 +186,43 @@ void exerciseTwoPressure(bool& pointAdd)
     else
     {
         pointAdd = false;
+    }
+}
+
+void optionMenuPressure()
+{
+    printGameFrame_small();
+    printStars_small();
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 9);
+    cout << "1.";
+    setColor(COLOR_WHITE);
+    cout << "Exercise - calculator";
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 14);
+    cout << "2.";
+    setColor(COLOR_WHITE);
+    cout << "Quiz";
+
+    while (true)
+    {
+        switch (_getch())
+        {
+        case '1':
+        {
+            ClearScreen();
+            Pressure();
+            break;
+        }
+        case '2':
+        {
+            ClearScreen();
+            QuizPressure();
+            break;
+        }
+        }
     }
 }
 

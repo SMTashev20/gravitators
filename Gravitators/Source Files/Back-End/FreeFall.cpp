@@ -4,6 +4,7 @@
 #include "../../Header Files/Back-End/FreeFall.h"
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Front-End/MainFront-EndFunctions.h"
+#include "../../Header Files/Back-End/Quiz.h"
 
 using namespace std;
 
@@ -159,6 +160,42 @@ void exerciseTwoFreeFall(bool& pointAdd)
     }
 }
 
+void optionMenuFreeFall()
+{
+    printGameFrame_small();
+    printStars_small();
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 9);
+    cout << "1.";
+    setColor(COLOR_WHITE);
+    cout << "Exercise - calculator";
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 14);
+    cout << "2.";
+    setColor(COLOR_WHITE);
+    cout << "Quiz";
+
+    while (true)
+    {
+        switch (_getch())
+        {
+        case '1':
+        {
+            ClearScreen();
+            FreeFall();
+            break;
+        }
+        case '2':
+        {
+            ClearScreen();
+            QuizFreeFall();
+            break;
+        }
+        }
+    }
+}
 
 void FreeFall()
 {

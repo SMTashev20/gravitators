@@ -15,4 +15,6 @@ void exerciseOnePressure(bool& pointAdd);
 
 void exerciseTwoPressure(bool& pointAdd);
 
+void optionMenuPressure();
+
 void Pressure();

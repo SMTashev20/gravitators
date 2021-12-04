@@ -15,4 +15,6 @@ void exerciseOneHP(bool& pointAdd);
 
 void exerciseTwoHP(bool& pointAdd);
 
+void optionMenuHydrostaticPressure();
+
 void hydrostaticPressure();

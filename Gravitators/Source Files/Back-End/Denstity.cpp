@@ -4,6 +4,7 @@
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Front-End/MainFront-EndFunctions.h"
 #include "../../Header Files/Front-End/Frame.h"
+#include "../../Header Files/Back-End/Quiz.h"
 
 using namespace std;
 
@@ -185,6 +186,42 @@ void exerciseTwoDensity(bool& pointAdd)
     }
 }
 
+void optionMenuDensity()
+{
+    printGameFrame_small();
+    printStars_small();
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 9);
+    cout << "1.";
+    setColor(COLOR_WHITE);
+    cout << "Exercise - calculator";
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(14, 14);
+    cout << "2.";
+    setColor(COLOR_WHITE);
+    cout << "Quiz";
+
+    while (true)
+    {
+        switch (_getch())
+        {
+        case '1':
+        {
+            ClearScreen();
+            Density();
+            break;
+        }
+        case '2':
+        {
+            ClearScreen();
+            QuizDensity();
+            break;
+        }
+        }
+    }
+}
 
 void Density()
 {

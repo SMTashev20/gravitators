@@ -14,7 +14,7 @@
 #include "../../Header Files/Back-End/Newton'sSecondLaw.h"
 #include "../../Header Files/Back-End/Pressure.h"
 #include "../../Header Files/Back-End/uniformAcceleration.h"
-#include "../../Header Files/Back-End/QuizRecap.h"
+#include "../../Header Files/Back-End/Quiz.h"
 #include "../../Header Files/Back-End/MainFunctions.h"
 
 using namespace std;
@@ -24,7 +24,7 @@ void start()
 	printGameFrame_mainMenu();
 	printStars_mainMenu();
 	printPhysicsLogo();
-	setColor(7);
+	setColor(COLOR_WHITE);
     setCursor(0);
 
 	setOutputPosition(27, 10);
@@ -48,7 +48,7 @@ void start()
 	setOutputPosition(62, 19);
 	cout << "9. Recap Quiz" << endl;
 
-	setColor(6);
+	setColor(COLOR_YELLOW);
 	int game;
     setOutputPosition(41, 22);
 
@@ -59,43 +59,43 @@ void start()
         case '1':
         {
             ClearScreen();
-            Density();
+            optionMenuDensity();
             break;
         }
         case '2':
         {
             ClearScreen();
-            FreeFall();
+            optionMenuFreeFall();
             break;
         }
         case '3':
         {
             ClearScreen();
-            Gravity();
+            optionMenuGravity();
             break;
         }
         case '4':
         {
             ClearScreen();
-            hydrostaticPressure();
+            optionMenuHydrostaticPressure();
             break;
         }
         case '5':
         {
             ClearScreen();
-            newtonSecondLaw();
+           optionMenuNewtonLaws();
             break;
         }
         case '6':
         {
             ClearScreen();
-            Pressure();
+            optionMenuPressure();
             break;
         }
         case '7':
         {
             ClearScreen();
-            uniformAcceleration();
+            optionMenuUniformAcceleration();
             break;
         }
         case '8':
