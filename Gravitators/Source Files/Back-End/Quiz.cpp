@@ -455,3 +455,74 @@ void QuizNewtonLaws()
 	cout << endl << endl;
 	setColor(COLOR_BLACK);
 }
+
+void QuizPressure()
+{
+	printGameFrame_Exercises();
+	printStars_Exercises();
+
+	int pointsTotal = 0;
+	outputOptions("Controls:", "W, D - up, down", "Z - confirm", "N - continue");
+	printTutorialUser();
+
+	outputOptions("Related to the word press", "Pressure", "Force", "Friction"); //Correct rows: 9, 11 and 13
+	printUser(pointsTotal, 9);
+
+	outputOptions("The formula for pressure", "Pressure = Force / area – correct", "Pressure = Force * area" , "Pressure = area / Force");
+	printUser(pointsTotal, 9);
+
+	outputOptions("The unit for pressure", "Pascal", "Newton", "Gram");
+	printUser(pointsTotal, 9);
+
+	outputOptions("When force increase...", "pressure increase", "pressure decrease", "pressure stays the same");
+	printUser(pointsTotal, 9);
+
+	outputOptions("When the area increase......", "pressure increase", "pressure decrease ", "pressure stays the same");
+	printUser(pointsTotal, 11);
+
+	outputOptions("As elevation increase,", "pressure decrease ", "pressure increase", "pressure stays the same");
+	printUser(pointsTotal, 9);
+
+	outputOptions("As depth decrease", "pressure decrease", "pressure increase ", "pressure stays the same");
+	printUser(pointsTotal, 9);
+
+	outputOptions("As depth increase", "pressure decrease", "pressure increase", "pressure stays the same");
+	printUser(pointsTotal, 11);
+
+	outputTotalPoints(pointsTotal);
+
+	setOutputPosition(11, 32);
+	cout << endl << endl;
+	setColor(COLOR_BLACK);
+}
+
+void QuizUniformAcceleration()
+{
+	printGameFrame_Exercises();
+	printStars_Exercises();
+
+	int pointsTotal = 0;
+	outputOptions("Controls:", "W, D - up, down", "Z - confirm", "N - continue");
+	printTutorialUser();
+
+	outputOptions("How is displacement different from distance?", "displacement is a vector, it must have magnitude and direction ", "displacement is a vector, it must have magnitude only", "displacement is a scalar, it must have magnitude and direction"); //Correct rows: 9, 11 and 13
+	printUser(pointsTotal, 9);
+
+	outputOptions("A man walks 10 meters east and 5 meters west. What was his displacement?", "15 meters east", "15 meters west", "5 meters east");
+	printUser(pointsTotal, 13);
+
+	outputOptions("A golf ball accelerates off a tee at 15 m/s2, changing its velocity from 0 m/s to 50 m/s down the fairway. How long did it take the golf ball to accelerate?", "750 s", "35 s", "3.3 s");
+	printUser(pointsTotal, 13);
+
+	outputOptions("A drag racer accelerated from 0 m/s to 200 m/s in 5 s.  What was the acceleration?", "0 m/s^2", "40 m/s^2", "40m/s^2");
+	printUser(pointsTotal, 11);
+
+	outputOptions("The SI unit for acceleration", "mPh", "ft/s^2", "m/s^");
+	printUser(pointsTotal, 13);
+
+	outputTotalPoints(pointsTotal);
+
+	setOutputPosition(11, 32);
+	cout << endl << endl;
+	setColor(COLOR_BLACK);
+}
