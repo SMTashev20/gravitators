@@ -1,6 +1,8 @@
 #include <iostream>
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Back-End/Gravity.h"
+#include "../../Header Files/Front-End/Frame.h"
+#include "../../Header Files/Front-End/MainFront-EndFunctions.h"
 
 using namespace std;
 
@@ -10,16 +12,28 @@ void gravityCalculatorGravity()
     string opening;
 
     // enter value for m
+    setOutputPosition(14, 8);
     cout << "Enter the mass of the object (m):" << endl;
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(78, 8);
     inputNumber(mass);
 
+    setOutputPosition(14, 10);
+    setColor(COLOR_WHITE);
     outputFormula(opening, ""); // output formula
     cout << opening;
     cout << outputFormula(opening, "G = m * g") << endl;
-    cout << "First we replace the values:" << endl;
-    // calculate using the formula
+
+    setOutputPosition(14, 12);
+    cout << "First we replace the values:" << endl;  // calculate using the formula
+
+    setOutputPosition(14, 13);
     cout << "G = " << mass << " * " << 10 << endl;
+
+    setOutputPosition(14, 14);
     cout << "Then we calculate our equation:" << endl;
+    setOutputPosition(14, 15);
     cout << "G = " << 10 * mass << " N" << endl;
 }
 
@@ -29,16 +43,30 @@ void massCalculatorGravity()
     string opening;
 
     // enter value for G
+    setOutputPosition(14, 8);
+    setColor(COLOR_WHITE);
     cout << "Enter the gravity force of the object (G):" << endl;
+
+    setOutputPosition(78, 8);
+    setColor(COLOR_YELLOW);
     inputNumber(gravityForce);
 
+    setOutputPosition(14, 10);
+    setColor(COLOR_WHITE);
     outputFormula(opening, "");
     cout << opening;
     cout << outputFormula(opening, "m = G / g") << endl;
-    cout << "First we replace the values:" << endl;
-    // calculate using the formula
+
+    setOutputPosition(14, 12);
+    cout << "First we replace the values:" << endl;  // calculate using the formula
+
+    setOutputPosition(14, 13);
     cout << "m = " << gravityForce << " / " << 10 << endl;
+
+    setOutputPosition(14, 14);
     cout << "Then we calculate our equation:" << endl;
+
+    setOutputPosition(14, 15);
     cout << "m = " << gravityForce / 10 << " kg" << endl;
 }
 
@@ -60,12 +88,24 @@ void exerciseOneGravity(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
-    string question = "Estimate the gravitational force of a sumo wrestler with mass 220 kg.\ns = ?m (example input: 122)\n";
+    string question = "Estimate the gravitational force of a sumo wrestler with mass 220 kg.\n"
+                       "             s = ?m (example input: 122)\n";
 
+    ClearScreen();
+    printGameFrame_Exercises();
+    printStars_Exercises();
+
+    setOutputPosition(14, 4);
     outputProblem(opening, question); // output the problem
     cout << opening;
+
+    setOutputPosition(14, 6);
     cout << outputProblem(opening, question);
+
+    setOutputPosition(14, 8);
+    setColor(COLOR_YELLOW);
     cin >> answer;
+    setColor(COLOR_WHITE);
     // the right answer is 2200, if user inputs 2200
     // then it is correct and if returns true
     if (answer == 2200)
@@ -83,12 +123,24 @@ void exerciseTwoGravity(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
-    string question = "Evaluate the mass of a spherical steel ball with a magnitude of gravitational force 50 N.\nm = ? kg(example input : 122)\n";
+    string question = "Evaluate the mass of a spherical steel ball with a magnitude 50 N.\n"
+                        "               m = ? kg(example input : 122)\n";
 
+    ClearScreen();
+    printGameFrame_Exercises();
+    printStars_Exercises();
+
+    setOutputPosition(14, 4);
     outputProblem(opening, question);  // output the problem
     cout << opening;
+
+    setOutputPosition(14, 6);
     cout << outputProblem(opening, question);
+
+    setOutputPosition(14, 8);
+    setColor(COLOR_YELLOW);
     cin >> answer;
+    setColor(COLOR_WHITE);
     // the right answer is 5, if user inputs 5
     // then it is correct and if returns true
     if (answer == 5)
@@ -104,8 +156,15 @@ void exerciseTwoGravity(bool& pointAdd)
 
 void Gravity()
 {
+    printGameFrame_Exercises();
+    printStars_Exercises();
+
+    setOutputPosition(14, 4);
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     string symbol;
+
+    setColor(COLOR_YELLOW);
+    setOutputPosition(78, 4);
     cin >> symbol; // input symbol to answer the question
 
     int correctExerciseCount = 0; // count user's points
@@ -116,16 +175,27 @@ void Gravity()
 
     while (symbol != "c" && symbol != "p")  // check if input is valid
     {
+        setOutputPosition(14, 4);
+        cout << "                                                                ";
+        setOutputPosition(14, 4);
         cout << "Please enter a valid input!" << endl;
+        setOutputPosition(78, 4);
         cin >> symbol;
     }
     if (symbol == "c")  // user is using calculator
     {
+        setOutputPosition(14, 6);
         cout << "Enter the unit we are searching (G/m)" << endl;
+        setOutputPosition(78, 6);
+        setColor(COLOR_YELLOW);
         cin >> symbol;
         while (symbol != "G" && symbol != "m") // check if input is valid
         {
+            setOutputPosition(14, 6);
+            cout << "                                                                ";
+            setOutputPosition(14, 6);
             cout << "Please enter a valid input!" << endl;
+            setOutputPosition(78, 6);
             cin >> symbol;
         }
         gravityMassCalculatorGravity(symbol);
@@ -137,21 +207,36 @@ void Gravity()
         exerciseOneGravity(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
+            setOutputPosition(14, 10);
             cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
+            setOutputPosition(14, 10);
             cout << "That's wrong! ";
         }
     }
 
+    setOutputPosition(14, 18);
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
+
+    setOutputPosition(71, 18);
+    setColor(COLOR_YELLOW);
     cin >> symbol; // input symbol to answer the question
+    setColor(COLOR_WHITE);
+
     while (symbol != "y" && symbol != "n") // check if input is valid
     {
+        setOutputPosition(14, 18);
+        cout << "                                                ";
+
+        setOutputPosition(14, 18);
         cout << "Please enter a valid input!" << endl;
+
+        setColor(COLOR_YELLOW);
         cin >> symbol;
+        setColor(COLOR_WHITE);
     }
     if (symbol == "n")
     {
@@ -162,30 +247,54 @@ void Gravity()
         exerciseTwoGravity(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
+            setOutputPosition(14, 10);
             cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
+            setOutputPosition(14, 10);
             cout << "That's wrong! ";
         }
     }
 
+    setOutputPosition(14, 18);
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
+
+    setOutputPosition(78, 18);
+    setColor(COLOR_YELLOW);
     cin >> symbol; // input symbol to answer the question
+    setOutputPosition(14, 4);
+    setColor(COLOR_WHITE);
 
     while (symbol != "c" && symbol != "p") // check if input is valid
     {
+        setOutputPosition(14, 18);
+        cout << "                                                               ";
+
+        setOutputPosition(14, 18);
         cout << "Please enter a valid input!" << endl;
+        setOutputPosition(78, 6);
         cin >> symbol;
     }
     if (symbol == "c") // user is using calculator
     {
+        ClearScreen();
+        printGameFrame_Exercises();
+        printStars_Exercises();
+
+        setOutputPosition(14, 6);
         cout << "Enter the unit we are searching (G/m)" << endl;
+        setOutputPosition(78, 6);
+        setColor(COLOR_YELLOW);
         cin >> symbol;
         while (symbol != "G" && symbol != "m") // check if input is valid
         {
+            setOutputPosition(14, 6);
+            cout << "                                                                ";
+            setOutputPosition(14, 6);
             cout << "Please enter a valid input!" << endl;
+            setOutputPosition(78, 6);
             cin >> symbol;
         }
         gravityMassCalculatorGravity(symbol);
@@ -198,11 +307,13 @@ void Gravity()
             exerciseTwoGravity(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
+                setOutputPosition(14, 10);
                 cout << "That's correct! ";
                 correctExerciseCount++;
             }
             else if (isCorrect == false)
             {
+                setOutputPosition(14, 10);
                 cout << "That's wrong! ";
             }
         }
@@ -212,20 +323,31 @@ void Gravity()
             exerciseOneGravity(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
+                setOutputPosition(14, 10);
                 cout << "That's correct! ";
                 correctExerciseCount++;
             }
             else if (isCorrect == false)
             {
+                setOutputPosition(14, 10);
                 cout << "That's wrong! ";
             }
         }
         else // output this if user has done problem 1 and problem 2
         {
+            ClearScreen();
+            printGameFrame_Exercises();
+            printStars_Exercises();
+
+            setOutputPosition(14, 6);
             cout << "Oops! You've finished all of the exercises!" << endl;
         }
     }
 
     // output user's score
+    setOutputPosition(14, 8);
     cout << "You got " << correctExerciseCount << " out of 2 points!";
+
+    setColor(COLOR_BLACK);
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 }

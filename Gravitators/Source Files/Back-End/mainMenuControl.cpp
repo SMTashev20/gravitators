@@ -25,6 +25,7 @@ void start()
 	printStars_mainMenu();
 	printPhysicsLogo();
 	setColor(7);
+    setCursor(0);
 
 	setOutputPosition(27, 10);
 	cout << "Welcome! Please pick your game." << endl;
@@ -49,72 +50,67 @@ void start()
 
 	setColor(6);
 	int game;
-	setOutputPosition(41, 22);
-	cin >> game;
+    setOutputPosition(41, 22);
 
-	while (!(game > 0 && game < 10))
-	{
-		setOutputPosition(41, 22);
-		cout << "                                ";
-		setOutputPosition(41, 22);
-		cin >> game;
-	}
+    while (true)
+    {
+        switch (_getch())
+        {
+        case '1':
+        {
+            ClearScreen();
+            Density();
+            break;
+        }
+        case '2':
+        {
+            ClearScreen();
+            FreeFall();
+            break;
+        }
+        case '3':
+        {
+            ClearScreen();
+            Gravity();
+            break;
+        }
+        case '4':
+        {
+            ClearScreen();
+            hydrostaticPressure();
+            break;
+        }
+        case '5':
+        {
+            ClearScreen();
+            newtonSecondLaw();
+            break;
+        }
+        case '6':
+        {
+            ClearScreen();
+            Pressure();
+            break;
+        }
+        case '7':
+        {
+            ClearScreen();
+            uniformAcceleration();
+            break;
+        }
+        case '8':
+        {
+            ClearScreen();
+            FormulaList();
+            break;
+        }
+        case '9':
+        {
+            ClearScreen();
+            QuizRecap();
+            break;
+        }
+        }
+    }
 
-	switch (game)
-	{
-		case 1:
-		{
-			ClearScreen();
-			Density();
-			break;
-		}
-		case 2:
-		{
-			ClearScreen();
-			FreeFall();
-			break;
-		}
-		case 3:
-		{
-			ClearScreen();
-			Gravity();
-			break;
-		}
-		case 4:
-		{
-			ClearScreen();
-			hydrostaticPressure();
-			break;
-		}
-		case 5:
-		{
-			ClearScreen();
-			newtonSecondLaw();
-			break;
-		}
-		case 6:
-		{
-			ClearScreen();
-			Pressure();
-			break;
-		}
-		case 7:
-		{
-			ClearScreen();
-			uniformAcceleration();
-			break;
-		}
-		case 8:
-		{
-			ClearScreen();
-			FormulaList();
-			break;
-		}
-		case 9:
-		{
-			ClearScreen();
-			QuizRecap();
-			break;
-		}
-	}
 }

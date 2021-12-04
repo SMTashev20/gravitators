@@ -6,6 +6,7 @@
 using namespace std;
 
 void setOutputPosition(short x, short y);
+void setCursor(bool shown);
 
 void setColor(int color);
 

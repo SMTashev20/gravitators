@@ -6,5 +6,3 @@
 using namespace std;
 
 void FormulaList();
-
-int Checker();

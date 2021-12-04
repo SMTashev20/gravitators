@@ -31,6 +31,18 @@ void setColor(int color)
 	else {}
 }
 
+void setCursor(bool shown)
+{
+	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO info;
+	info.dwSize = 100;
+	info.bVisible = shown;
+
+	if (SetConsoleCursorInfo(consoleHandle, &info) == 0)
+	{
+	}
+}
+
 void printPhysicsLogo() {
 	setColor(COLOR_YELLOW);
 	setOutputPosition(16, 3);
@@ -62,7 +74,7 @@ void printGameFrame_mainMenu() {
 
 	setColor(COLOR_GRAY);
 	setOutputPosition(8, 24);
-	cout << "TEAM GRAVITATORS" << endl;
+	cout << "  TEAM GRAVITATORS" << endl;
 	setColor(COLOR_WHITE);
 }
 
@@ -177,6 +189,7 @@ void printStars_Exercises()
 	cout << "                           *          '                        *                   " << endl;
 	setOutputPosition(8, 18);
 	cout << "   *                  *           .                                +               " << endl;
+	setColor(COLOR_WHITE);
 }
 
 void printStars_small()

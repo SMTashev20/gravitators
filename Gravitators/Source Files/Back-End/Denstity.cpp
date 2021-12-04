@@ -120,11 +120,12 @@ void exerciseOneDensity(bool& pointAdd)
 {
     double answer; // declare variable
     string opening;
-    string question = "If the volume of a metal shpere of 200g mass is 20 cm3,\n"
+    string question = "If the volume of a metal shpere of 200g mass is 20 cm^3,\n"
                       "             what is the density of the metal? s = ?m (example input: 122)\n";
 
     ClearScreen();
     printGameFrame_Exercises();
+    printStars_Exercises();
 
     setOutputPosition(14, 4);
     outputProblem(opening, question);  // output the problem
@@ -159,6 +160,7 @@ void exerciseTwoDensity(bool& pointAdd)
 
     ClearScreen();
     printGameFrame_Exercises();
+    printStars_Exercises();
 
     setOutputPosition(14, 4);
     outputProblem(opening, question); // output the problem
@@ -187,10 +189,12 @@ void exerciseTwoDensity(bool& pointAdd)
 void Density()
 {
     printGameFrame_Exercises();
+    printStars_Exercises();
 
     setOutputPosition(14, 4);
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     string sym;
+
     setColor(COLOR_YELLOW);
     setOutputPosition(78, 4);
     cin >> sym; // input symbol to answer the question
@@ -217,15 +221,18 @@ void Density()
     {
         setOutputPosition(14, 6);
         cout << "Enter the unit we are searching (p/m)" << endl;
+
         setOutputPosition(78, 6);
         setColor(COLOR_YELLOW);
         cin >> sym;
+
         while (sym != "p" && sym != "m") // check if input is valid
         {
             setOutputPosition(14, 6);
             cout << "                                                                ";
             setOutputPosition(14, 6);
             cout << "Please enter a valid input!" << endl;
+
             setOutputPosition(78, 6);
             cin >> sym;
         }
@@ -311,12 +318,15 @@ void Density()
     {
         ClearScreen();
         printGameFrame_Exercises();
+        printStars_Exercises();
 
         setOutputPosition(14, 6);
         cout << "Enter the unit we are searching (p/m)" << endl;
+
         setOutputPosition(78, 6);
         setColor(COLOR_YELLOW);
         cin >> sym;
+
         while (sym != "p" && sym != "m") // check if input is valid
         {
             setOutputPosition(14, 6);
@@ -366,6 +376,8 @@ void Density()
         {
             ClearScreen();
             printGameFrame_Exercises();
+            printStars_Exercises();
+
             setOutputPosition(14, 6);
             cout << "Oops! You've finished all of the exercises!" << endl;
         }
