@@ -366,3 +366,92 @@ void QuizGravity()
 	cout << endl << endl;
 	setColor(COLOR_BLACK);
 }
+
+void QuizHydrostaticPressure()
+{
+	printGameFrame_Exercises();
+	printStars_Exercises();
+
+	int pointsTotal = 0;
+	outputOptions("Controls:", "W, D - up, down", "Z - confirm", "N - continue");
+	printTutorialUser();
+
+	outputOptions("Assuming constant temperature condition and air to be an ideal gas, the variation in atmospheric pressure with height calculated from fluid statics is", "liner", "exponetial", "quadratic"); //Correct rows: 9, 11 and 13
+	printUser(pointsTotal, 9);
+
+	outputOptions("The piezometric head in a static liquid:", "remains constant at all points in the liquid ", "increases linearly with depth below a free surface ", "decreases linearly with depth below a free surface");
+	printUser(pointsTotal, 13);
+
+	outputOptions("Choose the correct answer statement: A static fluid can have : ", "on-zero normal and shear stress", "zero egative normal stress and zero shear stress ", "non-zero normal stress and zero shear stress");
+	printUser(pointsTotal, 13);
+
+	outputOptions("The center of pressure of a liquid on a plane surface immersed vertically in a static body of liquid, always lies below the centroid of the surface area, because:", "there is no shear stress in liquids at rest", "in liquids the pressure acting is same in all directions", "the liquid pressure increases linearly with depth");
+	printUser(pointsTotal, 13);
+
+	outputOptions("The line of action of buoyancy force acts through the:", "centre of gravity of any submerged body", "centroid of the volume of any floating body", "centroid of the displaced volume of fluid");
+	printUser(pointsTotal, 13);
+
+	outputOptions("At sea level, the value of atmospheric pressure is close to:", "1 metre of water column", "100 metre of water column", "10.33 metre of water column");
+	printUser(pointsTotal, 13);
+
+	outputOptions("For a 2 m deep swimming pool, pressure difference between the top and the bottom of the pool is _______ kPa. ", "22 ", "12", "19.63");
+	printUser(pointsTotal, 13);
+
+	outputOptions("For a static fluid, the increase of pressure at any point inside the fluid, in a vertically downward direction, must be equal to the product of the ________ of the fluid and depth from the free surface. ", "density", "viscosity", "specific weight");
+	printUser(pointsTotal, 13);
+
+	outputOptions("A tank is containing water up to a height of 2 m. Calculate the pressure at the bottom of the tank in N/m2", "19.62", "1.962", "19620");
+	printUser(pointsTotal, 13);
+
+	outputOptions("The pressure at a point inside a liquid does not depend on which of the following?", "The acceleration due to gravity at that point ", " The shape of containing vessel", "The nature of the liquid");
+	printUser(pointsTotal, 11);
+
+	outputTotalPoints(pointsTotal);
+
+	setOutputPosition(11, 32);
+	cout << endl << endl;
+	setColor(COLOR_BLACK);
+}
+
+void QuizNewtonLaws()
+{
+	printGameFrame_Exercises();
+	printStars_Exercises();
+
+	int pointsTotal = 0;
+	outputOptions("Controls:", "W, D - up, down", "Z - confirm", "N - continue");
+	printTutorialUser();
+
+	outputOptions("Which of Newton's Three Laws does the following statement satisfy? The relationship between an object's mass (m), its acceleration (a), and the applied force F is F=ma. Acceleration and force are vectors. This law requires that the direction of the acceleration vector is in the same direction as the force vector.", "Newton’s First law", "Newton’s Second law", "Newton’s Third law"); //Correct rows: 9, 11 and 13
+	printUser(pointsTotal, 11);
+
+	outputOptions("Which of Newton's Three Laws does the following statement satisfy? For every action there is an equal and opposite reaction.", "Newton’s First law", "Newton’s Second law", "Newton’s Third law");
+	printUser(pointsTotal, 13);
+
+	outputOptions("Which of Newton's Three Laws does the following statement satisfy? Every object in a state of uniform motion tends to remain in that state of motion unless an external force is applied to it. ", "Newton’s First law", "Newton’s Second law", "Newton’s Third law");
+	printUser(pointsTotal, 9);
+
+	outputOptions("Which of Newton's three laws does the following example illustrate? If you have a hockey puck sliding along a table, it will eventually come to a stop.", "Newton’s First law", "Newton’s Second law", "Newton’s Third law");
+	printUser(pointsTotal, 9);
+
+	outputOptions("In the following example, what are the forces that are acting on the ball? Check all that apply. If a ball is thrown in the air, it will keep going the same velocity unless a force changes the velocity (speed and direction).", "air friction ", "gravity", "mass the ball");
+	printUser(pointsTotal, 9);
+
+	outputOptions("Which law states the need to wear seatbelts?", "Newton’s First law", "Newton’s Second law", "Newton’s Third law");
+	printUser(pointsTotal, 9);
+
+	outputOptions("________________ was the scientist who gave us the Laws of Motion.", "Isaac Newton ", "Albert Einstein", "Stephen Hawking");
+	printUser(pointsTotal, 9);
+
+	outputOptions("What is another name for the Newton's first law of motion?", "Law of Acceleration", "Law of velocity", "Law of Inertia");
+	printUser(pointsTotal, 13);
+
+	outputOptions("Which of Newton's Three Law does the following example illustrate? The blood in your head rushes to your feet when riding on an elevator this is descending and abruptly stops.", "Newton’s First law", "Newton’s Second law", "Newton’s Third law");
+	printUser(pointsTotal, 9);
+
+	outputTotalPoints(pointsTotal);
+
+	setOutputPosition(11, 32);
+	cout << endl << endl;
+	setColor(COLOR_BLACK);
+}
