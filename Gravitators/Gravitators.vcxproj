@@ -165,6 +165,7 @@
     <ClInclude Include="Header Files\Back-End\mainMenuControl.h" />
     <ClInclude Include="Header Files\Back-End\Newton%27sSecondLaw.h" />
     <ClInclude Include="Header Files\Back-End\Pressure.h" />
+    <ClInclude Include="Header Files\Back-End\Quiz.h" />
     <ClInclude Include="Header Files\Back-End\uniformAcceleration.h" />
     <ClInclude Include="Header Files\Front-End\FormulaList.h" />
     <ClInclude Include="Header Files\Front-End\Frame.h" />

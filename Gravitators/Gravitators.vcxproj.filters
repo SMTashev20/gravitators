@@ -113,5 +113,8 @@
     <ClInclude Include="Header Files\Front-End\TowerOfPizza.h">
       <Filter>Header Files\Front-End</Filter>
     </ClInclude>
+    <ClInclude Include="Header Files\Back-End\Quiz.h">
+      <Filter>Header Files\Back-End</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
