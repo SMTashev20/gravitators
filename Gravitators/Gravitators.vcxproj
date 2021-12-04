@@ -169,7 +169,6 @@
     <ClInclude Include="Header Files\Back-End\uniformAcceleration.h" />
     <ClInclude Include="Header Files\Front-End\FormulaList.h" />
     <ClInclude Include="Header Files\Front-End\Frame.h" />
-    <ClInclude Include="Header Files\Front-End\MainFront-EndFunctions.h" />
     <ClInclude Include="Header Files\Front-End\TowerOfPizza.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

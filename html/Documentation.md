@@ -45,7 +45,12 @@ Our collaborative work took place in GitHub and for the files to be accessible t
 Communication is realized through Teams. Thanks to all the features and the provided visualization - on-screen communication and feedback are sufficiently complete.
 
 ### What technologies are used?
-The technologies we used are C++ as the programming language with which the code is written, Git and GitHub for collaborative work, Visual Studio 2019 - as an IDE, Teams - connection and communication and Doxygen - preparing a presentation and documentation.
+The technologies we used are C++ as the programming language with which the code is written, Git and GitHub for collaborative work, Visual Studio 2019 - as an IDE, Teams - connection and communication and Doxygen - preparing a presentation and documentation. 
+
+##
+
+
+
 
 
 

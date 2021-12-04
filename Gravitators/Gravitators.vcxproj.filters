@@ -107,9 +107,6 @@
     <ClInclude Include="Header Files\Front-End\FormulaList.h">
       <Filter>Header Files\Front-End</Filter>
     </ClInclude>
-    <ClInclude Include="Header Files\Front-End\MainFront-EndFunctions.h">
-      <Filter>Header Files\Front-End</Filter>
-    </ClInclude>
     <ClInclude Include="Header Files\Front-End\TowerOfPizza.h">
       <Filter>Header Files\Front-End</Filter>
     </ClInclude>

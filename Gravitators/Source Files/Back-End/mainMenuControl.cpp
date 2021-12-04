@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cstring> 
 #include <ctime>
-#include<windows.h>
+#include <windows.h>
+#include <conio.h>
 
 #include "../../Header Files/Back-End/mainMenuControl.h"
 #include "../../Header Files/Front-End/Frame.h"
@@ -14,7 +15,7 @@
 #include "../../Header Files/Back-End/Newton'sSecondLaw.h"
 #include "../../Header Files/Back-End/Pressure.h"
 #include "../../Header Files/Back-End/uniformAcceleration.h"
-#include "../../Header Files/Back-End/QuizRecap.h"
+#include "../../Header Files/Back-End/Quiz.h"
 #include "../../Header Files/Back-End/MainFunctions.h"
 
 using namespace std;
