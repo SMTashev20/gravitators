@@ -3,7 +3,6 @@
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Back-End/Gravity.h"
 #include "../../Header Files/Front-End/Frame.h"
-#include "../../Header Files/Front-End/MainFront-EndFunctions.h"
 
 using namespace std;
 

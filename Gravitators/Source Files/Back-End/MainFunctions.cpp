@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../../Header Files/Front-End/MainFront-EndFunctions.h"
+#include "../../Header Files/Front-End/Frame.h"
 
 using namespace std;
 
