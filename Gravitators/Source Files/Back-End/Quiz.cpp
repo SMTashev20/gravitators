@@ -194,7 +194,7 @@ void QuizRecap()
 	outputOptions("The change in velocity in a given time period is?", "Vi", "Vf", "a"); //Correct rows: 9, 11 and 13
 	printUser(pointsTotal, 13);
 
-    outputOptions("When the velocity of an object does not change, \n what happens to its acceleration?",
+    outputOptions("When the velocity of an object does not change,\n		    what happens to its acceleration?",
 				"Nothing, it does accelerate", "It is a constant acceleration", "It is a changing acceleration");
 	printUser(pointsTotal, 9);
 
@@ -202,7 +202,7 @@ void QuizRecap()
 		"It accelerates at a constant rate until it hits the ground", "It accelerates at a constant rate until it reaches terminal velocity");
 	printUser(pointsTotal, 11);
 
-	outputOptions("Which would hit the ground first if dropped from the same height in a vacuum—a feather or a metal bolt?",
+	outputOptions("Which would hit the ground first if dropped from the same\n		    height in a vacuum - a feather or a metal bolt?",
 											"the feather", "the metal bolt", "They would hit the ground at the same time.");
 	printUser(pointsTotal, 13);
 
