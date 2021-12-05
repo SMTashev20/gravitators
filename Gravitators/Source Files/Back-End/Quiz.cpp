@@ -453,26 +453,29 @@ void QuizNewtonLaws()
 	outputOptions("Controls:", "W, D - up, down", "Z - confirm", "N - continue");
 	printTutorialUser();
 
-	outputOptions("Which of Newton's Three Laws does the following statement satisfy? The relationship between an object's mass (m),"
-		"its acceleration (a), and the applied force F is F=ma. Acceleration and force are vectors. This law requires that the direction of the acceleration vector is in the same direction as the force vector.",
-		"Newton’s First law", "Newton’s Second law", "Newton’s Third law"); //Correct rows: 9, 11 and 13
+	outputOptions("The relationship between an object's mass (m), its \"a\", and F is F=ma.\n		    "
+		"The direction of \"a\" is in the same direction as the force vector.",
+		"Newton First law", "Newton Second law", "Newton Third law"); //Correct rows: 9, 11 and 13
 	printUser(pointsTotal, 11);
 
-	outputOptions("Which of Newton's Three Laws does the following statement satisfy? For every action there is an equal and opposite reaction.", "Newton’s First law", "Newton’s Second law", "Newton’s Third law");
+	outputOptions("Which of Newton's Three Laws does the following statement satisfy?\n		     "
+		"For every action there is an equal and opposite reaction.", "Newton First law", "Newton Second law", "Newton Third law");
 	printUser(pointsTotal, 13);
 
-	outputOptions("Which of Newton's Three Laws does the following statement satisfy? Every object in a state of uniform motion tends to remain in that state of motion unless an external force is applied to it. ",
-		"Newton’s First law", "Newton’s Second law", "Newton’s Third law");
+	outputOptions("Every object in a state of uniform motion remains \n		    "
+		"in that state unless an external force is applied.",
+		"Newton First law", "Newton Second law", "Newton Third law");
 	printUser(pointsTotal, 9);
 
-	outputOptions("Which of Newton's three laws does the following example illustrate? If you have a hockey puck sliding along a table, it will eventually come to a stop.", 
-		"Newton’s First law", "Newton’s Second law", "Newton’s Third law");
+	outputOptions("If you have a hockey puck sliding, it'll eventually stop.", 
+		"Newton First law", "Newton Second law", "Newton Third law");
 	printUser(pointsTotal, 9);
 
-	outputOptions("If a ball is thrown in the air, it will keep going the same velocity unless a force changes the velocity (speed and direction).", "air friction ", "gravity", "mass the ball");
+	outputOptions("If a ball is thrown in the air, it will keep going the same velocity\n		    "
+		"unless a force changes the velocity (speed and direction).", "air friction ", "gravity", "mass the ball");
 	printUser(pointsTotal, 9);
 
-	outputOptions("Which law states the need to wear seatbelts?", "Newton’s First law", "Newton’s Second law", "Newton’s Third law");
+	outputOptions("Which law states the need to wear seatbelts?", "Newton First law", "Newton Second law", "Newton Third law");
 	printUser(pointsTotal, 9);
 
 	outputOptions("________ was the scientist who gave us the Laws of Motion.", "Isaac Newton ", "Albert Einstein", "Stephen Hawking");
@@ -481,8 +484,8 @@ void QuizNewtonLaws()
 	outputOptions("What is another name for the Newton's first law of motion?", "Law of Acceleration", "Law of velocity", "Law of Inertia");
 	printUser(pointsTotal, 13);
 
-	outputOptions("Which of Newton's Three Law does the following example illustrate? The blood in your head rushes to your feet when riding on an elevator"
-				"this is descending and abruptly stops.", "Newton’s First law", "Newton’s Second law", "Newton’s Third law");
+	outputOptions("The blood in your head rushes to your feet when riding on an elevator."
+				"\n		    This is descending and abruptly stops.", "Newton First law", "Newton Second law", "Newton Third law");
 	printUser(pointsTotal, 9);
 
 	outputTotalPoints(pointsTotal);
@@ -504,7 +507,7 @@ void QuizPressure()
 	outputOptions("Related to the word press", "Pressure", "Force", "Friction"); //Correct rows: 9, 11 and 13
 	printUser(pointsTotal, 9);
 
-	outputOptions("The formula for pressure", "Pressure = Force / area – correct", "Pressure = Force * area" , "Pressure = area / Force");
+	outputOptions("The formula for pressure", "Pressure = Force / area", "Pressure = Force * area" , "Pressure = area / Force");
 	printUser(pointsTotal, 9);
 
 	outputOptions("The unit for pressure", "Pascal", "Newton", "Gram");
@@ -548,11 +551,11 @@ void QuizUniformAcceleration()
 	outputOptions("A man walks 10 meters east and 5 meters west. What was his displacement?", "15 meters east", "15 meters west", "5 meters east");
 	printUser(pointsTotal, 13);
 
-	outputOptions("A golf ball accelerates off a tee at 15 m/s2, changing its velocity from 0 m/s to 50 m/s down the fairway. How long did it take the golf ball to accelerate?", 
+	outputOptions("A golf ball accelerates off a tee at 15 m/s2, changing its velocity from \n 	    0 m/s to 50 m/s. How long did it take the golf ball to accelerate?", 
 				"750 s", "35 s", "3.3 s");
 	printUser(pointsTotal, 13);
 
-	outputOptions("A drag racer accelerated from 0 m/s to 200 m/s in 5 s.  What was the acceleration?", "0 m/s^2", "40 m/s^2", "40m/s^2");
+	outputOptions("A drag racer accelerated from 0 m/s to 200 m/s in 5 s.\n		    What was the acceleration?", "0 m/s^2", "40 m/s^2", "40m/s^2");
 	printUser(pointsTotal, 11);
 
 	outputOptions("The SI unit for acceleration", "mPh", "ft/s^2", "m/s^");
