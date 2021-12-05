@@ -310,23 +310,23 @@ void QuizFreeFall()
 	printUser(pointsTotal, 13);
 
 	outputOptions("What is terminal velocity?", "The highest speed an object reaches because of unbalanced forces", 
-		"The highest speed an object reaches because air resistance offsets gravity in the real world ", "When an object reaches its final velocity of zero");
+		"The highest speed an object reaches because of air resistance", "When an object reaches its final velocity of zero");
 	printUser(pointsTotal, 11);
 
-	outputOptions("If you know the time an object is in the air, can you find the Vf of the object?", 
-		"Yes, you would have to halve the time since the Ttotal is for both rise and fall and you would have to calculate the height the object rose before finding the Vf ", 
+	outputOptions("If you know the time an object is in the air, can you find its Vf?", 
+		"Yes, but you would have to halve the time", 
 		"No, you are not given enough information", "When an object reaches its final velocity of zero");
 	printUser(pointsTotal, 9);
 
 	outputOptions("How does the Vi compare to the Vf in a free fall problem?", "Vi and Vf are exactly the same, this is because of symmetry",
-		"Vi and Vf are close but Vf is larger because you would fall faster than you would rise, since you are slowing down", 
+		"Vi and Vf are close but Vf is larger", 
 		"Vi and Vf are the same in magnitude, but different in vector");
 	printUser(pointsTotal, 13);
 
 	outputOptions("The change in velocity in a given time period is?", "Vi", "Vf", "a");
 	printUser(pointsTotal, 13);
 
-	outputOptions("When the velocity of an object does not change, what happens to its acceleration?", 
+	outputOptions("When the \"V\" of an object doesn't change, what happens to its \"a\"?", 
 		"Nothing, it does accelerate", "It is a constant acceleration", "It is a changing acceleration");
 	printUser(pointsTotal, 9);
 
@@ -355,8 +355,8 @@ void QuizGravity()
 	outputOptions("Gravity attract all objects to towards one another.", "False", "True ", "It depends");
 	printUser(pointsTotal, 11);
 
-	outputOptions("Two factors effecting the magnitude of the force of gravity between 2 objects are...",
-		"mass and distance", "mass and matter", "distance and weight");
+	outputOptions("Two factors effecting the magnitude of the force of gravity\n		    between 2 objects are...",
+				"mass and distance", "mass and matter", "distance and weight");
 	printUser(pointsTotal, 9);
 
 	outputOptions("A person would weigh less on on the Moon than on the Earth because . . .",
@@ -399,7 +399,7 @@ void QuizHydrostaticPressure()
 	outputOptions("Controls:", "W, D - up, down", "Z - confirm", "N - continue");
 	printTutorialUser();
 
-	outputOptions("Assuming constant temperature condition and air to be an ideal gas, the variation in atmospheric pressure with height calculated from fluid statics is",
+	outputOptions("Assuming constant temperature condition and air to be an ideal gas,\n		    the variation in atmospheric pressure with height from fluid statics is",
 		"liner", "exponetial", "quadratic"); //Correct rows: 9, 11 and 13
 	printUser(pointsTotal, 9);
 
@@ -411,8 +411,8 @@ void QuizHydrostaticPressure()
 		"zero egative normal stress and zero shear stress ", "non-zero normal stress and zero shear stress");
 	printUser(pointsTotal, 13);
 
-	outputOptions("The center of pressure of a liquid on a plane surface immersed vertically in a static body of liquid, always lies below the centroid of the surface area, because:",
-		"there is no shear stress in liquids at rest", "in liquids the pressure acting is same in all directions", "the liquid pressure increases linearly with depth");
+	outputOptions("The center of pressure of a liquid on a plane surface immersed\n 		    in a static liquid, always lies below the centroid of the surface:",
+		"because there is no shear stress in liquids at rest", "because in liquids the pressure acting is same in all directions", "because the liquid pressure increases linearly with depth");
 	printUser(pointsTotal, 13);
 
 	outputOptions("The line of action of buoyancy force acts through the:", "centre of gravity of any submerged body",
@@ -423,17 +423,17 @@ void QuizHydrostaticPressure()
 		"100 metre of water column", "10.33 metre of water column");
 	printUser(pointsTotal, 13);
 
-	outputOptions("For a 2 m deep swimming pool, pressure difference between the top and the bottom of the pool is _______ kPa. ", "22 ", "12", "19.63");
+	outputOptions("For a 2 m deep swimming pool, pressure difference between the top\n		     and the bottom of the pool is ___ kPa. ", "22 ", "12", "19.63");
 	printUser(pointsTotal, 13);
 
-	outputOptions("For a static fluid, the increase of pressure at any point inside the fluid, in a vertically downward direction, must be equal to the product"
-				"of the ________ of the fluid and depth from the free surface. ", "density", "viscosity", "specific weight");
+	outputOptions("For a static fluid, the increase of pressure inside the fluid,\n		     in a downward direction, must be equal to the product"
+				"of _____ and depth.", "density", "viscosity", "specific weight");
 	printUser(pointsTotal, 13);
 
-	outputOptions("A tank is containing water up to a height of 2 m. Calculate the pressure at the bottom of the tank in N/m2", "19.62", "1.962", "19620");
+	outputOptions("A tank is containing water up to a height of 2 m. Calculate the pressure\n		    at the bottom of the tank in N/m2", "19.62", "1.962", "19620");
 	printUser(pointsTotal, 13);
 
-	outputOptions("The pressure at a point inside a liquid does not depend on which of the following?", "The acceleration due to gravity at that point ",
+	outputOptions("The pressure at a point inside a liquid does not depend on\n		    which of the following?", "The acceleration due to gravity at that point ",
 				" The shape of containing vessel", "The nature of the liquid");
 	printUser(pointsTotal, 11);
 
