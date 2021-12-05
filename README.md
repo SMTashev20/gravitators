@@ -7,7 +7,10 @@
 <p align = "center">
    <img src = "https://img.shields.io/github/languages/count/SMTashev20/gravitators">
    <img src = "https://img.shields.io/github/milestones/open/SMTashev20/gravitators">
+<<<<<<< HEAD
   
+=======
+>>>>>>> 3d68e0b2442e324573fbfe48346a262a95c78906
    <img src = "https://img.shields.io/github/contributors/SMTashev20/gravitators?style=flat-square">
    <img src = "https://img.shields.io/github/languages/code-size/SMTashev20/gravitators?style=flat-square">
    <img src = "https://img.shields.io/github/last-commit/SMTashev20/gravitators/main">
@@ -33,12 +36,20 @@ Application for practicing mechanics.
 ### Docs
 - [Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/smtashev20_codingburgas_bg/EdTqM0a8r9pIjn9tQe_Tv4oB-Zvg1AMdNjPzSbMeK9z1eQ?e=jezRBE)
 - [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/smtashev20_codingburgas_bg/EQD-zvML-VlCgcbjCCFjlDIBq4T9opb6jnAPeHCmkWke4g?e=5Q1kJw)
+<<<<<<< HEAD
 - [Doxygen](https://smtashev20.github.io/Doxygen_Gravitators/)
+=======
+- [Doxygen](https://smtashev20.github.io/gravitators_docs/)
+>>>>>>> 3d68e0b2442e324573fbfe48346a262a95c78906
 
 <h1> 📥 Installing </h1>
 <p> To install our project on your machine you just need to clone it. This can be done by : </p>
 <pre>git clone https://github.com/SMTashev20/gravitators.git</pre>
+<<<<<<< HEAD
 You can open the project by opening the <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/512px-Visual_Studio_Icon_2019.svg.png" height="18px" alt="vs logo"><strong> Gravitators.sln </strong> file
+=======
+You can open the project by opening the <strong> Gravitators.sln </strong> file
+>>>>>>> 3d68e0b2442e324573fbfe48346a262a95c78906
 
 ## 🧒 Our Team
 
