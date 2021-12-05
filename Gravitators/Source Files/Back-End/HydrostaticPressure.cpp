@@ -429,7 +429,7 @@ void hydrostaticPressure()
         cout << "You got " << correctExerciseCount << " out of 2 points!";
 
 
-        setColor(COLOR_BLACK);
-        cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+        setColor(COLOR_YELLOW);
+        returnToMainMenu(14, 10);
     }
 }

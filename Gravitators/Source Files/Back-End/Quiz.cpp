@@ -232,9 +232,8 @@ void QuizRecap()
 
 	outputTotalPoints(pointsTotal);
 
-	setOutputPosition(11, 32);
-	cout << endl << endl;
-	setColor(COLOR_BLACK);
+	setColor(COLOR_YELLOW);
+	returnToMainMenu(34, 13);
 }
 
 void QuizDensity()
@@ -292,9 +291,8 @@ void QuizDensity()
 
 	outputTotalPoints(pointsTotal);
 
-	setOutputPosition(11, 32);
-	cout << endl << endl;
-	setColor(COLOR_BLACK);
+	setColor(COLOR_YELLOW);
+	returnToMainMenu(34, 13);
 }
 
 void QuizFreeFall()
@@ -332,9 +330,8 @@ void QuizFreeFall()
 
 	outputTotalPoints(pointsTotal);
 
-	setOutputPosition(11, 32);
-	cout << endl << endl;
-	setColor(COLOR_BLACK);
+	setColor(COLOR_YELLOW);
+	returnToMainMenu(34, 13);
 }
 
 void QuizGravity()
@@ -385,9 +382,8 @@ void QuizGravity()
 
 	outputTotalPoints(pointsTotal);
 
-	setOutputPosition(11, 32);
-	cout << endl << endl;
-	setColor(COLOR_BLACK);
+	setColor(COLOR_YELLOW);
+	returnToMainMenu(34, 13);
 }
 
 void QuizHydrostaticPressure()
@@ -439,9 +435,8 @@ void QuizHydrostaticPressure()
 
 	outputTotalPoints(pointsTotal);
 
-	setOutputPosition(11, 32);
-	cout << endl << endl;
-	setColor(COLOR_BLACK);
+	setColor(COLOR_YELLOW);
+	returnToMainMenu(34, 13);
 }
 
 void QuizNewtonLaws()
@@ -490,9 +485,8 @@ void QuizNewtonLaws()
 
 	outputTotalPoints(pointsTotal);
 
-	setOutputPosition(11, 32);
-	cout << endl << endl;
-	setColor(COLOR_BLACK);
+	setColor(COLOR_YELLOW);
+	returnToMainMenu(34, 13);
 }
 
 void QuizPressure()
@@ -530,9 +524,8 @@ void QuizPressure()
 
 	outputTotalPoints(pointsTotal);
 
-	setOutputPosition(11, 32);
-	cout << endl << endl;
-	setColor(COLOR_BLACK);
+	setColor(COLOR_YELLOW);
+	returnToMainMenu(34, 13);
 }
 
 void QuizUniformAcceleration()
@@ -563,7 +556,6 @@ void QuizUniformAcceleration()
 
 	outputTotalPoints(pointsTotal);
 
-	setOutputPosition(11, 32);
-	cout << endl << endl;
-	setColor(COLOR_BLACK);
+	setColor(COLOR_YELLOW);
+	returnToMainMenu(34, 13);
 }

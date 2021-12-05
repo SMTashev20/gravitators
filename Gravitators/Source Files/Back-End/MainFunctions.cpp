@@ -1,5 +1,8 @@
 #include <iostream>
+#include <conio.h>
+
 #include "../../Header Files/Front-End/Frame.h"
+#include "../../Header Files/Back-End/mainMenuControl.h"
 
 using namespace std;
 
@@ -45,6 +48,26 @@ void inputNumber(double& number, int x = -1, int y = -1)
             setOutputPosition(78, y);
         }
         cin >> number;
+    }
+}
+
+void returnToMainMenu(int x, int y)
+{
+    setOutputPosition(x, y);
+    cout << "Press N to go back.";
+
+    while (true)
+    {
+        switch (_getch())
+        {
+        case 'N':
+        case 'n':
+        {
+            ClearScreen();
+            start();
+            break;
+        }
+        }
     }
 }
 

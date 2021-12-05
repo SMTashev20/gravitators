@@ -54,19 +54,7 @@ void FormulaList()
 	setOutputPosition(12, 22);
 	cout << "P = rho * g * h" << endl;
 
-	setOutputPosition(50, 22);
 	setColor(COLOR_YELLOW);
-	cout << "Press N to go back.";
-
-	switch (_getch())
-	{
-	case 'N':
-	case 'n':
-	{
-		ClearScreen();
-		start();
-		break;
-	}
-	}
+	returnToMainMenu(50, 22);
 }
 

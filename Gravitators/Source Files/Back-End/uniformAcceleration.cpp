@@ -452,6 +452,6 @@ void uniformAcceleration()
 
     // output user's score
 
-    setColor(COLOR_BLACK);
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    setColor(COLOR_YELLOW);
+    returnToMainMenu(14, 13);
 }

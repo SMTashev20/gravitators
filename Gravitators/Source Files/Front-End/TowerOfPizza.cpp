@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Back-End/MainFunctions.h"
+#include "../../Header Files/Back-End/mainMenuControl.h"
 
 using namespace std;
 
@@ -41,39 +42,48 @@ void towerOfPizza()
 	printGameFrame_small();
 	printStars_small();
 	printTower();
+	setColor(COLOR_GRAY);
+	setOutputPosition(11, 22);
+	cout << "Press N to go back.";
 	setColor(COLOR_YELLOW);
 	char user = 'O';
 	int userCol = 22, userRow = 5;
 
 	setOutputPosition(userCol, userRow);
 	cout << user;
-
+	while (true)
 	{
-		for (int moves = 13; moves > 0; moves--)
 		{
-			switch (_getch())
+			for (int moves = 13; moves > 0; moves--)
 			{
-			case 'd':
-			case 'D':
-			{
-				setOutputPosition(userCol, userRow);
-				cout << " ";
-				userCol++;
-				userRow++;
-				setOutputPosition(userCol, userRow);
-				cout << user;
-			}
-			break;
-			default:
-			{
-				userCol--;
-				userRow++;
-			}
+				switch (_getch())
+				{
+				case 'd':
+				case 'D':
+				{
+					setOutputPosition(userCol, userRow);
+					cout << " ";
+					userCol++;
+					userRow++;
+					moves--;
+					setOutputPosition(userCol, userRow);
+					cout << user;
+				}
+				case 'n':
+				case 'N':
+				{
+					ClearScreen();
+					start();
+				}
+				break;
+				default:
+				{
+					userCol--;
+					userRow++;
+				}
+				}
 			}
 		}
 	}
-	setOutputPosition(11, 19);
-	cout << endl << endl;
-	setColor(COLOR_BLACK);
 }
 
