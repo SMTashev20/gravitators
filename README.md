@@ -26,7 +26,7 @@ Application for practicing mechanics.
 
 ## 📄 Documents
 ### QA Documentation
-  - [QA Documentation](https://codingburgas-my.sharepoint.com/:x:/g/personal/smtashev20_codingburgas_bg/ERA6tSGpkJdNkzM46rp8zQoB8dgs6hf7KyO8lMP-yJdL6Q?e=Y1dxsh)
+  - [QA Documentation](https://codingburgas-my.sharepoint.com/:x:/g/personal/smtashev20_codingburgas_bg/Ecrd_m4S2kBKpss5TO_FWKwBXhatldZY82F0dBKy2u-u_w?e=hNp1eW)
   - [Test plan](https://codingburgas-my.sharepoint.com/:w:/g/personal/rzmavraganova20_codingburgas_bg/EeVhfgnlOPlNmEVboHsmdscB75nQCp8gnZ80xsHMW4ywpA?e=w7ZIR)
 ### Docs
 - [Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/smtashev20_codingburgas_bg/EdTqM0a8r9pIjn9tQe_Tv4oB-Zvg1AMdNjPzSbMeK9z1eQ?e=jezRBE)
