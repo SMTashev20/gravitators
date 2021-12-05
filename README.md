@@ -25,11 +25,12 @@ Application for practicing mechanics.
 
 
 ## 📄 Documents
-
+### QA Documentation
+  - [QA Documentation](https://codingburgas-my.sharepoint.com/:x:/g/personal/smtashev20_codingburgas_bg/ERA6tSGpkJdNkzM46rp8zQoB8dgs6hf7KyO8lMP-yJdL6Q?e=Y1dxsh)
+  - [Test plan](https://codingburgas-my.sharepoint.com/:w:/g/personal/rzmavraganova20_codingburgas_bg/EeVhfgnlOPlNmEVboHsmdscB75nQCp8gnZ80xsHMW4ywpA?e=w7ZIR)
+### Docs
 - [Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/smtashev20_codingburgas_bg/EdTqM0a8r9pIjn9tQe_Tv4oB-Zvg1AMdNjPzSbMeK9z1eQ?e=jezRBE)
 - [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/smtashev20_codingburgas_bg/EQD-zvML-VlCgcbjCCFjlDIBq4T9opb6jnAPeHCmkWke4g?e=5Q1kJw)
-- [QA Documentation](href="")
-- [Test plan](https://codingburgas-my.sharepoint.com/:w:/g/personal/rzmavraganova20_codingburgas_bg/EeVhfgnlOPlNmEVboHsmdscB75nQCp8gnZ80xsHMW4ywpA?e=w7ZIRD)
 - [Doxygen](href="")
 
 
