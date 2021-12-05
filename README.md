@@ -35,6 +35,10 @@ Application for practicing mechanics.
 - [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/smtashev20_codingburgas_bg/EQD-zvML-VlCgcbjCCFjlDIBq4T9opb6jnAPeHCmkWke4g?e=5Q1kJw)
 - [Doxygen](https://smtashev20.github.io/Doxygen_Gravitators/)
 
+<h1> 📥 Installing </h1>
+<p> To install our project on your machine you just need to clone it. This can be done by : </p>
+<pre>git clone https://github.com/SMTashev20/gravitators.git</pre>
+You can open the project by opening the <strong> Gravitators.sln </strong> file
 
 ## 🧒 Our Team
 
