@@ -4,10 +4,12 @@
 #include <windows.h>
 #include <conio.h>
 
+//include front-end header files
 #include "../../Header Files/Back-End/mainMenuControl.h"
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Front-End/FormulaList.h"
 
+//include back-end header files
 #include "../../Header Files/Back-End/Density.h"
 #include "../../Header Files/Back-End/FreeFall.h"
 #include "../../Header Files/Back-End/Gravity.h"
@@ -20,6 +22,7 @@
 
 using namespace std;
 
+//Main start the main menu
 void start()
 {
 	printGameFrame_mainMenu();
@@ -28,29 +31,29 @@ void start()
 	setColor(COLOR_WHITE);
     setCursor(0);
 
-	setOutputPosition(27, 10);
+	setOutputPosition1(27, 10);
 	cout << "Welcome! Please pick your game." << endl;
-	setOutputPosition(10, 13);
+	setOutputPosition1(10, 13);
 	cout << "1. Density" << endl;
-	setOutputPosition(37, 13);
+	setOutputPosition1(37, 13);
 	cout << "2. Free Fall" << endl;
-	setOutputPosition(62, 13);
+	setOutputPosition1(62, 13);
 	cout << "3. Gravity" << endl;
-	setOutputPosition(10, 16);
+	setOutputPosition1(10, 16);
 	cout << "4. Hydrostatic Pressure" << endl;
-	setOutputPosition(37, 16);
+	setOutputPosition1(37, 16);
 	cout << "5. Newton's Second Law" << endl;
-	setOutputPosition(62, 16);
+	setOutputPosition1(62, 16);
 	cout << "6. Pressure" << endl;
-	setOutputPosition(10, 19);
+	setOutputPosition1(10, 19);
 	cout << "7. Uniforms Acceleration" << endl;
-	setOutputPosition(37, 19);
+	setOutputPosition1(37, 19);
 	cout << "8. Formula list" << endl;
-	setOutputPosition(62, 19);
+	setOutputPosition1(62, 19);
 	cout << "9. Recap Quiz" << endl;
 
 	setColor(COLOR_YELLOW);
-    setOutputPosition(41, 22);
+    setOutputPosition1(41, 22);
 
     while (true)
     {

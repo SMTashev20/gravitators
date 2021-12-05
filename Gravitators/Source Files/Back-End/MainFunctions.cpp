@@ -1,6 +1,7 @@
 #include <iostream>
 #include <conio.h>
 
+//include header files
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Back-End/mainMenuControl.h"
 
@@ -12,21 +13,19 @@ void ignoreUserInput()
     cin.ignore(INT_MAX, '\n');  // ignore last input
 }
 
+//clear console
 void ClearScreen()
 {
-    setOutputPosition(0, 1);
-    string EmptySpace = "                                                                                                                   ";
-    for (int i = 0; i < 50; i++)
-    {
-        cout << EmptySpace << endl;
-    }
+    system("cls");
 }
 
+//print error message
 string outputErrorMessage()
 {
     return "Please enter a valid input!\n";
 }
 
+//input number
 void inputNumber(double& number, int x = -1, int y = -1)
 {
     cin >> number;
@@ -36,24 +35,25 @@ void inputNumber(double& number, int x = -1, int y = -1)
         ignoreUserInput();
         if (x != -1 && y != -1)
         {
-            setOutputPosition(x, y);
+            setOutputPosition1(x, y);
             cout << "                                                                ";
-            setOutputPosition(x, y);
+            setOutputPosition1(x, y);
         }
         cout << outputErrorMessage();
         if (y != -1)
         {
-            setOutputPosition(78, y);
+            setOutputPosition1(78, y);
             cout << "          ";
-            setOutputPosition(78, y);
+            setOutputPosition1(78, y);
         }
         cin >> number;
     }
 }
 
-void returnToMainMenu(int x, int y)
+//function to return to main menu
+void returnToMainMenu1(int x, int y)
 {
-    setOutputPosition(x, y);
+    setOutputPosition1(x, y);
     cout << "Press N to go back.";
 
     while (true)
@@ -71,12 +71,14 @@ void returnToMainMenu(int x, int y)
     }
 }
 
+//function to print the first half of opening question
 string outputFormula(string& openingSentence, string formula)
 {
     openingSentence = "Our formula is ";
     return formula;
 }
 
+//function to print "Now, try to slove this problem"
 string outputProblem(string& openingSentence, string problem)
 {
     openingSentence = "Now, try to solve this problem!\n";

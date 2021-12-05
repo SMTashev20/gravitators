@@ -9,6 +9,7 @@ using namespace std;
 
 int main()
 {
+	//start the program
 	start();
 }
 

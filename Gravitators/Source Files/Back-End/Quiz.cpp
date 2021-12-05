@@ -7,10 +7,12 @@ using namespace std;
 #include <windows.h>
 #include <conio.h>
 
+//include header files
 #include "../../Header Files/Front-End/TowerOfPizza.h"
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Back-End/MainFunctions.h"
 
+//defines colors that are used in the application
 #define COLOR_BLACK 0
 #define COLOR_AQUA 3
 #define COLOR_GRAY 8
@@ -19,31 +21,34 @@ using namespace std;
 
 using namespace std;
 
+//defines the position of the output option in the quiz
 void outputOptions(string question, string option1, string option2, string option3)
 {
 	setColor(COLOR_WHITE);
-	setOutputPosition(20, 6);
+	setOutputPosition1(20, 6);
 	cout << question;
 
-	setOutputPosition(20, 9);
+	setOutputPosition1(20, 9);
 	cout << option1;
-	setOutputPosition(20, 11);
+	setOutputPosition1(20, 11);
 	cout << option2;
-	setOutputPosition(20, 13);
+	setOutputPosition1(20, 13);
 	cout << option3;
 }
 
+//defines the position of the output for total points
 void outputTotalPoints(int& pointsTotal)
 {
 	setColor(COLOR_WHITE);
-	setOutputPosition(30, 10);
+	setOutputPosition1(30, 10);
 	cout << "Congratulations! You have finished the quiz!" << endl;
-	setOutputPosition(34, 11);
+	setOutputPosition1(34, 11);
 	cout << "Your total points are: ";
 	setColor(COLOR_YELLOW);
 	cout << pointsTotal;
 }
 
+//print arrow to help user navigate through the application
 void printUser(int& pointsTotal, int correctRow)
 {
 	string user = "-->";
@@ -57,20 +62,20 @@ void printUser(int& pointsTotal, int correctRow)
 			case 'w':
 			case 'W':
 			{
-				setOutputPosition(userCol, userRow);
+				setOutputPosition1(userCol, userRow);
 				cout << "    ";
 				userRow--;
-				setOutputPosition(userCol, userRow);
+				setOutputPosition1(userCol, userRow);
 				cout << user;
 			}
 			break;
 			case 's':
 			case 'S':
 			{
-				setOutputPosition(userCol, userRow);
+				setOutputPosition1(userCol, userRow);
 				cout << "    ";
 				userRow++;
-				setOutputPosition(userCol, userRow);
+				setOutputPosition1(userCol, userRow);
 
 				cout << user;
 			}
@@ -85,7 +90,7 @@ void printUser(int& pointsTotal, int correctRow)
 					printStars_Exercises();
 
 					setColor(COLOR_YELLOW);
-					setOutputPosition(35, 10);
+					setOutputPosition1(35, 10);
 					cout << "+1pt! Press N to continue.";
 					pointsTotal++;
 					moves = 1;
@@ -97,7 +102,7 @@ void printUser(int& pointsTotal, int correctRow)
 					printStars_Exercises();
 
 					setColor(COLOR_YELLOW);
-					setOutputPosition(35, 10);
+					setOutputPosition1(35, 10);
 					cout << "+0pt, press N to continue." << endl;
 					moves = 1;
 				}
@@ -120,6 +125,7 @@ void printUser(int& pointsTotal, int correctRow)
 	}
 }
 
+
 void printTutorialUser()
 {
 	string user = "-->";
@@ -133,20 +139,20 @@ void printTutorialUser()
 			case 'w':
 			case 'W':
 			{
-				setOutputPosition(userCol, userRow);
+				setOutputPosition1(userCol, userRow);
 				cout << "    ";
 				userRow--;
-				setOutputPosition(userCol, userRow);
+				setOutputPosition1(userCol, userRow);
 				cout << user;
 			}
 			break;
 			case 's':
 			case 'S':
 			{
-				setOutputPosition(userCol, userRow);
+				setOutputPosition1(userCol, userRow);
 				cout << "    ";
 				userRow++;
-				setOutputPosition(userCol, userRow);
+				setOutputPosition1(userCol, userRow);
 
 				cout << user;
 			}
@@ -160,7 +166,7 @@ void printTutorialUser()
 					printStars_Exercises();
 
 					setColor(COLOR_YELLOW);
-					setOutputPosition(35, 10);
+					setOutputPosition1(35, 10);
 					cout << "Great! Press N to continue.";
 					moves = 1;
 			}
@@ -182,6 +188,7 @@ void printTutorialUser()
 	}
 }
 
+//storage for recap quiz questions
 void QuizRecap()
 {
 	printGameFrame_Exercises();
@@ -233,9 +240,10 @@ void QuizRecap()
 	outputTotalPoints(pointsTotal);
 
 	setColor(COLOR_YELLOW);
-	returnToMainMenu(34, 13);
+	returnToMainMenu1(34, 13);
 }
 
+//storage for Density quiz questions
 void QuizDensity()
 {
 	printGameFrame_Exercises();
@@ -292,9 +300,10 @@ void QuizDensity()
 	outputTotalPoints(pointsTotal);
 
 	setColor(COLOR_YELLOW);
-	returnToMainMenu(34, 13);
+	returnToMainMenu1(34, 13);
 }
 
+//storage for FreeFall quiz questions
 void QuizFreeFall()
 {
 	printGameFrame_Exercises();
@@ -331,9 +340,10 @@ void QuizFreeFall()
 	outputTotalPoints(pointsTotal);
 
 	setColor(COLOR_YELLOW);
-	returnToMainMenu(34, 13);
+	returnToMainMenu1(34, 13);
 }
 
+//storage for Gravity quiz questions
 void QuizGravity()
 {
 	printGameFrame_Exercises();
@@ -383,9 +393,10 @@ void QuizGravity()
 	outputTotalPoints(pointsTotal);
 
 	setColor(COLOR_YELLOW);
-	returnToMainMenu(34, 13);
+	returnToMainMenu1(34, 13);
 }
 
+//storage for Hydristatic Pressure quiz questions
 void QuizHydrostaticPressure()
 {
 	printGameFrame_Exercises();
@@ -436,9 +447,10 @@ void QuizHydrostaticPressure()
 	outputTotalPoints(pointsTotal);
 
 	setColor(COLOR_YELLOW);
-	returnToMainMenu(34, 13);
+	returnToMainMenu1(34, 13);
 }
 
+//storage for Newtons Laws quiz questions
 void QuizNewtonLaws()
 {
 	printGameFrame_Exercises();
@@ -486,9 +498,10 @@ void QuizNewtonLaws()
 	outputTotalPoints(pointsTotal);
 
 	setColor(COLOR_YELLOW);
-	returnToMainMenu(34, 13);
+	returnToMainMenu1(34, 13);
 }
 
+//storage for Pressure quiz questions
 void QuizPressure()
 {
 	printGameFrame_Exercises();
@@ -525,9 +538,10 @@ void QuizPressure()
 	outputTotalPoints(pointsTotal);
 
 	setColor(COLOR_YELLOW);
-	returnToMainMenu(34, 13);
+	returnToMainMenu1(34, 13);
 }
 
+//storage for Uniform Acceleration quiz questions
 void QuizUniformAcceleration()
 {
 	printGameFrame_Exercises();
@@ -557,5 +571,5 @@ void QuizUniformAcceleration()
 	outputTotalPoints(pointsTotal);
 
 	setColor(COLOR_YELLOW);
-	returnToMainMenu(34, 13);
+	returnToMainMenu1(34, 13);
 }

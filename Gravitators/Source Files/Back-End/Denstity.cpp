@@ -1,5 +1,6 @@
 #include <iostream>
 
+//include header files
 #include "../../Header Files/Back-End/Density.h"
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Front-End/Frame.h"
@@ -7,6 +8,7 @@
 
 using namespace std;
 
+//include density calculator
 void densityCalculatorDensity()
 {
     double mass; // declare variables
@@ -15,53 +17,54 @@ void densityCalculatorDensity()
     // p = m / V
 
     // enter values for m and a
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_WHITE);
     cout << "Enter the mass of the object (m):" << endl;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 8);
+    setOutputPosition1(78, 8);
     inputNumber(mass, 14, 8);
 
-    setOutputPosition(14, 10);
+    setOutputPosition1(14, 10);
     setColor(COLOR_WHITE);
     cout << "Enter the volume of the object (V):" << endl;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 10);
+    setOutputPosition1(78, 10);
     inputNumber(volume, 14, 10);
 
     setColor(COLOR_WHITE);
 
     while (volume == 0) // check for dividing by zero
     {
-        setOutputPosition(14, 10);
+        setOutputPosition1(14, 10);
         cout << "You can't divide by 0! Enter new value!" << endl;
         setColor(COLOR_YELLOW);
 
-        setOutputPosition(78, 10);
+        setOutputPosition1(78, 10);
         inputNumber(volume, 14, 10);
         setColor(COLOR_WHITE);
     }
 
-    setOutputPosition(14, 12);
+    setOutputPosition1(14, 12);
     outputFormula(opening, ""); // output formula
     cout << opening;
     cout << outputFormula(opening, "p = m / V") << endl;
 
-    setOutputPosition(14, 13);
+    setOutputPosition1(14, 13);
     cout << "First we replace the values:" << endl; // print detailed solution with values set by user
 
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << "p = " << mass << " / " << volume << endl;
 
-    setOutputPosition(14, 15);
+    setOutputPosition1(14, 15);
     cout << "Then we calculate our equation:" << endl;
 
-    setOutputPosition(14, 16);
+    setOutputPosition1(14, 16);
     cout << "p = " << mass / volume << " kg/m2" << endl;
 }
 
+//include mass calculator
 void massCalculatorDensity()
 {
     double density; // declare variables
@@ -70,35 +73,35 @@ void massCalculatorDensity()
     // p = m / V
 
     // enter values for F and m
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_WHITE);
     cout << "Enter the density of the object (p):" << endl;
 
-    setOutputPosition(78, 8);
+    setOutputPosition1(78, 8);
     setColor(COLOR_YELLOW);
     inputNumber(density, 14, 8);
 
-    setOutputPosition(14, 10);
+    setOutputPosition1(14, 10);
     setColor(COLOR_WHITE);
     cout << "Enter the volume of the object (V):" << endl;
 
-    setOutputPosition(78, 10);
+    setOutputPosition1(78, 10);
     setColor(COLOR_YELLOW);
     inputNumber(volume, 14, 10);
     setColor(COLOR_WHITE);
 
-    setOutputPosition(14, 12);
+    setOutputPosition1(14, 12);
     outputFormula(opening, "");
     cout << opening;
     cout << outputFormula(opening, "m = p * V") << endl;
 
-    setOutputPosition(14, 13);
+    setOutputPosition1(14, 13);
     cout << "First we replace the values:" << endl;    // calculate using values entered by user
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << "m = " << density << " * " << volume << endl;
-    setOutputPosition(14, 15);
+    setOutputPosition1(14, 15);
     cout << "Then we calculate our equation:" << endl;
-    setOutputPosition(14, 16);
+    setOutputPosition1(14, 16);
     cout << "m = " << density * volume << " kg" << endl;
 }
 
@@ -127,14 +130,14 @@ void exerciseOneDensity(bool& pointAdd)
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     outputProblem(opening, question);  // output the problem
     cout << opening;
 
-    setOutputPosition(14, 6);
+    setOutputPosition1(14, 6);
     cout << outputProblem(opening, question);
 
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_YELLOW);
     cin >> answer;
     setColor(COLOR_WHITE);
@@ -162,14 +165,14 @@ void exerciseTwoDensity(bool& pointAdd)
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     outputProblem(opening, question); // output the problem
     cout << opening;
 
-    setOutputPosition(14, 6);
+    setOutputPosition1(14, 6);
     cout << outputProblem(opening, question);
 
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_YELLOW);
     cin >> answer;
     setColor(COLOR_WHITE);
@@ -185,19 +188,20 @@ void exerciseTwoDensity(bool& pointAdd)
     }
 }
 
+//print option menu for Density
 void optionMenuDensity()
 {
     printGameFrame_small();
     printStars_small();
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(14, 9);
+    setOutputPosition1(14, 9);
     cout << "1.";
     setColor(COLOR_WHITE);
     cout << "Exercise - calculator";
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << "2.";
     setColor(COLOR_WHITE);
     cout << "Quiz";
@@ -222,17 +226,18 @@ void optionMenuDensity()
     }
 }
 
+//print Density exercise + calculator
 void Density()
 {
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     string sym;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 4);
+    setOutputPosition1(78, 4);
     cin >> sym; // input symbol to answer the question
 
     int correctExerciseCount = 0; // count user's points
@@ -243,11 +248,11 @@ void Density()
 
     while (sym != "c" && sym != "p") // check if input is valid
     {
-        setOutputPosition(14, 4);
+        setOutputPosition1(14, 4);
         cout << "                                                                ";
-        setOutputPosition(14, 4);
+        setOutputPosition1(14, 4);
         cout << "Please enter a valid input!" << endl;
-        setOutputPosition(78, 4);
+        setOutputPosition1(78, 4);
         cin >> sym;
     }
 
@@ -255,21 +260,21 @@ void Density()
 
     if (sym == "c") // user is using calculator
     {
-        setOutputPosition(14, 6);
+        setOutputPosition1(14, 6);
         cout << "Enter the unit we are searching (p/m)" << endl;
 
-        setOutputPosition(78, 6);
+        setOutputPosition1(78, 6);
         setColor(COLOR_YELLOW);
         cin >> sym;
 
         while (sym != "p" && sym != "m") // check if input is valid
         {
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "                                                                ";
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Please enter a valid input!" << endl;
 
-            setOutputPosition(78, 6);
+            setOutputPosition1(78, 6);
             cin >> sym;
         }
         densityMassCalculatorDensity(sym);
@@ -280,31 +285,31 @@ void Density()
         exerciseOneDensity(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's wrong! ";
         }
         exerciseOneChecker = 1;
     }
-    setOutputPosition(14, 18);
+    setOutputPosition1(14, 18);
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
 
-    setOutputPosition(71, 18);
+    setOutputPosition1(71, 18);
     setColor(COLOR_YELLOW);
     cin >> sym; // input symbol to answer the question
     setColor(COLOR_WHITE);
 
     while (sym != "y" && sym != "n") // check if input is valid
     {
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "                                                ";
 
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "Please enter a valid input!" << endl;
 
         setColor(COLOR_YELLOW);
@@ -320,33 +325,33 @@ void Density()
         exerciseTwoDensity(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's wrong! ";
         }
 
     }
 
-    setOutputPosition(14, 18);
+    setOutputPosition1(14, 18);
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
 
-    setOutputPosition(78, 18);
+    setOutputPosition1(78, 18);
     setColor(COLOR_YELLOW);
     cin >> sym; // input symbol to answer the question
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     setColor(COLOR_WHITE);
 
     while (sym != "c" && sym != "p") // check if input is valid
     {
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "                                                               ";
 
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "Please enter a valid input!" << endl;
         cin >> sym;
     }
@@ -356,20 +361,20 @@ void Density()
         printGameFrame_Exercises();
         printStars_Exercises();
 
-        setOutputPosition(14, 6);
+        setOutputPosition1(14, 6);
         cout << "Enter the unit we are searching (p/m)" << endl;
 
-        setOutputPosition(78, 6);
+        setOutputPosition1(78, 6);
         setColor(COLOR_YELLOW);
         cin >> sym;
 
         while (sym != "p" && sym != "m") // check if input is valid
         {
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "                                                                ";
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Please enter a valid input!" << endl;
-            setOutputPosition(78, 6);
+            setOutputPosition1(78, 6);
             cin >> sym;
         }
         densityMassCalculatorDensity(sym);
@@ -382,13 +387,13 @@ void Density()
             exerciseTwoDensity(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's correct! ";
                 correctExerciseCount++;
             }
             else if (isCorrect == false)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's wrong! ";
             }
         }
@@ -398,13 +403,13 @@ void Density()
             exerciseOneDensity(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's correct! ";
                 correctExerciseCount++;
             }
             else if (isCorrect == false)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's wrong! ";
             }
         }
@@ -414,15 +419,15 @@ void Density()
             printGameFrame_Exercises();
             printStars_Exercises();
 
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Oops! You've finished all of the exercises!" << endl;
         }
     }
 
     // output user's score
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     cout << "You got " << correctExerciseCount << " out of 2 points!";
 
     setColor(COLOR_YELLOW);
-    returnToMainMenu(14, 10);
+    returnToMainMenu1(14, 10);
 }

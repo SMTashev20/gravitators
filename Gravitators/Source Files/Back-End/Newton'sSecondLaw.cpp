@@ -1,5 +1,6 @@
 #include <iostream>
 
+//include header files
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Back-End/Newton'sSecondLaw.h"
 #include "../../Header Files/Front-End/Frame.h"
@@ -7,6 +8,8 @@
 
 using namespace std;
 
+
+//force calculator
 void forceCalculatorNewtonSSecondLaw()
 {
     double acceleration; // declare variables
@@ -15,41 +18,42 @@ void forceCalculatorNewtonSSecondLaw()
     // F = m * a
 
     // enter values for m and a
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_WHITE);
     cout << "Enter the mass of the object (m):" << endl;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 8);
+    setOutputPosition1(78, 8);
     inputNumber(mass, 14, 8);
 
-    setOutputPosition(14, 10);
+    setOutputPosition1(14, 10);
     setColor(COLOR_WHITE);
     cout << "Enter the acceleration of the object (a):" << endl;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 10);
+    setOutputPosition1(78, 10);
     inputNumber(acceleration, 14, 10);
     setColor(COLOR_WHITE);
 
-    setOutputPosition(14, 12);
+    setOutputPosition1(14, 12);
     outputFormula(opening, ""); // output formula
     cout << opening;
     cout << outputFormula(opening, "F = m * a") << endl;
 
-    setOutputPosition(14, 13);
+    setOutputPosition1(14, 13);
     cout << "First we replace the values:" << endl; // calculate using the formula
     
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << "F = " << mass << " * " << acceleration << endl;
 
-    setOutputPosition(14, 15);
+    setOutputPosition1(14, 15);
     cout << "Then we calculate our equation:" << endl;
 
-    setOutputPosition(14, 16);
+    setOutputPosition1(14, 16);
     cout << "F = " << mass * acceleration << " N" << endl;
 }
 
+//acceleration calculator 
 void accelerationCalculatorNewtonSSecondLaw()
 {
     double force; // declare variables
@@ -58,46 +62,46 @@ void accelerationCalculatorNewtonSSecondLaw()
     // a = F / m
 
     // enter values for F and m
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_WHITE);
     cout << "Enter the force of the object (F):" << endl;
 
 
-    setOutputPosition(78, 8);
+    setOutputPosition1(78, 8);
     setColor(COLOR_YELLOW);
     inputNumber(force, 14, 8);
 
-    setOutputPosition(14, 10);
+    setOutputPosition1(14, 10);
     setColor(COLOR_WHITE);
     cout << "Enter the mass of the object (m):" << endl;
     inputNumber(mass);
 
     while (mass == 0) // check for dividing by zero
     {
-        setOutputPosition(14, 10);
+        setOutputPosition1(14, 10);
         cout << "You can't divide by 0! Enter new value!" << endl;
         setColor(COLOR_YELLOW);
 
-        setOutputPosition(78, 10);
+        setOutputPosition1(78, 10);
         inputNumber(mass);
         setColor(COLOR_WHITE);
     }
 
-    setOutputPosition(14, 12);
+    setOutputPosition1(14, 12);
     outputFormula(opening, "");
     cout << opening;
     cout << outputFormula(opening, "a = F / m") << endl;
 
-    setOutputPosition(14, 13);
+    setOutputPosition1(14, 13);
     cout << "First we replace the values:" << endl; // calculate using the formula
 
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << "a = " << force << " / " << mass << endl;
 
-    setOutputPosition(14, 15);
+    setOutputPosition1(14, 15);
     cout << "Then we calculate our equation:" << endl;
 
-    setOutputPosition(14, 16);
+    setOutputPosition1(14, 16);
     cout << "a = " << force / mass << " m/s^2" << endl;
 }
 
@@ -127,16 +131,16 @@ void exerciseOneNSL(bool& pointAdd)
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     outputProblem(opening, question);
     cout << opening;
 
-    setOutputPosition(14, 6);
+    setOutputPosition1(14, 6);
     cout << outputProblem(opening, question); // output the problem
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     cout << "Hint: 15cm = 0,15m" << endl;
 
-    setOutputPosition(14, 9);
+    setOutputPosition1(14, 9);
     setColor(COLOR_YELLOW);
     cin >> answer;
     setColor(COLOR_WHITE);
@@ -166,14 +170,14 @@ void exerciseTwoNSL(bool& pointAdd)
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     outputProblem(opening, question); // output the problem
     cout << opening;
 
-    setOutputPosition(14, 6);
+    setOutputPosition1(14, 6);
     cout << outputProblem(opening, question);
 
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_YELLOW);
     cin >> answer;
     setColor(COLOR_WHITE);
@@ -189,19 +193,20 @@ void exerciseTwoNSL(bool& pointAdd)
     }
 }
 
+//print option menu
 void optionMenuNewtonLaws()
 {
     printGameFrame_small();
     printStars_small();
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(14, 9);
+    setOutputPosition1(14, 9);
     cout << "1.";
     setColor(COLOR_WHITE);
     cout << "Exercise - calculator";
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << "2.";
     setColor(COLOR_WHITE);
     cout << "Quiz";
@@ -226,17 +231,18 @@ void optionMenuNewtonLaws()
     }
 }
 
+//print calculator + exercises
 void newtonSecondLaw()
 {
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     cout << "Would you like to use the calculator or solve a problem? (c/p) " << endl;
     string symbol;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 4);
+    setOutputPosition1(78, 4);
     cin >> symbol; // input symbol to answer the question
     setColor(COLOR_WHITE);
 
@@ -248,26 +254,26 @@ void newtonSecondLaw()
 
     while (symbol != "c" && symbol != "p") // check if input is valid
     {
-        setOutputPosition(14, 4);
+        setOutputPosition1(14, 4);
         cout << "                                                                ";
-        setOutputPosition(14, 4);
+        setOutputPosition1(14, 4);
         cout << "Please enter a valid input!" << endl;
-        setOutputPosition(78, 4);
+        setOutputPosition1(78, 4);
         cin >> symbol;
     }
     if (symbol == "c") // user is using calculator
     {
-        setOutputPosition(14, 6);
+        setOutputPosition1(14, 6);
         cout << "Enter the unit we are searching (F/a) " << endl;
 
-        setOutputPosition(78, 6);
+        setOutputPosition1(78, 6);
         setColor(COLOR_YELLOW);
         cin >> symbol;
         while (symbol != "F" && symbol != "a") // check if input is valid
         {
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "                                                                ";
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Please enter a valid input!" << endl;
 
             setColor(COLOR_YELLOW);
@@ -282,34 +288,34 @@ void newtonSecondLaw()
         exerciseOneNSL(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's correct! ";
             correctExerciseCount++;
 
         }
         else if (isCorrect == false)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's wrong! ";
         }
         exerciseOneChecker = 1;
     }
 
-    setOutputPosition(14, 18);
+    setOutputPosition1(14, 18);
     cout << "Would you like to go to the next exercise? (y/n) " << endl;
    
-    setOutputPosition(71, 18);
+    setOutputPosition1(71, 18);
     setColor(COLOR_YELLOW);
     cin >> symbol; // input symbol to answer the question
     setColor(COLOR_WHITE);
 
     while (symbol != "y" && symbol != "n") // check if input is valid
     {
-        setOutputPosition(14, 6);
+        setOutputPosition1(14, 6);
         cout << "                                                                ";
-        setOutputPosition(14, 6);
+        setOutputPosition1(14, 6);
         cout << "Please enter a valid input!" << endl;
-        setOutputPosition(78, 6);
+        setOutputPosition1(78, 6);
         cin >> symbol;
     }
     if (symbol == "n")
@@ -321,32 +327,32 @@ void newtonSecondLaw()
         exerciseTwoNSL(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's wrong! ";
         }
 
     }
 
-    setOutputPosition(14, 18);
+    setOutputPosition1(14, 18);
     cout << "Would you like to use the calculator or solve a problem? (c/p) " << endl;
-    setOutputPosition(78, 18);
+    setOutputPosition1(78, 18);
     setColor(COLOR_YELLOW);
     cin >> symbol; // input symbol to answer the question
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     setColor(COLOR_WHITE);
 
     while (symbol != "c" && symbol != "p") // check if input is valid
     {
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "                                                               ";
 
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
@@ -356,20 +362,20 @@ void newtonSecondLaw()
         printGameFrame_Exercises();
         printStars_Exercises();
 
-        setOutputPosition(14, 6);
+        setOutputPosition1(14, 6);
         cout << "Enter the unit we are searching (F/a)" << endl;
 
-        setOutputPosition(78, 6);
+        setOutputPosition1(78, 6);
         setColor(COLOR_YELLOW);
         cin >> symbol;
 
         while (symbol != "F" && symbol != "a") // check if input is valid
         {
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "                                                                ";
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Please enter a valid input!" << endl;
-            setOutputPosition(78, 6);
+            setOutputPosition1(78, 6);
             cin >> symbol;
         }
         forceAccelerationCalculatorNewtonSSecondLaw(symbol);
@@ -382,13 +388,13 @@ void newtonSecondLaw()
             exerciseTwoNSL(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's correct! ";
                 correctExerciseCount++;
             }
             else if (isCorrect == false)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's wrong! ";
             }
         }
@@ -398,13 +404,13 @@ void newtonSecondLaw()
             exerciseOneNSL(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's correct! ";
                 correctExerciseCount++;
             }
             else if (isCorrect == false)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's wrong! ";
             }
         }
@@ -414,15 +420,15 @@ void newtonSecondLaw()
             printGameFrame_Exercises();
             printStars_Exercises();
 
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Oops! You've finished all of the exercises!" << endl;
         }
     }
 
     // output user's score
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     cout << "You got " << correctExerciseCount << " out of 2 points!";
 
     setColor(COLOR_YELLOW);
-    returnToMainMenu(14, 10);
+    returnToMainMenu1(14, 10);
 }

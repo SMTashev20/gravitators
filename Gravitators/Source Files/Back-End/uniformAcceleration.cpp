@@ -1,4 +1,6 @@
 #include <iostream>
+
+//include header files  
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Back-End/uniformAcceleration.h"
 #include "../../Header Files/Front-End/Frame.h"
@@ -7,108 +9,110 @@
 
 using namespace std;
 
+//Calculator for distance
 void distanceCalculatorUniformAcceleration()
 {
     double initialVelocity, time, acceleration; // declare variables
     string opening;
 
     // enter values for Vo, a, t
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_WHITE);
     cout << "Enter the initial velocity of the body (Vo):" << endl;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 8);
+    setOutputPosition1(78, 8);
     inputNumber(initialVelocity, 14, 8);
 
-    setOutputPosition(14, 9);
+    setOutputPosition1(14, 9);
     setColor(COLOR_WHITE);
     cout << "Enter the time interval (t):" << endl;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 9);
+    setOutputPosition1(78, 9);
     inputNumber(time, 14, 9);
 
     setColor(COLOR_WHITE);
-    setOutputPosition(14, 10);
+    setOutputPosition1(14, 10);
     cout << "Enter the acceleration of the body (a):" << endl;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 10);
+    setOutputPosition1(78, 10);
     inputNumber(acceleration, 14, 10);
 
     setColor(COLOR_WHITE);
 
-    setOutputPosition(14, 12);
+    setOutputPosition1(14, 12);
     outputFormula(opening, ""); // output formula
     cout << opening;
     cout << outputFormula(opening, "s = Vo * t + (a * t * t) / 2") << endl;
 
-    setOutputPosition(14, 13);
+    setOutputPosition1(14, 13);
     cout << "First we replace the values:" << endl; // print detailed solution with values set by user
 
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << "s = " << initialVelocity << " * " << time << " + ";
 
-    setOutputPosition(14, 15);
+    setOutputPosition1(14, 15);
     cout << "(" << acceleration << " * " << time * time << ")" << " / 2" << endl;
 
-    setOutputPosition(14, 16);
+    setOutputPosition1(14, 16);
     cout << "Then we calculate our equation:" << endl;  // calculate using the formula
 
-    setOutputPosition(14, 17);
+    setOutputPosition1(14, 17);
     cout << "s = " << initialVelocity * time << " + " << (acceleration * time * time) / 2 << endl;
 
-    setOutputPosition(14, 18);
+    setOutputPosition1(14, 18);
     cout << "s = " << initialVelocity * time + (acceleration * time * time) / 2 << " m" << endl;
 }
 
+//velovity calculator 
 void velocityCalculatorUniformAcceleration()
 {
     double initialVelocity, time, acceleration; // declare variables
     string opening;
 
     // enter values for Vo, a, t
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_WHITE);
     cout << "Enter the initial velocity of the body (Vo):" << endl;
 
-    setOutputPosition(78, 8);
+    setOutputPosition1(78, 8);
     setColor(COLOR_YELLOW);
     inputNumber(initialVelocity, 14, 8);
 
-    setOutputPosition(14, 9);
+    setOutputPosition1(14, 9);
     setColor(COLOR_WHITE);
     cout << "Enter the acceleration of the body (a):" << endl;
 
-    setOutputPosition(78, 9);
+    setOutputPosition1(78, 9);
     setColor(COLOR_YELLOW);
     inputNumber(acceleration, 14, 9);
      setColor(COLOR_WHITE);
 
-     setOutputPosition(14, 10);
+     setOutputPosition1(14, 10);
     cout << "Enter the time interval (t):" << endl;
 
-    setOutputPosition(78, 10);
+    setOutputPosition1(78, 10);
     setColor(COLOR_YELLOW);
     inputNumber(time, 14, 10);
     setColor(COLOR_WHITE);
 
-    setOutputPosition(14, 12);
+    setOutputPosition1(14, 12);
     outputFormula(opening, "");
     cout << opening;
     cout << outputFormula(opening, "V = Vo + a * t") << endl;
 
-    setOutputPosition(14, 13);
+    setOutputPosition1(14, 13);
     cout << "First we replace the values:" << endl;
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << "V = " << initialVelocity << " + " << acceleration << " * " << time << endl;
-    setOutputPosition(14, 15);
+    setOutputPosition1(14, 15);
     cout << "Then we calculate our equation:" << endl;
     // calculate using the formula
-    setOutputPosition(14, 16);
+    setOutputPosition1(14, 16);
     cout << "V = " << initialVelocity << " + " << acceleration * time << endl;
-    setOutputPosition(14, 17);
+    setOutputPosition1(14, 17);
     cout << "V = " << initialVelocity + acceleration * time << " m/s" << endl;
 }
 
@@ -137,17 +141,17 @@ void exerciseOneUA(bool& pointAdd)
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     outputProblem(opening, question);  // output the problem
     cout << opening;
 
-    setOutputPosition(14, 6);
+    setOutputPosition1(14, 6);
     cout << outputProblem(opening, question);
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     cout << "Hint: 15cm = 0,15m, F = m * g and g = 10" << endl;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(14, 9);
+    setOutputPosition1(14, 9);
     cin >> answer;
     setColor(COLOR_WHITE);
     // the right answer is 780, if user inputs 780
@@ -174,17 +178,17 @@ void exerciseTwoUA(bool& pointAdd)
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     outputProblem(opening, question);
     cout << opening;
 
-    setOutputPosition(14, 6);
+    setOutputPosition1(14, 6);
     cout << outputProblem(opening, question); // output the problem
 
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     cout << "Hint: 36 km/h = 10 m/s\n" << endl;
 
-    setOutputPosition(14, 9);
+    setOutputPosition1(14, 9);
     setColor(COLOR_YELLOW);
     cin >> answer;
     setColor(COLOR_WHITE);
@@ -200,25 +204,26 @@ void exerciseTwoUA(bool& pointAdd)
     }
 }
 
+//print menu for Uniform Acceleration
 void optionMenuUniformAcceleration()
 {
     printGameFrame_small();
     printStars_small();
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(14, 6);
+    setOutputPosition1(14, 6);
     cout << "1.";
     setColor(COLOR_WHITE);
     cout << "Exercise - calculator";
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(14, 11);
+    setOutputPosition1(14, 11);
     cout << "2.";
     setColor(COLOR_WHITE);
     cout << "Quiz";
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(14, 16);
+    setOutputPosition1(14, 16);
     cout << "3.";
     setColor(COLOR_WHITE);
     cout << "Tower of Pisa";
@@ -248,17 +253,18 @@ void optionMenuUniformAcceleration()
     }
 }
 
+//print calculator + exercise for Uniform Acceleration
 void uniformAcceleration()
 {
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     string symbol;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 4);
+    setOutputPosition1(78, 4);
     cin >> symbol; // input symbol to answer the question
     setColor(COLOR_WHITE);
 
@@ -270,32 +276,32 @@ void uniformAcceleration()
 
     while (symbol != "c" && symbol != "p") // check if input is valid
     {
-        setOutputPosition(14, 4);
+        setOutputPosition1(14, 4);
         cout << "                                                                ";
-        setOutputPosition(14, 4);
+        setOutputPosition1(14, 4);
         cout << "Please enter a valid input!" << endl;
-        setOutputPosition(78, 4);
+        setOutputPosition1(78, 4);
         cin >> symbol;
         setColor(COLOR_WHITE);
     }
 
     if (symbol == "c") // user is using calculator
     {
-        setOutputPosition(14, 6);
+        setOutputPosition1(14, 6);
         cout << "Enter the unit we are searching (V/s)" << endl;
 
-        setOutputPosition(78, 6);
+        setOutputPosition1(78, 6);
         setColor(COLOR_YELLOW);
         cin >> symbol;
 
         while (symbol != "V" && symbol != "s") // check if input is valid
         {
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "                                                                ";
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Please enter a valid input!" << endl;
 
-            setOutputPosition(78, 6);
+            setOutputPosition1(78, 6);
             cin >> symbol;
         }
         velocityDistanceCalculatorUniformAcceleration(symbol);
@@ -306,33 +312,33 @@ void uniformAcceleration()
         exerciseOneUA(isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's wrong! ";
         }
         exerciseOneChecker = 1;
     }
 
 
-    setOutputPosition(14, 18);
+    setOutputPosition1(14, 18);
     cout << "Would you like to go to the next exercise? (y/n)" << endl;
 
-    setOutputPosition(71, 18);
+    setOutputPosition1(71, 18);
     setColor(COLOR_YELLOW);
     cin >> symbol; // input symbol to answer the question
     setColor(COLOR_WHITE);
 
     while (symbol != "y" && symbol != "n") // check if input is valid
     {
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "                                                ";
 
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "Please enter a valid input!" << endl;
 
         setColor(COLOR_YELLOW);
@@ -348,33 +354,33 @@ void uniformAcceleration()
         exerciseTwoUA(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's wrong! ";
         }
     }
 
 
-    setOutputPosition(14, 18);
+    setOutputPosition1(14, 18);
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
 
-    setOutputPosition(78, 18);
+    setOutputPosition1(78, 18);
     setColor(COLOR_YELLOW);
     cin >> symbol; // input symbol to answer the question
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     setColor(COLOR_WHITE);
 
     while (symbol != "c" && symbol != "p") // check if input is valid
     {
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "                                                               ";
 
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
@@ -385,20 +391,20 @@ void uniformAcceleration()
         printGameFrame_Exercises();
         printStars_Exercises();
 
-        setOutputPosition(14, 6);
+        setOutputPosition1(14, 6);
         cout << "Enter the unit we are searching (V/s)" << endl;
 
-        setOutputPosition(78, 6);
+        setOutputPosition1(78, 6);
         setColor(COLOR_YELLOW);
         cin >> symbol;
 
         while (symbol != "V" && symbol != "s") // check if input is valid
         {
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "                                                                ";
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Please enter a valid input!" << endl;
-            setOutputPosition(78, 6);
+            setOutputPosition1(78, 6);
             cin >> symbol;
         }
         velocityDistanceCalculatorUniformAcceleration(symbol);
@@ -411,13 +417,13 @@ void uniformAcceleration()
             exerciseTwoUA(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's correct! ";
                 correctExerciseCount++;
             }
             else if (isCorrect == false)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's wrong! ";
             }
         }
@@ -427,13 +433,13 @@ void uniformAcceleration()
             exerciseOneUA(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's correct! ";
                 correctExerciseCount++;
             }
             else if (isCorrect == false)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's wrong! ";
             }
         }
@@ -443,9 +449,9 @@ void uniformAcceleration()
             printGameFrame_Exercises();
             printStars_Exercises();
 
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Oops! You've finished all of the exercises!" << endl;
-            setOutputPosition(14, 12); // output user's score
+            setOutputPosition1(14, 12); // output user's score
             cout << "You got " << correctExerciseCount << " out of 2 points!";
         }
     }
@@ -453,5 +459,5 @@ void uniformAcceleration()
     // output user's score
 
     setColor(COLOR_YELLOW);
-    returnToMainMenu(14, 13);
+    returnToMainMenu1(14, 13);
 }

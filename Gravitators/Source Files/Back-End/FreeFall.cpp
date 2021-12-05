@@ -1,5 +1,6 @@
 #include <iostream>
 
+//add header files
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Back-End/FreeFall.h"
 #include "../../Header Files/Front-End/Frame.h"
@@ -7,72 +8,74 @@
 
 using namespace std;
 
+//declarate function for distance calculator
 void distanceCalculatorFreeFall()
 {
     double time; // declare variable
     string opening;
 
     // enter value for t
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_WHITE);
     cout << "Enter the time interval (t):" << endl;
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 8);
+    setOutputPosition1(78, 8);
     inputNumber(time, 14, 8);
 
-    setOutputPosition(14, 10);
+    setOutputPosition1(14, 10);
     setColor(COLOR_WHITE);
     outputFormula(opening, ""); // output formula
     cout << opening;
     cout << outputFormula(opening, "s = (g * t * t ) / 2") << endl;
 
-    setOutputPosition(14, 12);
+    setOutputPosition1(14, 12);
     cout << "First we replace the values:" << endl;  // calculate using the formula
 
-    setOutputPosition(14, 13);
+    setOutputPosition1(14, 13);
     cout << "s = " << "(" << 10 << " * ";
 
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << time << " * " << time << ")" << " / 2" << endl;
 
-    setOutputPosition(14, 15);
+    setOutputPosition1(14, 15);
     cout << "Then we calculate our equation:" << endl;
 
-    setOutputPosition(14, 16);
+    setOutputPosition1(14, 16);
     cout << "s = " << (10 * time * time) / 2 << " m" << endl;
 }
 
+//include velocity calculator 
 void velocityCalculatorFreeFall()
 {
     double time; // declare variable
     string opening;
 
     // enter value for t
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_WHITE);
     cout << "Enter the time interval (t):" << endl;
 
-    setOutputPosition(78, 8);
+    setOutputPosition1(78, 8);
     setColor(COLOR_YELLOW);
     inputNumber(time, 14, 8);
 
-    setOutputPosition(14, 10);
+    setOutputPosition1(14, 10);
     setColor(COLOR_WHITE);
     outputFormula(opening, ""); // output formula
     cout << opening;
     cout << outputFormula(opening, "V = g * t") << endl;
 
-    setOutputPosition(14, 12);
+    setOutputPosition1(14, 12);
     cout << "First we replace the values:" << endl;  // calculate using the formula
 
-    setOutputPosition(14, 13);
+    setOutputPosition1(14, 13);
     cout << "V = " << 10 << " * " << time << endl;
 
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << "Then we calculate our equation:" << endl;
 
-    setOutputPosition(14, 15);
+    setOutputPosition1(14, 15);
     cout << "V = " << 10 * time << " m/s" << endl;
 }
 
@@ -101,14 +104,14 @@ void exerciseOneFreeFall(bool& pointAdd)
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     outputProblem(opening, question);
     cout << opening << '\n';
 
-    setOutputPosition(14, 6);
+    setOutputPosition1(14, 6);
     cout << outputProblem(opening, question); // output the problem
 
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_YELLOW);
     cin >> answer;
     setColor(COLOR_WHITE);
@@ -136,14 +139,14 @@ void exerciseTwoFreeFall(bool& pointAdd)
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     outputProblem(opening, question);
     cout << opening << '\n';
 
-    setOutputPosition(14, 6);
+    setOutputPosition1(14, 6);
     cout << outputProblem(opening, question); // output the problem
 
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     setColor(COLOR_YELLOW);
     cin >> answer;
     setColor(COLOR_WHITE);
@@ -159,19 +162,20 @@ void exerciseTwoFreeFall(bool& pointAdd)
     }
 }
 
+//add option menu
 void optionMenuFreeFall()
 {
     printGameFrame_small();
     printStars_small();
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(14, 9);
+    setOutputPosition1(14, 9);
     cout << "1.";
     setColor(COLOR_WHITE);
     cout << "Exercise - calculator";
 
     setColor(COLOR_YELLOW);
-    setOutputPosition(14, 14);
+    setOutputPosition1(14, 14);
     cout << "2.";
     setColor(COLOR_WHITE);
     cout << "Quiz";
@@ -196,15 +200,16 @@ void optionMenuFreeFall()
     }
 }
 
+//start of the program
 void FreeFall()
 {
     printGameFrame_Exercises();
     printStars_Exercises();
 
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
     setColor(COLOR_YELLOW);
-    setOutputPosition(78, 4);
+    setOutputPosition1(78, 4);
     string symbol;
     cin >> symbol; // input symbol to answer the question
 
@@ -216,11 +221,11 @@ void FreeFall()
 
     while (symbol != "c" && symbol != "p") // check if input is valid
     {
-        setOutputPosition(14, 4);
+        setOutputPosition1(14, 4);
         cout << "                                                                ";
-        setOutputPosition(14, 4);
+        setOutputPosition1(14, 4);
         cout << "Please enter a valid input!" << endl;
-        setOutputPosition(78, 4);
+        setOutputPosition1(78, 4);
         cin >> symbol;
     }
 
@@ -228,18 +233,18 @@ void FreeFall()
 
     if (symbol == "c") // user is using calculator
     {
-        setOutputPosition(14, 6);
+        setOutputPosition1(14, 6);
         cout << "Enter the unit we are searching (V/s)" << endl;
-        setOutputPosition(78, 6);
+        setOutputPosition1(78, 6);
         setColor(COLOR_YELLOW);
         cin >> symbol;
         while (symbol != "V" && symbol != "s") // check if input is valid
         {
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "                                                                ";
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Please enter a valid input!" << endl;
-            setOutputPosition(78, 6);
+            setOutputPosition1(78, 6);
             cin >> symbol;
         }
         velocityDistanceCalculatorFreeFall(symbol);
@@ -250,32 +255,32 @@ void FreeFall()
         exerciseOneFreeFall (isCorrect); // check if problem 1 is answered correctly
         if (isCorrect == true)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's wrong! ";
         }
         exerciseOneChecker = 1;
     }
 
-    setOutputPosition(14, 18);
+    setOutputPosition1(14, 18);
     cout << "Would you like to do the next exercise? (y/n)" << endl;
 
-    setOutputPosition(71, 18);
+    setOutputPosition1(71, 18);
     setColor(COLOR_YELLOW);
     cin >> symbol; // input symbol to answer the question
     setColor(COLOR_WHITE);
 
     while (symbol != "y" && symbol != "n") // check if input is valid
     {
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "                                                ";
 
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "Please enter a valid input!" << endl;
 
         setColor(COLOR_YELLOW);
@@ -291,32 +296,32 @@ void FreeFall()
         exerciseTwoFreeFall(isCorrect); // check if problem 2 is answered correctly
         if (isCorrect == true)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's correct! ";
             correctExerciseCount++;
         }
         else if (isCorrect == false)
         {
-            setOutputPosition(14, 10);
+            setOutputPosition1(14, 10);
             cout << "That's wrong! ";
         }
     }
 
-    setOutputPosition(14, 18);
+    setOutputPosition1(14, 18);
     cout << "Would you like to use the calculator or solve a problem? (c/p)" << endl;
 
-    setOutputPosition(78, 18);
+    setOutputPosition1(78, 18);
     setColor(COLOR_YELLOW);
     cin >> symbol; // input symbol to answer the question
-    setOutputPosition(14, 4);
+    setOutputPosition1(14, 4);
     setColor(COLOR_WHITE);
 
     while (symbol != "c" && symbol != "p") // check if input is valid
     {
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "                                                               ";
 
-        setOutputPosition(14, 18);
+        setOutputPosition1(14, 18);
         cout << "Please enter a valid input!" << endl;
         cin >> symbol;
     }
@@ -326,19 +331,19 @@ void FreeFall()
         printGameFrame_Exercises();
         printStars_Exercises();
 
-        setOutputPosition(14, 6);
+        setOutputPosition1(14, 6);
         cout << "Enter the unit we are searching (V/s)" << endl;
 
-        setOutputPosition(78, 6);
+        setOutputPosition1(78, 6);
         setColor(COLOR_YELLOW);
         cin >> symbol;
         while (symbol != "V" && symbol != "s") // check if input is valid
         {
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "                                                                ";
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Please enter a valid input!" << endl;
-            setOutputPosition(78, 6);
+            setOutputPosition1(78, 6);
             cin >> symbol;
         }
         velocityDistanceCalculatorFreeFall(symbol);
@@ -351,13 +356,13 @@ void FreeFall()
             exerciseTwoFreeFall(isCorrect); // check if problem 2 is answered correctly
             if (isCorrect == true)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's correct! ";
                 correctExerciseCount++;
             }
             else if (isCorrect == false)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's wrong! ";
             }
         }
@@ -367,13 +372,13 @@ void FreeFall()
             exerciseOneFreeFall(isCorrect); // check if problem 1 is answered correctly
             if (isCorrect == true)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's correct! ";
                 correctExerciseCount++;
             }
             else if (isCorrect == false)
             {
-                setOutputPosition(14, 10);
+                setOutputPosition1(14, 10);
                 cout << "That's wrong! ";
             }
         }
@@ -383,14 +388,14 @@ void FreeFall()
             printGameFrame_Exercises();
             printStars_Exercises();
 
-            setOutputPosition(14, 6);
+            setOutputPosition1(14, 6);
             cout << "Oops! You've finished all of the exercises!" << endl;
         }
     }
     // output user's score
-    setOutputPosition(14, 8);
+    setOutputPosition1(14, 8);
     cout << "You got " << correctExerciseCount << " out of 2 points!";
 
     setColor(COLOR_YELLOW);
-    returnToMainMenu(14, 10);
+    returnToMainMenu1(14, 10);
 }

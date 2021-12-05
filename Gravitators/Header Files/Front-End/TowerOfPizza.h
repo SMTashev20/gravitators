@@ -4,12 +4,10 @@
 
 using namespace std;
 
-void setOutputPosition(short x, short y);
-
-void setColor(int color);
-
+//Print the Tower 
 void printTower();
 
+//Print the Tower
 void towerOfPizza();
 
 
