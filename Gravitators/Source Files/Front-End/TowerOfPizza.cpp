@@ -65,14 +65,21 @@ void towerOfPizza()
 				case 'd':
 				case 'D':
 				{
-					setOutputPosition1(userCol, userRow);
-					cout << " ";
-					userCol++;
-					userRow++;
-					moves--;
-					setOutputPosition1(userCol, userRow);
-					cout << user;
+					{
+						if (userRow == 18)
+						{
+							break;
+						}
+
+						setOutputPosition1(userCol, userRow);
+						cout << " ";
+						userCol++;
+						userRow++;
+						setOutputPosition1(userCol, userRow);
+						cout << user;
+					}
 				}
+				break;
 				case 'n':
 				case 'N':
 				{
