@@ -1,9 +1,3 @@
-#include <iostream>
-#include <cstring> 
-#include <ctime>
-#include <windows.h>
-#include <conio.h>
-
 //include front-end header files
 #include "../../Header Files/Back-End/mainMenuControl.h"
 #include "../../Header Files/Front-End/Frame.h"
@@ -19,8 +13,6 @@
 #include "../../Header Files/Back-End/uniformAcceleration.h"
 #include "../../Header Files/Back-End/Quiz.h"
 #include "../../Header Files/Back-End/MainFunctions.h"
-
-using namespace std;
 
 //Main start the main menu
 void start()

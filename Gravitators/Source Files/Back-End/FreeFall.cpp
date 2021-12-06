@@ -1,12 +1,8 @@
-#include <iostream>
-
 //add header files
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Back-End/FreeFall.h"
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Back-End/Quiz.h"
-
-using namespace std;
 
 //declarate function for distance calculator
 void distanceCalculatorFreeFall()

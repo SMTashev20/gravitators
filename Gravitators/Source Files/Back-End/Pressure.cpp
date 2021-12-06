@@ -1,12 +1,8 @@
-#include <iostream>
-
 //include header files  
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Back-End/Pressure.h"
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Back-End/Quiz.h"
-
-using namespace std;
 
 //calculator for force
 void forceCalculatorPressure()

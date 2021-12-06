@@ -1,11 +1,5 @@
-#include <iostream>
-#include <conio.h>
-
-//include header files
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Back-End/mainMenuControl.h"
-
-using namespace std;
 
 void ignoreUserInput()
 {

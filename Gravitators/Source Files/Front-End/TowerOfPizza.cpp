@@ -1,11 +1,7 @@
-#include <iostream>
-
 //include header files
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Back-End/mainMenuControl.h"
-
-using namespace std;
 
 //print tower of Pissa
 void printTower() {

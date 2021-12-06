@@ -1,8 +1,11 @@
 #pragma once
 
 #include <iostream>
+#include <Windows.h>
+#include <conio.h>
 
-//Define the color that are used in frame
+
+//defines color of the frame
 #define COLOR_BLACK 0
 #define COLOR_AQUA 3
 #define COLOR_GRAY 8

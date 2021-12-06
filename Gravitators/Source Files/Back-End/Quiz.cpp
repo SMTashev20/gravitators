@@ -1,12 +1,3 @@
-#include <iostream>
-using namespace std;
-
-#include <iostream>
-#include <cstring> 
-#include <ctime>
-#include <windows.h>
-#include <conio.h>
-
 //include header files
 #include "../../Header Files/Front-End/TowerOfPizza.h"
 #include "../../Header Files/Front-End/Frame.h"
@@ -18,8 +9,6 @@ using namespace std;
 #define COLOR_GRAY 8
 #define COLOR_WHITE 7
 #define COLOR_YELLOW 6
-
-using namespace std;
 
 //defines the position of the output option in the quiz
 void outputOptions(string question, string option1, string option2, string option3)

@@ -1,12 +1,7 @@
-#include <iostream>
-
 //Include header files
 #include "../../Header Files/Back-End/mainMenuControl.h"
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Front-End/Frame.h"
-#include <conio.h>
-
-using namespace std;
 
 //print Formula list
 void FormulaList()

@@ -1,12 +1,8 @@
-#include <iostream>
-
 //Include header files
 #include "../../Header Files/Back-End/MainFunctions.h"
 #include "../../Header Files/Back-End/Gravity.h"
 #include "../../Header Files/Front-End/Frame.h"
 #include "../../Header Files/Back-End/Quiz.h"
-
-using namespace std;
 
 //Insert gravity Calculator
 void gravityCalculatorGravity()
