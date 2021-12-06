@@ -5,11 +5,11 @@
 </p>
 
 <p align = "center">
-   <img src = "https://img.shields.io/github/languages/count/SMTashev20/gravitators">
-   <img src = "https://img.shields.io/github/milestones/open/SMTashev20/gravitators">
+
+   <img src = "https://img.shields.io/github/milestones/open/SMTashev20/gravitators?style=flat-square">
    <img src = "https://img.shields.io/github/contributors/SMTashev20/gravitators?style=flat-square">
    <img src = "https://img.shields.io/github/languages/code-size/SMTashev20/gravitators?style=flat-square">
-   <img src = "https://img.shields.io/github/last-commit/SMTashev20/gravitators/main">
+   <img src = "https://img.shields.io/github/last-commit/SMTashev20/gravitators/main?style=flat-square">
    <img src = "https://img.shields.io/github/languages/top/SMTashev20/gravitators?style=flat-square">
 
 
@@ -38,7 +38,6 @@ Application for practicing mechanics.
 <h1> 📥 Installing </h1>
 <p> To install our project on your machine you just need to clone it. This can be done by : </p>
 <pre>git clone https://github.com/SMTashev20/gravitators.git</pre>
-You can open the project by opening the <strong> Gravitators.sln </strong> file
 You can open the project by opening the <strong> Gravitators.sln </strong> file
 
 ## 🧒 Our Team
