@@ -39,7 +39,6 @@ Application for practicing mechanics.
 <p> To install our project on your machine you just need to clone it. This can be done by : </p>
 <pre>git clone https://github.com/SMTashev20/gravitators.git</pre>
 You can open the project by opening the <strong> Gravitators.sln </strong> file
-You can open the project by opening the <strong> Gravitators.sln </strong> file
 
 ## 🧒 Our Team
 
